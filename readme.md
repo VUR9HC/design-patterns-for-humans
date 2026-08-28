@@ -6,15 +6,15 @@
 ***
 
 <p align="center">
-🎉 Ultra-simplified explanation to design patterns! 🎉
+🎉 Giải thích siêu đơn giản về design patterns! 🎉
 </p>
 <p align="center">
-A topic that can easily make anyone's mind wobble. Here I try to make them stick in to your<br> mind (and maybe mine) by explaining them in the <i>simplest</i> way possible.
+Một chủ đề rất dễ làm bất kỳ ai rối trí. Ở đây tôi cố gắng giúp chúng in sâu vào<br> tâm trí bạn (và có lẽ cả của tôi nữa) bằng cách giải thích chúng theo cách <i>đơn giản</i> nhất có thể.
 </p>
 
 ***
 
-<sub>Check out my [other project](http://roadmap.sh) and say "hi" on [Twitter](https://twitter.com/kamrify).</sub>
+<sub>Hãy xem [dự án khác](http://roadmap.sh) của tôi và ghé [Twitter](https://twitter.com/kamrify) để nói "xin chào".</sub>
 
 <br>
 
@@ -33,27 +33,27 @@ A topic that can easily make anyone's mind wobble. Here I try to make them stick
 
 <br>
 
-Introduction
+Giới thiệu
 =================
 
-Design patterns are solutions to recurring problems; **guidelines on how to tackle certain problems**. They are not classes, packages or libraries that you can plug into your application and wait for the magic to happen. These are, rather, guidelines on how to tackle certain problems in certain situations.
+Design patterns là lời giải cho những vấn đề lặp đi lặp lại; **những hướng dẫn về cách xử lý một số vấn đề nhất định**. Chúng không phải là class, package hay library mà bạn có thể cắm vào ứng dụng rồi chờ phép màu xảy ra. Đúng hơn, chúng là những hướng dẫn về cách giải quyết một số vấn đề trong những tình huống nhất định.
 
-> Design patterns are solutions to recurring problems; guidelines on how to tackle certain problems
+> Design patterns là lời giải cho những vấn đề lặp đi lặp lại; những hướng dẫn về cách xử lý một số vấn đề nhất định
 
-Wikipedia describes them as
+Wikipedia mô tả chúng như sau
 
-> In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations.
+> Trong kỹ nghệ phần mềm, một software design pattern là một giải pháp tổng quát có thể tái sử dụng cho một vấn đề thường gặp trong một ngữ cảnh cụ thể của thiết kế phần mềm. Nó không phải là một thiết kế hoàn chỉnh có thể chuyển trực tiếp thành source code hay machine code. Nó là một mô tả hoặc khuôn mẫu về cách giải quyết một vấn đề có thể được dùng trong nhiều tình huống khác nhau.
 
-⚠️ Be Careful
+⚠️ Cẩn thận
 -----------------
-- Design patterns are not a silver bullet to all your problems.
-- Do not try to force them; bad things are supposed to happen, if done so. 
-- Keep in mind that design patterns are solutions **to** problems, not solutions **finding** problems; so don't overthink.
-- If used in a correct place in a correct manner, they can prove to be a savior; or else they can result in a horrible mess of a code.
+- Design patterns không phải là viên đạn bạc cho mọi vấn đề của bạn.
+- Đừng cố ép áp dụng chúng; nếu làm vậy thì rất dễ có chuyện tệ xảy ra. 
+- Hãy nhớ rằng design patterns là lời giải **cho** vấn đề, không phải lời giải **đi tìm** vấn đề; vì vậy đừng suy diễn quá mức.
+- Nếu được dùng đúng chỗ, đúng cách, chúng có thể trở thành cứu tinh; còn không thì có thể biến code của bạn thành một mớ hỗn độn kinh khủng.
 
-> Also note that the code samples below are in PHP-7, however this shouldn't stop you because the concepts are same anyways.
+> Cũng lưu ý rằng các ví dụ code bên dưới dùng C++17, nhưng điều đó không nên cản trở bạn vì các khái niệm thì vẫn như nhau.
 
-Types of Design Patterns
+Các loại design patterns
 -----------------
 
 * [Creational](#creational-design-patterns)
@@ -63,11 +63,11 @@ Types of Design Patterns
 Creational Design Patterns
 ==========================
 
-In plain words
-> Creational patterns are focused towards how to instantiate an object or group of related objects.
+Nói đơn giản
+> Các pattern creational tập trung vào cách khởi tạo một object hoặc một nhóm object có liên quan với nhau.
 
-Wikipedia says
-> In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, creational design patterns là các design patterns xử lý cơ chế tạo object, cố gắng tạo object theo cách phù hợp với tình huống. Cách tạo object cơ bản có thể dẫn đến các vấn đề thiết kế hoặc làm tăng độ phức tạp của thiết kế. Creational design patterns giải quyết vấn đề này bằng cách kiểm soát việc tạo object theo một cách nào đó.
 
  * [Simple Factory](#-simple-factory)
  * [Factory Method](#-factory-method)
@@ -78,523 +78,1264 @@ Wikipedia says
 
 🏠 Simple Factory
 --------------
-Real world example
-> Consider, you are building a house and you need doors. You can either put on your carpenter clothes, bring some wood, glue, nails and all the tools required to build the door and start building it in your house or you can simply call the factory and get the built door delivered to you so that you don't need to learn anything about the door making or to deal with the mess that comes with making it.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang xây nhà và cần cửa. Bạn có thể tự mặc đồ thợ mộc, mang gỗ, keo, đinh và mọi dụng cụ cần thiết để làm cửa rồi bắt đầu đóng ngay tại nhà; hoặc bạn chỉ cần gọi cho factory và nhận cánh cửa hoàn thiện được giao tới, để không phải học cách làm cửa hay xử lý mớ bừa bộn đi kèm với việc đó.
 
-In plain words
-> Simple factory simply generates an instance for client without exposing any instantiation logic to the client
+Nói đơn giản
+> simple factory chỉ đơn giản tạo ra một instance cho client mà không để lộ logic khởi tạo cho client
 
-Wikipedia says
-> In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class from some method call, which is assumed to be "new".
+Wikipedia nói
+> Trong lập trình hướng đối tượng (OOP), factory là một object dùng để tạo ra các object khác — nói chính xác hơn, factory là một function hoặc method trả về các object có prototype hoặc class khác nhau từ một lời gọi method, vốn được ngầm hiểu là `new`.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-First of all we have a door interface and the implementation
-```php
-interface Door
-{
-    public function getWidth(): float;
-    public function getHeight(): float;
-}
+Trước hết, chúng ta có một interface cho cửa và phần cài đặt của nó
+```cpp
+#include <iostream>
+#include <memory>
 
-class WoodenDoor implements Door
-{
-    protected $width;
-    protected $height;
+class Door {
+public:
+    virtual float getWidth() const = 0;
+    virtual float getHeight() const = 0;
+    virtual ~Door() = default;
+};
 
-    public function __construct(float $width, float $height)
-    {
-        $this->width = $width;
-        $this->height = $height;
+class WoodenDoor : public Door {
+protected:
+    float width;
+    float height;
+
+public:
+    WoodenDoor(float width, float height) : width(width), height(height) {}
+
+    float getWidth() const override {
+        return width;
     }
 
-    public function getWidth(): float
-    {
-        return $this->width;
+    float getHeight() const override {
+        return height;
     }
+};
 
-    public function getHeight(): float
-    {
-        return $this->height;
+class DoorFactory {
+public:
+    static std::shared_ptr<Door> makeDoor(float width, float height) {
+        return std::make_shared<WoodenDoor>(width, height);
     }
+};
+
+int main() {
+    auto door = DoorFactory::makeDoor(100, 200);
+    std::cout << "Width: " << door->getWidth();
+    std::cout << "Height: " << door->getHeight();
+
+    auto door2 = DoorFactory::makeDoor(50, 100);
+    (void)door2;
+    return 0;
 }
 ```
-Then we have our door factory that makes the door and returns it
-```php
-class DoorFactory
-{
-    public static function makeDoor($width, $height): Door
-    {
-        return new WoodenDoor($width, $height);
+Tiếp theo, chúng ta có door factory tạo cửa và trả nó về
+```cpp
+#include <iostream>
+#include <memory>
+
+class Door {
+public:
+    virtual float getWidth() const = 0;
+    virtual float getHeight() const = 0;
+    virtual ~Door() = default;
+};
+
+class WoodenDoor : public Door {
+protected:
+    float width;
+    float height;
+
+public:
+    WoodenDoor(float width, float height) : width(width), height(height) {}
+
+    float getWidth() const override {
+        return width;
     }
+
+    float getHeight() const override {
+        return height;
+    }
+};
+
+class DoorFactory {
+public:
+    static std::shared_ptr<Door> makeDoor(float width, float height) {
+        return std::make_shared<WoodenDoor>(width, height);
+    }
+};
+
+int main() {
+    auto door = DoorFactory::makeDoor(100, 200);
+    std::cout << "Width: " << door->getWidth();
+    std::cout << "Height: " << door->getHeight();
+
+    auto door2 = DoorFactory::makeDoor(50, 100);
+    (void)door2;
+    return 0;
 }
 ```
-And then it can be used as
-```php
-// Make me a door of 100x200
-$door = DoorFactory::makeDoor(100, 200);
+Và sau đó có thể dùng như sau
+```cpp
+#include <iostream>
+#include <memory>
 
-echo 'Width: ' . $door->getWidth();
-echo 'Height: ' . $door->getHeight();
+class Door {
+public:
+    virtual float getWidth() const = 0;
+    virtual float getHeight() const = 0;
+    virtual ~Door() = default;
+};
 
-// Make me a door of 50x100
-$door2 = DoorFactory::makeDoor(50, 100);
+class WoodenDoor : public Door {
+protected:
+    float width;
+    float height;
+
+public:
+    WoodenDoor(float width, float height) : width(width), height(height) {}
+
+    float getWidth() const override {
+        return width;
+    }
+
+    float getHeight() const override {
+        return height;
+    }
+};
+
+class DoorFactory {
+public:
+    static std::shared_ptr<Door> makeDoor(float width, float height) {
+        return std::make_shared<WoodenDoor>(width, height);
+    }
+};
+
+int main() {
+    auto door = DoorFactory::makeDoor(100, 200);
+    std::cout << "Width: " << door->getWidth();
+    std::cout << "Height: " << door->getHeight();
+
+    auto door2 = DoorFactory::makeDoor(50, 100);
+    (void)door2;
+    return 0;
+}
 ```
 
-**When to Use?**
+**Khi nào sử dụng?**
 
-When creating an object is not just a few assignments and involves some logic, it makes sense to put it in a dedicated factory instead of repeating the same code everywhere.
+Khi việc tạo một object không chỉ là vài phép gán đơn giản mà còn bao gồm một số logic, thì việc đặt nó vào một factory chuyên biệt sẽ hợp lý hơn là lặp lại cùng một đoạn code ở khắp nơi.
 
 🏭 Factory Method
 --------------
 
-Real world example
-> Consider the case of a hiring manager. It is impossible for one person to interview for each of the positions. Based on the job opening, she has to decide and delegate the interview steps to different people.
+Ví dụ thực tế
+> Hãy xem trường hợp của một quản lý tuyển dụng. Một người không thể phỏng vấn cho mọi vị trí. Dựa trên vị trí đang tuyển, cô ấy phải quyết định và giao các bước phỏng vấn cho những người khác nhau.
 
-In plain words
-> It provides a way to delegate the instantiation logic to child classes.
+Nói đơn giản
+> Nó cung cấp một cách để ủy quyền logic khởi tạo cho các lớp con.
 
-Wikipedia says
-> In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+Wikipedia nói
+> Trong lập trình dựa trên class, factory method pattern là một creational pattern sử dụng factory methods để giải quyết bài toán tạo object mà không cần chỉ rõ chính xác class của object sẽ được tạo. Điều này được thực hiện bằng cách tạo object thông qua việc gọi một factory method — hoặc được khai báo trong một interface và được cài đặt bởi các lớp con, hoặc được cài đặt trong một base class và có thể được các lớp dẫn xuất ghi đè — thay vì gọi constructor trực tiếp.
 
- **Programmatic Example**
+ **Ví dụ lập trình**
 
-Taking our hiring manager example above. First of all we have an interviewer interface and some implementations for it
+Lấy ví dụ về quản lý tuyển dụng ở trên. Trước hết, chúng ta có một interface cho người phỏng vấn và một vài phần cài đặt của nó
 
-```php
-interface Interviewer
-{
-    public function askQuestions();
-}
+```cpp
+#include <iostream>
+#include <memory>
 
-class Developer implements Interviewer
-{
-    public function askQuestions()
-    {
-        echo 'Asking about design patterns!';
+class Interviewer {
+public:
+    virtual void askQuestions() = 0;
+    virtual ~Interviewer() = default;
+};
+
+class Developer : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about design patterns!";
     }
-}
+};
 
-class CommunityExecutive implements Interviewer
-{
-    public function askQuestions()
-    {
-        echo 'Asking about community building';
+class CommunityExecutive : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about community building";
     }
+};
+
+class HiringManager {
+protected:
+    virtual std::shared_ptr<Interviewer> makeInterviewer() = 0;
+
+public:
+    virtual ~HiringManager() = default;
+
+    void takeInterview() {
+        auto interviewer = makeInterviewer();
+        interviewer->askQuestions();
+    }
+};
+
+class DevelopmentManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<Developer>();
+    }
+};
+
+class MarketingManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<CommunityExecutive>();
+    }
+};
+
+int main() {
+    DevelopmentManager devManager;
+    devManager.takeInterview();
+    std::cout << std::endl;
+
+    MarketingManager marketingManager;
+    marketingManager.takeInterview();
+    return 0;
 }
 ```
 
-Now let us create our `HiringManager`
+Bây giờ hãy tạo `HiringManager` của chúng ta
 
-```php
-abstract class HiringManager
-{
+```cpp
+#include <iostream>
+#include <memory>
 
-    // Factory method
-    abstract protected function makeInterviewer(): Interviewer;
+class Interviewer {
+public:
+    virtual void askQuestions() = 0;
+    virtual ~Interviewer() = default;
+};
 
-    public function takeInterview()
-    {
-        $interviewer = $this->makeInterviewer();
-        $interviewer->askQuestions();
+class Developer : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about design patterns!";
     }
-}
+};
 
-```
-Now any child can extend it and provide the required interviewer
-```php
-class DevelopmentManager extends HiringManager
-{
-    protected function makeInterviewer(): Interviewer
-    {
-        return new Developer();
+class CommunityExecutive : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about community building";
     }
-}
+};
 
-class MarketingManager extends HiringManager
-{
-    protected function makeInterviewer(): Interviewer
-    {
-        return new CommunityExecutive();
+class HiringManager {
+protected:
+    virtual std::shared_ptr<Interviewer> makeInterviewer() = 0;
+
+public:
+    virtual ~HiringManager() = default;
+
+    void takeInterview() {
+        auto interviewer = makeInterviewer();
+        interviewer->askQuestions();
     }
+};
+
+class DevelopmentManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<Developer>();
+    }
+};
+
+class MarketingManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<CommunityExecutive>();
+    }
+};
+
+int main() {
+    DevelopmentManager devManager;
+    devManager.takeInterview();
+    std::cout << std::endl;
+
+    MarketingManager marketingManager;
+    marketingManager.takeInterview();
+    return 0;
 }
 ```
-and then it can be used as
+Giờ thì bất kỳ lớp con nào cũng có thể kế thừa nó và cung cấp người phỏng vấn phù hợp
+```cpp
+#include <iostream>
+#include <memory>
 
-```php
-$devManager = new DevelopmentManager();
-$devManager->takeInterview(); // Output: Asking about design patterns
+class Interviewer {
+public:
+    virtual void askQuestions() = 0;
+    virtual ~Interviewer() = default;
+};
 
-$marketingManager = new MarketingManager();
-$marketingManager->takeInterview(); // Output: Asking about community building.
+class Developer : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about design patterns!";
+    }
+};
+
+class CommunityExecutive : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about community building";
+    }
+};
+
+class HiringManager {
+protected:
+    virtual std::shared_ptr<Interviewer> makeInterviewer() = 0;
+
+public:
+    virtual ~HiringManager() = default;
+
+    void takeInterview() {
+        auto interviewer = makeInterviewer();
+        interviewer->askQuestions();
+    }
+};
+
+class DevelopmentManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<Developer>();
+    }
+};
+
+class MarketingManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<CommunityExecutive>();
+    }
+};
+
+int main() {
+    DevelopmentManager devManager;
+    devManager.takeInterview();
+    std::cout << std::endl;
+
+    MarketingManager marketingManager;
+    marketingManager.takeInterview();
+    return 0;
+}
+```
+và sau đó có thể dùng như sau
+
+```cpp
+#include <iostream>
+#include <memory>
+
+class Interviewer {
+public:
+    virtual void askQuestions() = 0;
+    virtual ~Interviewer() = default;
+};
+
+class Developer : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about design patterns!";
+    }
+};
+
+class CommunityExecutive : public Interviewer {
+public:
+    void askQuestions() override {
+        std::cout << "Asking about community building";
+    }
+};
+
+class HiringManager {
+protected:
+    virtual std::shared_ptr<Interviewer> makeInterviewer() = 0;
+
+public:
+    virtual ~HiringManager() = default;
+
+    void takeInterview() {
+        auto interviewer = makeInterviewer();
+        interviewer->askQuestions();
+    }
+};
+
+class DevelopmentManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<Developer>();
+    }
+};
+
+class MarketingManager : public HiringManager {
+protected:
+    std::shared_ptr<Interviewer> makeInterviewer() override {
+        return std::make_shared<CommunityExecutive>();
+    }
+};
+
+int main() {
+    DevelopmentManager devManager;
+    devManager.takeInterview();
+    std::cout << std::endl;
+
+    MarketingManager marketingManager;
+    marketingManager.takeInterview();
+    return 0;
+}
 ```
 
-**When to use?**
+**Khi nào sử dụng?**
 
-Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn't know what exact sub-class it might need.
+Hữu ích khi có một số xử lý chung trong một class nhưng lớp con cần dùng lại được quyết định động tại runtime. Nói cách khác, khi client không biết chính xác nó sẽ cần lớp con nào.
 
 🔨 Abstract Factory
 ----------------
 
-Real world example
-> Extending our door example from Simple Factory. Based on your needs you might get a wooden door from a wooden door shop, iron door from an iron shop or a PVC door from the relevant shop. Plus you might need a guy with different kind of specialities to fit the door, for example a carpenter for wooden door, welder for iron door etc. As you can see there is a dependency between the doors now, wooden door needs carpenter, iron door needs a welder etc.
+Ví dụ thực tế
+> Mở rộng ví dụ về cửa từ Simple Factory. Tùy theo nhu cầu, bạn có thể lấy cửa gỗ từ cửa hàng cửa gỗ, cửa sắt từ cửa hàng đồ sắt hoặc cửa PVC từ cửa hàng tương ứng. Thêm nữa, bạn sẽ cần người có chuyên môn phù hợp để lắp từng loại cửa, ví dụ thợ mộc cho cửa gỗ, thợ hàn cho cửa sắt, v.v. Như bạn thấy, giờ đã có sự phụ thuộc giữa các loại cửa: cửa gỗ cần thợ mộc, cửa sắt cần thợ hàn, v.v.
 
-In plain words
-> A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
+Nói đơn giản
+> Một factory của các factory; tức là một factory gom các factory riêng lẻ nhưng có liên quan/phụ thuộc với nhau lại mà không cần chỉ rõ các concrete class của chúng.
 
-Wikipedia says
-> The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes
+Wikipedia nói
+> abstract factory pattern cung cấp một cách để đóng gói một nhóm các factory riêng lẻ có chung một chủ đề mà không cần chỉ rõ các concrete class của chúng
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating the door example above. First of all we have our `Door` interface and some implementation for it
+Chuyển ví dụ về cửa ở trên sang code. Trước hết, chúng ta có interface `Door` và một vài phần cài đặt của nó
 
-```php
-interface Door
-{
-    public function getDescription();
-}
+```cpp
+#include <iostream>
+#include <memory>
 
-class WoodenDoor implements Door
-{
-    public function getDescription()
-    {
-        echo 'I am a wooden door';
+class Door {
+public:
+    virtual void getDescription() = 0;
+    virtual ~Door() = default;
+};
+
+class WoodenDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am a wooden door";
     }
-}
+};
 
-class IronDoor implements Door
-{
-    public function getDescription()
-    {
-        echo 'I am an iron door';
+class IronDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am an iron door";
     }
+};
+
+class DoorFittingExpert {
+public:
+    virtual void getDescription() = 0;
+    virtual ~DoorFittingExpert() = default;
+};
+
+class Welder : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit iron doors";
+    }
+};
+
+class Carpenter : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit wooden doors";
+    }
+};
+
+class DoorFactory {
+public:
+    virtual std::shared_ptr<Door> makeDoor() = 0;
+    virtual std::shared_ptr<DoorFittingExpert> makeFittingExpert() = 0;
+    virtual ~DoorFactory() = default;
+};
+
+class WoodenDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<WoodenDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Carpenter>();
+    }
+};
+
+class IronDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<IronDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Welder>();
+    }
+};
+
+int main() {
+    auto woodenFactory = std::make_shared<WoodenDoorFactory>();
+    auto door = woodenFactory->makeDoor();
+    auto expert = woodenFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    std::cout << std::endl;
+
+    auto ironFactory = std::make_shared<IronDoorFactory>();
+    door = ironFactory->makeDoor();
+    expert = ironFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    return 0;
 }
 ```
-Then we have some fitting experts for each door type
+Tiếp theo, chúng ta có một số chuyên gia lắp đặt cho từng loại cửa
 
-```php
-interface DoorFittingExpert
-{
-    public function getDescription();
-}
+```cpp
+#include <iostream>
+#include <memory>
 
-class Welder implements DoorFittingExpert
-{
-    public function getDescription()
-    {
-        echo 'I can only fit iron doors';
+class Door {
+public:
+    virtual void getDescription() = 0;
+    virtual ~Door() = default;
+};
+
+class WoodenDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am a wooden door";
     }
-}
+};
 
-class Carpenter implements DoorFittingExpert
-{
-    public function getDescription()
-    {
-        echo 'I can only fit wooden doors';
+class IronDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am an iron door";
     }
+};
+
+class DoorFittingExpert {
+public:
+    virtual void getDescription() = 0;
+    virtual ~DoorFittingExpert() = default;
+};
+
+class Welder : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit iron doors";
+    }
+};
+
+class Carpenter : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit wooden doors";
+    }
+};
+
+class DoorFactory {
+public:
+    virtual std::shared_ptr<Door> makeDoor() = 0;
+    virtual std::shared_ptr<DoorFittingExpert> makeFittingExpert() = 0;
+    virtual ~DoorFactory() = default;
+};
+
+class WoodenDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<WoodenDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Carpenter>();
+    }
+};
+
+class IronDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<IronDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Welder>();
+    }
+};
+
+int main() {
+    auto woodenFactory = std::make_shared<WoodenDoorFactory>();
+    auto door = woodenFactory->makeDoor();
+    auto expert = woodenFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    std::cout << std::endl;
+
+    auto ironFactory = std::make_shared<IronDoorFactory>();
+    door = ironFactory->makeDoor();
+    expert = ironFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    return 0;
 }
 ```
 
-Now we have our abstract factory that would let us make family of related objects i.e. wooden door factory would create a wooden door and wooden door fitting expert and iron door factory would create an iron door and iron door fitting expert
-```php
-interface DoorFactory
-{
-    public function makeDoor(): Door;
-    public function makeFittingExpert(): DoorFittingExpert;
-}
+Bây giờ chúng ta có abstract factory cho phép tạo ra cả một họ object liên quan với nhau, ví dụ wooden door factory sẽ tạo cửa gỗ và chuyên gia lắp cửa gỗ, còn iron door factory sẽ tạo cửa sắt và chuyên gia lắp cửa sắt
+```cpp
+#include <iostream>
+#include <memory>
 
-// Wooden factory to return carpenter and wooden door
-class WoodenDoorFactory implements DoorFactory
-{
-    public function makeDoor(): Door
-    {
-        return new WoodenDoor();
+class Door {
+public:
+    virtual void getDescription() = 0;
+    virtual ~Door() = default;
+};
+
+class WoodenDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am a wooden door";
+    }
+};
+
+class IronDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am an iron door";
+    }
+};
+
+class DoorFittingExpert {
+public:
+    virtual void getDescription() = 0;
+    virtual ~DoorFittingExpert() = default;
+};
+
+class Welder : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit iron doors";
+    }
+};
+
+class Carpenter : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit wooden doors";
+    }
+};
+
+class DoorFactory {
+public:
+    virtual std::shared_ptr<Door> makeDoor() = 0;
+    virtual std::shared_ptr<DoorFittingExpert> makeFittingExpert() = 0;
+    virtual ~DoorFactory() = default;
+};
+
+class WoodenDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<WoodenDoor>();
     }
 
-    public function makeFittingExpert(): DoorFittingExpert
-    {
-        return new Carpenter();
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Carpenter>();
     }
-}
+};
 
-// Iron door factory to get iron door and the relevant fitting expert
-class IronDoorFactory implements DoorFactory
-{
-    public function makeDoor(): Door
-    {
-        return new IronDoor();
+class IronDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<IronDoor>();
     }
 
-    public function makeFittingExpert(): DoorFittingExpert
-    {
-        return new Welder();
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Welder>();
     }
+};
+
+int main() {
+    auto woodenFactory = std::make_shared<WoodenDoorFactory>();
+    auto door = woodenFactory->makeDoor();
+    auto expert = woodenFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    std::cout << std::endl;
+
+    auto ironFactory = std::make_shared<IronDoorFactory>();
+    door = ironFactory->makeDoor();
+    expert = ironFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    return 0;
 }
 ```
-And then it can be used as
-```php
-$woodenFactory = new WoodenDoorFactory();
+Và sau đó có thể dùng như sau
+```cpp
+#include <iostream>
+#include <memory>
 
-$door = $woodenFactory->makeDoor();
-$expert = $woodenFactory->makeFittingExpert();
+class Door {
+public:
+    virtual void getDescription() = 0;
+    virtual ~Door() = default;
+};
 
-$door->getDescription();  // Output: I am a wooden door
-$expert->getDescription(); // Output: I can only fit wooden doors
+class WoodenDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am a wooden door";
+    }
+};
 
-// Same for Iron Factory
-$ironFactory = new IronDoorFactory();
+class IronDoor : public Door {
+public:
+    void getDescription() override {
+        std::cout << "I am an iron door";
+    }
+};
 
-$door = $ironFactory->makeDoor();
-$expert = $ironFactory->makeFittingExpert();
+class DoorFittingExpert {
+public:
+    virtual void getDescription() = 0;
+    virtual ~DoorFittingExpert() = default;
+};
 
-$door->getDescription();  // Output: I am an iron door
-$expert->getDescription(); // Output: I can only fit iron doors
+class Welder : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit iron doors";
+    }
+};
+
+class Carpenter : public DoorFittingExpert {
+public:
+    void getDescription() override {
+        std::cout << "I can only fit wooden doors";
+    }
+};
+
+class DoorFactory {
+public:
+    virtual std::shared_ptr<Door> makeDoor() = 0;
+    virtual std::shared_ptr<DoorFittingExpert> makeFittingExpert() = 0;
+    virtual ~DoorFactory() = default;
+};
+
+class WoodenDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<WoodenDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Carpenter>();
+    }
+};
+
+class IronDoorFactory : public DoorFactory {
+public:
+    std::shared_ptr<Door> makeDoor() override {
+        return std::make_shared<IronDoor>();
+    }
+
+    std::shared_ptr<DoorFittingExpert> makeFittingExpert() override {
+        return std::make_shared<Welder>();
+    }
+};
+
+int main() {
+    auto woodenFactory = std::make_shared<WoodenDoorFactory>();
+    auto door = woodenFactory->makeDoor();
+    auto expert = woodenFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    std::cout << std::endl;
+
+    auto ironFactory = std::make_shared<IronDoorFactory>();
+    door = ironFactory->makeDoor();
+    expert = ironFactory->makeFittingExpert();
+    door->getDescription();
+    std::cout << std::endl;
+    expert->getDescription();
+    return 0;
+}
 ```
 
-As you can see the wooden door factory has encapsulated the `carpenter` and the `wooden door` also iron door factory has encapsulated the `iron door` and `welder`. And thus it had helped us make sure that for each of the created door, we do not get a wrong fitting expert.   
+Như bạn có thể thấy, wooden door factory đã đóng gói cả `carpenter` và `wooden door`, còn iron door factory đã đóng gói cả `iron door` và `welder`. Nhờ đó, nó giúp đảm bảo rằng với mỗi cánh cửa được tạo ra, chúng ta sẽ không lấy nhầm người lắp đặt.   
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When there are interrelated dependencies with not-that-simple creation logic involved
+Dùng khi có các phụ thuộc liên quan lẫn nhau cùng với logic khởi tạo không hề đơn giản.
 
 👷 Builder
 --------------------------------------------
-Real world example
-> Imagine you are at Hardee's and you order a specific deal, lets say, "Big Hardee" and they hand it over to you without *any questions*; this is the example of simple factory. But there are cases when the creation logic might involve more steps. For example you want a customized Subway deal, you have several options in how your burger is made e.g what bread do you want? what types of sauces would you like? What cheese would you want? etc. In such cases builder pattern comes to the rescue.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang ở Hardee's và gọi một combo cụ thể, ví dụ như "Big Hardee", rồi họ giao ngay cho bạn mà không hỏi *bất kỳ câu nào*; đó là ví dụ của simple factory. Nhưng có những trường hợp logic tạo ra sản phẩm bao gồm nhiều bước hơn. Ví dụ bạn muốn một phần Subway tùy biến, bạn có nhiều lựa chọn cho chiếc burger của mình như: muốn loại bánh mì nào? muốn loại sốt nào? muốn loại phô mai nào? v.v. Trong những trường hợp như vậy, builder pattern sẽ phát huy tác dụng.
 
-In plain words
-> Allows you to create different flavors of an object while avoiding constructor pollution. Useful when there could be several flavors of an object. Or when there are a lot of steps involved in creation of an object.
+Nói đơn giản
+> Cho phép bạn tạo ra nhiều biến thể khác nhau của một object trong khi tránh làm constructor trở nên rối rắm. Hữu ích khi một object có thể có nhiều biến thể hoặc khi việc tạo object gồm rất nhiều bước.
 
-Wikipedia says
-> The builder pattern is an object creation software design pattern with the intentions of finding a solution to the telescoping constructor anti-pattern.
+Wikipedia nói
+> builder pattern là một software design pattern cho việc tạo object với mục tiêu tìm ra lời giải cho telescoping constructor anti-pattern.
 
-Having said that let me add a bit about what telescoping constructor anti-pattern is. At one point or the other we have all seen a constructor like below:
+Nhân đây, hãy nói thêm một chút về telescoping constructor anti-pattern là gì. Chắc hẳn ở đâu đó chúng ta đều từng thấy một constructor như bên dưới:
 
-```php
-public function __construct($size, $cheese = true, $pepperoni = true, $tomato = false, $lettuce = true)
-{
+```cpp
+#include <memory>
+
+class Burger {
+public:
+    Burger(int size, bool cheese = true, bool pepperoni = true, bool tomato = false, bool lettuce = true) {
+        (void)size;
+        (void)cheese;
+        (void)pepperoni;
+        (void)tomato;
+        (void)lettuce;
+    }
+};
+
+int main() {
+    auto burger = std::make_shared<Burger>(14);
+    (void)burger;
+    return 0;
 }
 ```
 
-As you can see; the number of constructor parameters can quickly get out of hand and it might become difficult to understand the arrangement of parameters. Plus this parameter list could keep on growing if you would want to add more options in future. This is called telescoping constructor anti-pattern.
+Như bạn thấy, số lượng tham số của constructor có thể nhanh chóng trở nên mất kiểm soát và rất khó hiểu thứ tự các tham số. Thêm vào đó, danh sách tham số này còn có thể tiếp tục dài ra nếu bạn muốn thêm nhiều tùy chọn trong tương lai. Đó được gọi là telescoping constructor anti-pattern.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-The sane alternative is to use the builder pattern. First of all we have our burger that we want to make
+Giải pháp hợp lý là dùng builder pattern. Trước hết, chúng ta có chiếc burger mà mình muốn tạo
 
-```php
-class Burger
-{
-    protected $size;
+```cpp
+#include <memory>
 
-    protected $cheese = false;
-    protected $pepperoni = false;
-    protected $lettuce = false;
-    protected $tomato = false;
+class BurgerBuilder;
 
-    public function __construct(BurgerBuilder $builder)
-    {
-        $this->size = $builder->size;
-        $this->cheese = $builder->cheese;
-        $this->pepperoni = $builder->pepperoni;
-        $this->lettuce = $builder->lettuce;
-        $this->tomato = $builder->tomato;
+class Burger {
+protected:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+public:
+    explicit Burger(const BurgerBuilder& builder);
+};
+
+class BurgerBuilder {
+public:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+    explicit BurgerBuilder(int size) : size(size) {}
+
+    BurgerBuilder& addPepperoni() {
+        pepperoni = true;
+        return *this;
     }
+
+    BurgerBuilder& addLettuce() {
+        lettuce = true;
+        return *this;
+    }
+
+    BurgerBuilder& addCheese() {
+        cheese = true;
+        return *this;
+    }
+
+    BurgerBuilder& addTomato() {
+        tomato = true;
+        return *this;
+    }
+
+    std::shared_ptr<Burger> build() {
+        return std::make_shared<Burger>(*this);
+    }
+};
+
+Burger::Burger(const BurgerBuilder& builder)
+    : size(builder.size),
+      cheese(builder.cheese),
+      pepperoni(builder.pepperoni),
+      lettuce(builder.lettuce),
+      tomato(builder.tomato) {}
+
+int main() {
+    auto burger = BurgerBuilder(14)
+                      .addPepperoni()
+                      .addLettuce()
+                      .addTomato()
+                      .build();
+    (void)burger;
+    return 0;
 }
 ```
 
-And then we have the builder
+Tiếp theo, chúng ta có builder
 
-```php
-class BurgerBuilder
-{
-    public $size;
+```cpp
+#include <memory>
 
-    public $cheese = false;
-    public $pepperoni = false;
-    public $lettuce = false;
-    public $tomato = false;
+class BurgerBuilder;
 
-    public function __construct(int $size)
-    {
-        $this->size = $size;
+class Burger {
+protected:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+public:
+    explicit Burger(const BurgerBuilder& builder);
+};
+
+class BurgerBuilder {
+public:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+    explicit BurgerBuilder(int size) : size(size) {}
+
+    BurgerBuilder& addPepperoni() {
+        pepperoni = true;
+        return *this;
     }
 
-    public function addPepperoni()
-    {
-        $this->pepperoni = true;
-        return $this;
+    BurgerBuilder& addLettuce() {
+        lettuce = true;
+        return *this;
     }
 
-    public function addLettuce()
-    {
-        $this->lettuce = true;
-        return $this;
+    BurgerBuilder& addCheese() {
+        cheese = true;
+        return *this;
     }
 
-    public function addCheese()
-    {
-        $this->cheese = true;
-        return $this;
+    BurgerBuilder& addTomato() {
+        tomato = true;
+        return *this;
     }
 
-    public function addTomato()
-    {
-        $this->tomato = true;
-        return $this;
+    std::shared_ptr<Burger> build() {
+        return std::make_shared<Burger>(*this);
     }
+};
 
-    public function build(): Burger
-    {
-        return new Burger($this);
-    }
+Burger::Burger(const BurgerBuilder& builder)
+    : size(builder.size),
+      cheese(builder.cheese),
+      pepperoni(builder.pepperoni),
+      lettuce(builder.lettuce),
+      tomato(builder.tomato) {}
+
+int main() {
+    auto burger = BurgerBuilder(14)
+                      .addPepperoni()
+                      .addLettuce()
+                      .addTomato()
+                      .build();
+    (void)burger;
+    return 0;
 }
 ```
-And then it can be used as:
+Và sau đó có thể dùng như sau:
 
-```php
-$burger = (new BurgerBuilder(14))
-                    ->addPepperoni()
-                    ->addLettuce()
-                    ->addTomato()
-                    ->build();
+```cpp
+#include <memory>
+
+class BurgerBuilder;
+
+class Burger {
+protected:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+public:
+    explicit Burger(const BurgerBuilder& builder);
+};
+
+class BurgerBuilder {
+public:
+    int size;
+    bool cheese = false;
+    bool pepperoni = false;
+    bool lettuce = false;
+    bool tomato = false;
+
+    explicit BurgerBuilder(int size) : size(size) {}
+
+    BurgerBuilder& addPepperoni() {
+        pepperoni = true;
+        return *this;
+    }
+
+    BurgerBuilder& addLettuce() {
+        lettuce = true;
+        return *this;
+    }
+
+    BurgerBuilder& addCheese() {
+        cheese = true;
+        return *this;
+    }
+
+    BurgerBuilder& addTomato() {
+        tomato = true;
+        return *this;
+    }
+
+    std::shared_ptr<Burger> build() {
+        return std::make_shared<Burger>(*this);
+    }
+};
+
+Burger::Burger(const BurgerBuilder& builder)
+    : size(builder.size),
+      cheese(builder.cheese),
+      pepperoni(builder.pepperoni),
+      lettuce(builder.lettuce),
+      tomato(builder.tomato) {}
+
+int main() {
+    auto burger = BurgerBuilder(14)
+                      .addPepperoni()
+                      .addLettuce()
+                      .addTomato()
+                      .build();
+    (void)burger;
+    return 0;
+}
 ```
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
+Dùng khi một object có thể có nhiều biến thể và bạn muốn tránh tình trạng constructor bị phình to. Điểm khác biệt chính so với factory pattern là: factory pattern dùng khi việc tạo là một bước duy nhất, còn builder pattern dùng khi việc tạo gồm nhiều bước.
 
 🐑 Prototype
 ------------
-Real world example
-> Remember dolly? The sheep that was cloned! Lets not get into the details but the key point here is that it is all about cloning
+Ví dụ thực tế
+> Bạn còn nhớ Dolly chứ? Con cừu đã được nhân bản! Không cần đi sâu vào chi tiết, điểm mấu chốt ở đây là mọi thứ đều xoay quanh việc sao chép.
 
-In plain words
-> Create object based on an existing object through cloning.
+Nói đơn giản
+> Tạo object dựa trên một object có sẵn thông qua việc clone.
 
-Wikipedia says
-> The prototype pattern is a creational design pattern in software development. It is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects.
+Wikipedia nói
+> prototype pattern là một creational design pattern trong phát triển phần mềm. Nó được dùng khi kiểu object cần tạo được xác định bởi một instance nguyên mẫu, instance này sẽ được clone để sinh ra các object mới.
 
-In short, it allows you to create a copy of an existing object and modify it to your needs, instead of going through the trouble of creating an object from scratch and setting it up.
+Nói ngắn gọn, nó cho phép bạn tạo một bản sao của object hiện có rồi chỉnh sửa theo nhu cầu, thay vì phải vất vả tạo object từ đầu và cấu hình lại.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-In PHP, it can be easily done using `clone`
+Trong PHP, việc này có thể được thực hiện rất dễ dàng bằng `clone`
 
-```php
-class Sheep
-{
-    protected $name;
-    protected $category;
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-    public function __construct(string $name, string $category = 'Mountain Sheep')
-    {
-        $this->name = $name;
-        $this->category = $category;
+class Sheep {
+protected:
+    std::string name;
+    std::string category;
+
+public:
+    Sheep(std::string name, std::string category = "Mountain Sheep")
+        : name(std::move(name)), category(std::move(category)) {}
+
+    void setName(const std::string& newName) {
+        name = newName;
     }
 
-    public function setName(string $name)
-    {
-        $this->name = $name;
+    std::string getName() const {
+        return name;
     }
 
-    public function getName()
-    {
-        return $this->name;
+    void setCategory(const std::string& newCategory) {
+        category = newCategory;
     }
 
-    public function setCategory(string $category)
-    {
-        $this->category = $category;
+    std::string getCategory() const {
+        return category;
     }
+};
 
-    public function getCategory()
-    {
-        return $this->category;
-    }
+int main() {
+    auto original = std::make_shared<Sheep>("Jolly");
+    std::cout << original->getName() << std::endl;
+    std::cout << original->getCategory() << std::endl;
+
+    auto cloned = std::make_shared<Sheep>(*original);
+    cloned->setName("Dolly");
+    std::cout << cloned->getName() << std::endl;
+    std::cout << cloned->getCategory();
+    return 0;
 }
 ```
-Then it can be cloned like below
-```php
-$original = new Sheep('Jolly');
-echo $original->getName(); // Jolly
-echo $original->getCategory(); // Mountain Sheep
+Sau đó nó có thể được clone như bên dưới
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-// Clone and modify what is required
-$cloned = clone $original;
-$cloned->setName('Dolly');
-echo $cloned->getName(); // Dolly
-echo $cloned->getCategory(); // Mountain sheep
+class Sheep {
+protected:
+    std::string name;
+    std::string category;
+
+public:
+    Sheep(std::string name, std::string category = "Mountain Sheep")
+        : name(std::move(name)), category(std::move(category)) {}
+
+    void setName(const std::string& newName) {
+        name = newName;
+    }
+
+    std::string getName() const {
+        return name;
+    }
+
+    void setCategory(const std::string& newCategory) {
+        category = newCategory;
+    }
+
+    std::string getCategory() const {
+        return category;
+    }
+};
+
+int main() {
+    auto original = std::make_shared<Sheep>("Jolly");
+    std::cout << original->getName() << std::endl;
+    std::cout << original->getCategory() << std::endl;
+
+    auto cloned = std::make_shared<Sheep>(*original);
+    cloned->setName("Dolly");
+    std::cout << cloned->getName() << std::endl;
+    std::cout << cloned->getCategory();
+    return 0;
+}
 ```
 
-Also you could use the magic method `__clone` to modify the cloning behavior.
+Bạn cũng có thể dùng magic method `__clone` để thay đổi hành vi clone.
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When an object is required that is similar to existing object or when the creation would be expensive as compared to cloning.
+Dùng khi bạn cần một object tương tự object đã có hoặc khi việc tạo mới tốn kém hơn so với clone.
 
 💍 Singleton
 ------------
-Real world example
-> There can only be one president of a country at a time. The same president has to be brought to action, whenever duty calls. President here is singleton.
+Ví dụ thực tế
+> Ở một thời điểm chỉ có thể có một tổng thống của một quốc gia. Mỗi khi cần, cũng chính vị tổng thống đó phải được đưa vào hoạt động. Tổng thống ở đây chính là singleton.
 
-In plain words
-> Ensures that only one object of a particular class is ever created.
+Nói đơn giản
+> Đảm bảo rằng chỉ có đúng một object của một class cụ thể từng được tạo ra.
 
-Wikipedia says
-> In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, singleton pattern là một software design pattern giới hạn việc khởi tạo một class chỉ còn một object. Điều này hữu ích khi hệ thống cần chính xác một object để điều phối các hành động.
 
-Singleton pattern is actually considered an anti-pattern and overuse of it should be avoided. It is not necessarily bad and could have some valid use-cases but should be used with caution because it introduces a global state in your application and change to it in one place could affect in the other areas and it could become pretty difficult to debug. The other bad thing about them is it makes your code tightly coupled plus mocking the singleton could be difficult.
+singleton pattern thực ra thường bị xem là một anti-pattern và nên tránh lạm dụng. Nó không hẳn là xấu và vẫn có một số trường hợp dùng hợp lý, nhưng cần dùng thận trọng vì nó đưa global state vào ứng dụng; thay đổi ở một nơi có thể ảnh hưởng đến nơi khác và khiến việc debug trở nên khá khó khăn. Điểm bất lợi khác là nó làm code bị kết dính chặt hơn và việc mock singleton cũng có thể khó.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-To create a singleton, make the constructor private, disable cloning, disable extension and create a static variable to house the instance
-```php
-final class President
-{
-    private static $instance;
+Để tạo singleton, hãy đặt constructor thành private, vô hiệu hóa việc clone, không cho phép kế thừa và tạo một biến static để giữ instance đó
+```cpp
+#include <iostream>
 
-    private function __construct()
-    {
-        // Hide the constructor
+class President final {
+private:
+    President() = default;
+
+public:
+    President(const President&) = delete;
+    President& operator=(const President&) = delete;
+
+    static President& getInstance() {
+        static President instance;
+        return instance;
     }
+};
 
-    public static function getInstance(): President
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
-    private function __clone()
-    {
-        // Disable cloning
-    }
-
-    private function __wakeup()
-    {
-        // Disable unserialize
-    }
+int main() {
+    President& president1 = President::getInstance();
+    President& president2 = President::getInstance();
+    std::cout << std::boolalpha << (&president1 == &president2);
+    return 0;
 }
 ```
-Then in order to use
-```php
-$president1 = President::getInstance();
-$president2 = President::getInstance();
+Sau đó, để sử dụng
+```cpp
+#include <iostream>
 
-var_dump($president1 === $president2); // true
+class President final {
+private:
+    President() = default;
+
+public:
+    President(const President&) = delete;
+    President& operator=(const President&) = delete;
+
+    static President& getInstance() {
+        static President instance;
+        return instance;
+    }
+};
+
+int main() {
+    President& president1 = President::getInstance();
+    President& president2 = President::getInstance();
+    std::cout << std::boolalpha << (&president1 == &president2);
+    return 0;
+}
 ```
 
 Structural Design Patterns
 ==========================
-In plain words
-> Structural patterns are mostly concerned with object composition or in other words how the entities can use each other. Or yet another explanation would be, they help in answering "How to build a software component?"
+Nói đơn giản
+> Structural patterns chủ yếu quan tâm đến việc kết hợp các object, hay nói cách khác là cách các thực thể có thể dùng lẫn nhau. Một cách diễn đạt khác là chúng giúp trả lời câu hỏi: "Làm thế nào để xây dựng một software component?"
 
-Wikipedia says
-> In software engineering, structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, structural design patterns là các design patterns giúp việc thiết kế trở nên dễ dàng hơn bằng cách xác định một cách đơn giản để hiện thực hóa các mối quan hệ giữa các thực thể.
 
  * [Adapter](#-adapter)
  * [Bridge](#-bridge)
@@ -606,693 +1347,1619 @@ Wikipedia says
 
 🔌 Adapter
 -------
-Real world example
-> Consider that you have some pictures in your memory card and you need to transfer them to your computer. In order to transfer them you need some kind of adapter that is compatible with your computer ports so that you can attach memory card to your computer. In this case card reader is an adapter.
-> Another example would be the famous power adapter; a three legged plug can't be connected to a two pronged outlet, it needs to use a power adapter that makes it compatible with the two pronged outlet.
-> Yet another example would be a translator translating words spoken by one person to another
+Ví dụ thực tế
+> Hãy tưởng tượng bạn có một số ảnh trong thẻ nhớ và cần chuyển chúng sang máy tính. Để làm điều đó, bạn cần một loại adapter tương thích với các cổng trên máy tính để có thể gắn thẻ nhớ vào. Trong trường hợp này, đầu đọc thẻ chính là adapter.
+> Một ví dụ khác là bộ đổi nguồn quen thuộc; một phích cắm ba chấu không thể cắm vào ổ hai chấu, nó cần dùng power adapter để tương thích với ổ hai chấu.
+> Một ví dụ nữa là người phiên dịch, chuyển lời nói của người này sang cho người kia.
 
-In plain words
-> Adapter pattern lets you wrap an otherwise incompatible object in an adapter to make it compatible with another class.
+Nói đơn giản
+> adapter pattern cho phép bạn bọc một object vốn không tương thích bên trong một adapter để làm nó tương thích với một class khác.
 
-Wikipedia says
-> In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, adapter pattern là một software design pattern cho phép interface của một class có sẵn được dùng như một interface khác. Nó thường được dùng để làm cho các class hiện có hoạt động được với nhau mà không cần sửa source code của chúng.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Consider a game where there is a hunter and he hunts lions.
+Hãy xét một trò chơi có một thợ săn và anh ta săn sư tử.
 
-First we have an interface `Lion` that all types of lions have to implement
+Trước tiên, chúng ta có interface `Lion` mà mọi loại sư tử đều phải cài đặt
 
-```php
-interface Lion
-{
-    public function roar();
-}
+```cpp
+#include <memory>
 
-class AfricanLion implements Lion
-{
-    public function roar()
-    {
+class Lion {
+public:
+    virtual void roar() = 0;
+    virtual ~Lion() = default;
+};
+
+class AfricanLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class AsianLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class Hunter {
+public:
+    void hunt(const std::shared_ptr<Lion>& lion) {
+        lion->roar();
     }
-}
+};
 
-class AsianLion implements Lion
-{
-    public function roar()
-    {
+class WildDog {
+public:
+    void bark() {}
+};
+
+class WildDogAdapter : public Lion {
+protected:
+    std::shared_ptr<WildDog> dog;
+
+public:
+    explicit WildDogAdapter(std::shared_ptr<WildDog> dog) : dog(std::move(dog)) {}
+
+    void roar() override {
+        dog->bark();
     }
-}
-```
-And hunter expects any implementation of `Lion` interface to hunt.
-```php
-class Hunter
-{
-    public function hunt(Lion $lion)
-    {
-        $lion->roar();
-    }
-}
-```
+};
 
-Now let's say we have to add a `WildDog` in our game so that hunter can hunt that also. But we can't do that directly because dog has a different interface. To make it compatible for our hunter, we will have to create an adapter that is compatible
+int main() {
+    auto wildDog = std::make_shared<WildDog>();
+    auto wildDogAdapter = std::make_shared<WildDogAdapter>(wildDog);
 
-```php
-// This needs to be added to the game
-class WildDog
-{
-    public function bark()
-    {
-    }
-}
-
-// Adapter around wild dog to make it compatible with our game
-class WildDogAdapter implements Lion
-{
-    protected $dog;
-
-    public function __construct(WildDog $dog)
-    {
-        $this->dog = $dog;
-    }
-
-    public function roar()
-    {
-        $this->dog->bark();
-    }
+    Hunter hunter;
+    hunter.hunt(wildDogAdapter);
+    return 0;
 }
 ```
-And now the `WildDog` can be used in our game using `WildDogAdapter`.
+Và thợ săn kỳ vọng bất kỳ phần cài đặt nào của interface `Lion` cũng có thể dùng để săn.
+```cpp
+#include <memory>
 
-```php
-$wildDog = new WildDog();
-$wildDogAdapter = new WildDogAdapter($wildDog);
+class Lion {
+public:
+    virtual void roar() = 0;
+    virtual ~Lion() = default;
+};
 
-$hunter = new Hunter();
-$hunter->hunt($wildDogAdapter);
+class AfricanLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class AsianLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class Hunter {
+public:
+    void hunt(const std::shared_ptr<Lion>& lion) {
+        lion->roar();
+    }
+};
+
+class WildDog {
+public:
+    void bark() {}
+};
+
+class WildDogAdapter : public Lion {
+protected:
+    std::shared_ptr<WildDog> dog;
+
+public:
+    explicit WildDogAdapter(std::shared_ptr<WildDog> dog) : dog(std::move(dog)) {}
+
+    void roar() override {
+        dog->bark();
+    }
+};
+
+int main() {
+    auto wildDog = std::make_shared<WildDog>();
+    auto wildDogAdapter = std::make_shared<WildDogAdapter>(wildDog);
+
+    Hunter hunter;
+    hunter.hunt(wildDogAdapter);
+    return 0;
+}
+```
+
+Giờ hãy giả sử chúng ta cần thêm `WildDog` vào trò chơi để thợ săn cũng có thể săn nó. Nhưng không thể làm trực tiếp vì chó có interface khác. Để làm nó tương thích với thợ săn, chúng ta sẽ phải tạo một adapter phù hợp.
+
+```cpp
+#include <memory>
+
+class Lion {
+public:
+    virtual void roar() = 0;
+    virtual ~Lion() = default;
+};
+
+class AfricanLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class AsianLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class Hunter {
+public:
+    void hunt(const std::shared_ptr<Lion>& lion) {
+        lion->roar();
+    }
+};
+
+class WildDog {
+public:
+    void bark() {}
+};
+
+class WildDogAdapter : public Lion {
+protected:
+    std::shared_ptr<WildDog> dog;
+
+public:
+    explicit WildDogAdapter(std::shared_ptr<WildDog> dog) : dog(std::move(dog)) {}
+
+    void roar() override {
+        dog->bark();
+    }
+};
+
+int main() {
+    auto wildDog = std::make_shared<WildDog>();
+    auto wildDogAdapter = std::make_shared<WildDogAdapter>(wildDog);
+
+    Hunter hunter;
+    hunter.hunt(wildDogAdapter);
+    return 0;
+}
+```
+Và bây giờ `WildDog` có thể được dùng trong trò chơi của chúng ta thông qua `WildDogAdapter`.
+
+```cpp
+#include <memory>
+
+class Lion {
+public:
+    virtual void roar() = 0;
+    virtual ~Lion() = default;
+};
+
+class AfricanLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class AsianLion : public Lion {
+public:
+    void roar() override {}
+};
+
+class Hunter {
+public:
+    void hunt(const std::shared_ptr<Lion>& lion) {
+        lion->roar();
+    }
+};
+
+class WildDog {
+public:
+    void bark() {}
+};
+
+class WildDogAdapter : public Lion {
+protected:
+    std::shared_ptr<WildDog> dog;
+
+public:
+    explicit WildDogAdapter(std::shared_ptr<WildDog> dog) : dog(std::move(dog)) {}
+
+    void roar() override {
+        dog->bark();
+    }
+};
+
+int main() {
+    auto wildDog = std::make_shared<WildDog>();
+    auto wildDogAdapter = std::make_shared<WildDogAdapter>(wildDog);
+
+    Hunter hunter;
+    hunter.hunt(wildDogAdapter);
+    return 0;
+}
 ```
 
 🚡 Bridge
 ------
-Real world example
-> Consider you have a website with different pages and you are supposed to allow the user to change the theme. What would you do? Create multiple copies of each of the pages for each of the themes or would you just create separate theme and load them based on the user's preferences? Bridge pattern allows you to do the second i.e.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn có một website với nhiều trang khác nhau và bạn cần cho phép người dùng đổi theme. Bạn sẽ làm gì? Tạo nhiều bản sao của từng trang cho từng theme, hay chỉ tạo các theme riêng biệt và nạp chúng dựa trên sở thích của người dùng? Bridge pattern cho phép bạn làm theo cách thứ hai, tức là:
 
-![With and without the bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
+![Với và không có bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
 
-In Plain Words
-> Bridge pattern is about preferring composition over inheritance. Implementation details are pushed from a hierarchy to another object with a separate hierarchy.
+Nói đơn giản
+> bridge pattern đề cao composition hơn inheritance. Các chi tiết cài đặt được tách khỏi một hệ phân cấp và đẩy sang một object khác có hệ phân cấp riêng.
 
-Wikipedia says
-> The bridge pattern is a design pattern used in software engineering that is meant to "decouple an abstraction from its implementation so that the two can vary independently"
+Wikipedia nói
+> bridge pattern là một design pattern được dùng trong kỹ nghệ phần mềm với mục đích "tách abstraction ra khỏi implementation để cả hai có thể thay đổi độc lập"
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating our WebPage example from above. Here we have the `WebPage` hierarchy
+Chuyển ví dụ `WebPage` ở trên sang code. Ở đây chúng ta có hệ phân cấp `WebPage`
 
-```php
-interface WebPage
-{
-    public function __construct(Theme $theme);
-    public function getContent();
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-class About implements WebPage
-{
-    protected $theme;
+class Theme {
+public:
+    virtual std::string getColor() const = 0;
+    virtual ~Theme() = default;
+};
 
-    public function __construct(Theme $theme)
-    {
-        $this->theme = $theme;
+class DarkTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Dark Black";
     }
+};
 
-    public function getContent()
-    {
-        return "About page in " . $this->theme->getColor();
+class LightTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Off white";
     }
-}
+};
 
-class Careers implements WebPage
-{
-    protected $theme;
-
-    public function __construct(Theme $theme)
-    {
-        $this->theme = $theme;
+class AquaTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Light blue";
     }
+};
 
-    public function getContent()
-    {
-        return "Careers page in " . $this->theme->getColor();
+class WebPage {
+public:
+    explicit WebPage(std::shared_ptr<Theme> theme) : theme(std::move(theme)) {}
+    virtual std::string getContent() const = 0;
+    virtual ~WebPage() = default;
+
+protected:
+    std::shared_ptr<Theme> theme;
+};
+
+class About : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "About page in " + theme->getColor();
     }
+};
+
+class Careers : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "Careers page in " + theme->getColor();
+    }
+};
+
+int main() {
+    auto darkTheme = std::make_shared<DarkTheme>();
+
+    About about(darkTheme);
+    Careers careers(darkTheme);
+
+    std::cout << about.getContent() << std::endl;
+    std::cout << careers.getContent();
+    return 0;
 }
 ```
-And the separate theme hierarchy
-```php
+Và hệ phân cấp theme riêng biệt
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-interface Theme
-{
-    public function getColor();
-}
+class Theme {
+public:
+    virtual std::string getColor() const = 0;
+    virtual ~Theme() = default;
+};
 
-class DarkTheme implements Theme
-{
-    public function getColor()
-    {
-        return 'Dark Black';
+class DarkTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Dark Black";
     }
-}
-class LightTheme implements Theme
-{
-    public function getColor()
-    {
-        return 'Off white';
+};
+
+class LightTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Off white";
     }
-}
-class AquaTheme implements Theme
-{
-    public function getColor()
-    {
-        return 'Light blue';
+};
+
+class AquaTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Light blue";
     }
+};
+
+class WebPage {
+public:
+    explicit WebPage(std::shared_ptr<Theme> theme) : theme(std::move(theme)) {}
+    virtual std::string getContent() const = 0;
+    virtual ~WebPage() = default;
+
+protected:
+    std::shared_ptr<Theme> theme;
+};
+
+class About : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "About page in " + theme->getColor();
+    }
+};
+
+class Careers : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "Careers page in " + theme->getColor();
+    }
+};
+
+int main() {
+    auto darkTheme = std::make_shared<DarkTheme>();
+
+    About about(darkTheme);
+    Careers careers(darkTheme);
+
+    std::cout << about.getContent() << std::endl;
+    std::cout << careers.getContent();
+    return 0;
 }
 ```
-And both the hierarchies
-```php
-$darkTheme = new DarkTheme();
+Và kết hợp cả hai hệ phân cấp
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-$about = new About($darkTheme);
-$careers = new Careers($darkTheme);
+class Theme {
+public:
+    virtual std::string getColor() const = 0;
+    virtual ~Theme() = default;
+};
 
-echo $about->getContent(); // "About page in Dark Black";
-echo $careers->getContent(); // "Careers page in Dark Black";
+class DarkTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Dark Black";
+    }
+};
+
+class LightTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Off white";
+    }
+};
+
+class AquaTheme : public Theme {
+public:
+    std::string getColor() const override {
+        return "Light blue";
+    }
+};
+
+class WebPage {
+public:
+    explicit WebPage(std::shared_ptr<Theme> theme) : theme(std::move(theme)) {}
+    virtual std::string getContent() const = 0;
+    virtual ~WebPage() = default;
+
+protected:
+    std::shared_ptr<Theme> theme;
+};
+
+class About : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "About page in " + theme->getColor();
+    }
+};
+
+class Careers : public WebPage {
+public:
+    using WebPage::WebPage;
+
+    std::string getContent() const override {
+        return "Careers page in " + theme->getColor();
+    }
+};
+
+int main() {
+    auto darkTheme = std::make_shared<DarkTheme>();
+
+    About about(darkTheme);
+    Careers careers(darkTheme);
+
+    std::cout << about.getContent() << std::endl;
+    std::cout << careers.getContent();
+    return 0;
+}
 ```
 
 🌿 Composite
 -----------------
 
-Real world example
-> Every organization is composed of employees. Each of the employees has the same features i.e. has a salary, has some responsibilities, may or may not report to someone, may or may not have some subordinates etc.
+Ví dụ thực tế
+> Mọi tổ chức đều được tạo thành từ các nhân viên. Mỗi nhân viên có những đặc điểm giống nhau, tức là có lương, có một số trách nhiệm, có thể hoặc không báo cáo cho ai đó, có thể hoặc không có cấp dưới, v.v.
 
-In plain words
-> Composite pattern lets clients treat the individual objects in a uniform manner.
+Nói đơn giản
+> composite pattern cho phép client xử lý các object riêng lẻ theo một cách thống nhất.
 
-Wikipedia says
-> In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, composite pattern là một design pattern phân chia cấu trúc. composite pattern mô tả rằng một nhóm object sẽ được đối xử giống như một instance đơn lẻ của object. Mục đích của composite là "ghép" các object thành cấu trúc cây để biểu diễn quan hệ bộ phận-tổng thể. Việc cài đặt composite pattern cho phép client xử lý thống nhất cả object riêng lẻ lẫn tổ hợp object.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our employees example from above. Here we have different employee types
+Lấy ví dụ về nhân viên ở trên. Ở đây chúng ta có nhiều kiểu nhân viên khác nhau
 
-```php
-interface Employee
-{
-    public function __construct(string $name, float $salary);
-    public function getName(): string;
-    public function setSalary(float $salary);
-    public function getSalary(): float;
-    public function getRoles(): array;
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
 
-class Developer implements Employee
-{
-    protected $salary;
-    protected $name;
-    protected $roles;
-    
-    public function __construct(string $name, float $salary)
-    {
-        $this->name = $name;
-        $this->salary = $salary;
+class Employee {
+public:
+    Employee(std::string name, float salary) : name(std::move(name)), salary(salary) {}
+    virtual ~Employee() = default;
+
+    virtual std::string getName() const {
+        return name;
     }
 
-    public function getName(): string
-    {
-        return $this->name;
+    virtual void setSalary(float newSalary) {
+        salary = newSalary;
     }
 
-    public function setSalary(float $salary)
-    {
-        $this->salary = $salary;
+    virtual float getSalary() const {
+        return salary;
     }
 
-    public function getSalary(): float
-    {
-        return $this->salary;
+    virtual std::vector<std::string> getRoles() const = 0;
+
+protected:
+    std::string name;
+    float salary;
+};
+
+class Developer : public Employee {
+public:
+    Developer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Designer : public Employee {
+public:
+    Designer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Organization {
+protected:
+    std::vector<std::shared_ptr<Employee>> employees;
+
+public:
+    void addEmployee(std::shared_ptr<Employee> employee) {
+        employees.push_back(std::move(employee));
     }
 
-    public function getRoles(): array
-    {
-        return $this->roles;
-    }
-}
-
-class Designer implements Employee
-{
-    protected $salary;
-    protected $name;
-    protected $roles;
-
-    public function __construct(string $name, float $salary)
-    {
-        $this->name = $name;
-        $this->salary = $salary;
-    }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function setSalary(float $salary)
-    {
-        $this->salary = $salary;
-    }
-
-    public function getSalary(): float
-    {
-        return $this->salary;
-    }
-
-    public function getRoles(): array
-    {
-        return $this->roles;
-    }
-}
-```
-
-Then we have an organization which consists of several different types of employees
-
-```php
-class Organization
-{
-    protected $employees;
-
-    public function addEmployee(Employee $employee)
-    {
-        $this->employees[] = $employee;
-    }
-
-    public function getNetSalaries(): float
-    {
-        $netSalary = 0;
-
-        foreach ($this->employees as $employee) {
-            $netSalary += $employee->getSalary();
+    float getNetSalaries() const {
+        float netSalary = 0;
+        for (const auto& employee : employees) {
+            netSalary += employee->getSalary();
         }
-
-        return $netSalary;
+        return netSalary;
     }
+};
+
+int main() {
+    auto john = std::make_shared<Developer>("John Doe", 12000);
+    auto jane = std::make_shared<Designer>("Jane Doe", 15000);
+
+    Organization organization;
+    organization.addEmployee(john);
+    organization.addEmployee(jane);
+
+    std::cout << "Net salaries: " << organization.getNetSalaries();
+    return 0;
 }
 ```
 
-And then it can be used as
+Sau đó, chúng ta có một tổ chức gồm nhiều loại nhân viên khác nhau
 
-```php
-// Prepare the employees
-$john = new Developer('John Doe', 12000);
-$jane = new Designer('Jane Doe', 15000);
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
 
-// Add them to organization
-$organization = new Organization();
-$organization->addEmployee($john);
-$organization->addEmployee($jane);
+class Employee {
+public:
+    Employee(std::string name, float salary) : name(std::move(name)), salary(salary) {}
+    virtual ~Employee() = default;
 
-echo "Net salaries: " . $organization->getNetSalaries(); // Net Salaries: 27000
+    virtual std::string getName() const {
+        return name;
+    }
+
+    virtual void setSalary(float newSalary) {
+        salary = newSalary;
+    }
+
+    virtual float getSalary() const {
+        return salary;
+    }
+
+    virtual std::vector<std::string> getRoles() const = 0;
+
+protected:
+    std::string name;
+    float salary;
+};
+
+class Developer : public Employee {
+public:
+    Developer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Designer : public Employee {
+public:
+    Designer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Organization {
+protected:
+    std::vector<std::shared_ptr<Employee>> employees;
+
+public:
+    void addEmployee(std::shared_ptr<Employee> employee) {
+        employees.push_back(std::move(employee));
+    }
+
+    float getNetSalaries() const {
+        float netSalary = 0;
+        for (const auto& employee : employees) {
+            netSalary += employee->getSalary();
+        }
+        return netSalary;
+    }
+};
+
+int main() {
+    auto john = std::make_shared<Developer>("John Doe", 12000);
+    auto jane = std::make_shared<Designer>("Jane Doe", 15000);
+
+    Organization organization;
+    organization.addEmployee(john);
+    organization.addEmployee(jane);
+
+    std::cout << "Net salaries: " << organization.getNetSalaries();
+    return 0;
+}
+```
+
+Và sau đó có thể dùng như sau
+
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+
+class Employee {
+public:
+    Employee(std::string name, float salary) : name(std::move(name)), salary(salary) {}
+    virtual ~Employee() = default;
+
+    virtual std::string getName() const {
+        return name;
+    }
+
+    virtual void setSalary(float newSalary) {
+        salary = newSalary;
+    }
+
+    virtual float getSalary() const {
+        return salary;
+    }
+
+    virtual std::vector<std::string> getRoles() const = 0;
+
+protected:
+    std::string name;
+    float salary;
+};
+
+class Developer : public Employee {
+public:
+    Developer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Designer : public Employee {
+public:
+    Designer(std::string name, float salary) : Employee(std::move(name), salary) {}
+
+    std::vector<std::string> getRoles() const override {
+        return {};
+    }
+};
+
+class Organization {
+protected:
+    std::vector<std::shared_ptr<Employee>> employees;
+
+public:
+    void addEmployee(std::shared_ptr<Employee> employee) {
+        employees.push_back(std::move(employee));
+    }
+
+    float getNetSalaries() const {
+        float netSalary = 0;
+        for (const auto& employee : employees) {
+            netSalary += employee->getSalary();
+        }
+        return netSalary;
+    }
+};
+
+int main() {
+    auto john = std::make_shared<Developer>("John Doe", 12000);
+    auto jane = std::make_shared<Designer>("Jane Doe", 15000);
+
+    Organization organization;
+    organization.addEmployee(john);
+    organization.addEmployee(jane);
+
+    std::cout << "Net salaries: " << organization.getNetSalaries();
+    return 0;
+}
 ```
 
 ☕ Decorator
 -------------
 
-Real world example
+Ví dụ thực tế
 
-> Imagine you run a car service shop offering multiple services. Now how do you calculate the bill to be charged? You pick one service and dynamically keep adding to it the prices for the provided services till you get the final cost. Here each type of service is a decorator.
+> Hãy tưởng tượng bạn điều hành một gara cung cấp nhiều dịch vụ. Vậy bạn tính hóa đơn như thế nào? Bạn bắt đầu với một dịch vụ rồi động thêm giá của từng dịch vụ được cung cấp cho tới khi ra tổng chi phí cuối cùng. Ở đây mỗi loại dịch vụ chính là một decorator.
 
-In plain words
-> Decorator pattern lets you dynamically change the behavior of an object at run time by wrapping them in an object of a decorator class.
+Nói đơn giản
+> decorator pattern cho phép bạn thay đổi động hành vi của một object trong lúc chạy bằng cách bọc nó bên trong một object thuộc decorator class.
 
-Wikipedia says
-> In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, decorator pattern là một design pattern cho phép bổ sung hành vi cho một object riêng lẻ, theo cách tĩnh hoặc động, mà không ảnh hưởng đến hành vi của các object khác cùng class. decorator pattern thường hữu ích để tuân theo Single Responsibility Principle, vì nó cho phép chia chức năng giữa các class với các mối quan tâm riêng biệt.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Lets take coffee for example. First of all we have a simple coffee implementing the coffee interface
+Hãy lấy cà phê làm ví dụ. Trước hết, chúng ta có một loại cà phê đơn giản cài đặt coffee interface
 
-```php
-interface Coffee
-{
-    public function getCost();
-    public function getDescription();
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-class SimpleCoffee implements Coffee
-{
-    public function getCost()
-    {
+class Coffee {
+public:
+    virtual int getCost() const = 0;
+    virtual std::string getDescription() const = 0;
+    virtual ~Coffee() = default;
+};
+
+class SimpleCoffee : public Coffee {
+public:
+    int getCost() const override {
         return 10;
     }
 
-    public function getDescription()
-    {
-        return 'Simple coffee';
+    std::string getDescription() const override {
+        return "Simple coffee";
     }
+};
+
+class MilkCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit MilkCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 2;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", milk";
+    }
+};
+
+class WhipCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit WhipCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 5;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", whip";
+    }
+};
+
+class VanillaCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit VanillaCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 3;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", vanilla";
+    }
+};
+
+int main() {
+    std::shared_ptr<Coffee> someCoffee = std::make_shared<SimpleCoffee>();
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<MilkCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<WhipCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<VanillaCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription();
+    return 0;
 }
 ```
-We want to make the code extensible to allow options to modify it if required. Lets make some add-ons (decorators)
-```php
-class MilkCoffee implements Coffee
-{
-    protected $coffee;
+Chúng ta muốn làm cho code có thể mở rộng để thêm các tùy chọn chỉnh sửa khi cần. Hãy tạo một vài phần bổ sung (decorators)
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-    public function __construct(Coffee $coffee)
-    {
-        $this->coffee = $coffee;
+class Coffee {
+public:
+    virtual int getCost() const = 0;
+    virtual std::string getDescription() const = 0;
+    virtual ~Coffee() = default;
+};
+
+class SimpleCoffee : public Coffee {
+public:
+    int getCost() const override {
+        return 10;
     }
 
-    public function getCost()
-    {
-        return $this->coffee->getCost() + 2;
+    std::string getDescription() const override {
+        return "Simple coffee";
+    }
+};
+
+class MilkCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit MilkCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 2;
     }
 
-    public function getDescription()
-    {
-        return $this->coffee->getDescription() . ', milk';
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", milk";
     }
-}
+};
 
-class WhipCoffee implements Coffee
-{
-    protected $coffee;
+class WhipCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
 
-    public function __construct(Coffee $coffee)
-    {
-        $this->coffee = $coffee;
-    }
+public:
+    explicit WhipCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
 
-    public function getCost()
-    {
-        return $this->coffee->getCost() + 5;
+    int getCost() const override {
+        return coffee->getCost() + 5;
     }
 
-    public function getDescription()
-    {
-        return $this->coffee->getDescription() . ', whip';
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", whip";
     }
-}
+};
 
-class VanillaCoffee implements Coffee
-{
-    protected $coffee;
+class VanillaCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
 
-    public function __construct(Coffee $coffee)
-    {
-        $this->coffee = $coffee;
-    }
+public:
+    explicit VanillaCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
 
-    public function getCost()
-    {
-        return $this->coffee->getCost() + 3;
+    int getCost() const override {
+        return coffee->getCost() + 3;
     }
 
-    public function getDescription()
-    {
-        return $this->coffee->getDescription() . ', vanilla';
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", vanilla";
     }
+};
+
+int main() {
+    std::shared_ptr<Coffee> someCoffee = std::make_shared<SimpleCoffee>();
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<MilkCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<WhipCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<VanillaCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription();
+    return 0;
 }
 ```
 
-Lets make a coffee now
+Giờ hãy pha một ly cà phê
 
-```php
-$someCoffee = new SimpleCoffee();
-echo $someCoffee->getCost(); // 10
-echo $someCoffee->getDescription(); // Simple Coffee
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-$someCoffee = new MilkCoffee($someCoffee);
-echo $someCoffee->getCost(); // 12
-echo $someCoffee->getDescription(); // Simple Coffee, milk
+class Coffee {
+public:
+    virtual int getCost() const = 0;
+    virtual std::string getDescription() const = 0;
+    virtual ~Coffee() = default;
+};
 
-$someCoffee = new WhipCoffee($someCoffee);
-echo $someCoffee->getCost(); // 17
-echo $someCoffee->getDescription(); // Simple Coffee, milk, whip
+class SimpleCoffee : public Coffee {
+public:
+    int getCost() const override {
+        return 10;
+    }
 
-$someCoffee = new VanillaCoffee($someCoffee);
-echo $someCoffee->getCost(); // 20
-echo $someCoffee->getDescription(); // Simple Coffee, milk, whip, vanilla
+    std::string getDescription() const override {
+        return "Simple coffee";
+    }
+};
+
+class MilkCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit MilkCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 2;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", milk";
+    }
+};
+
+class WhipCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit WhipCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 5;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", whip";
+    }
+};
+
+class VanillaCoffee : public Coffee {
+protected:
+    std::shared_ptr<Coffee> coffee;
+
+public:
+    explicit VanillaCoffee(std::shared_ptr<Coffee> coffee) : coffee(std::move(coffee)) {}
+
+    int getCost() const override {
+        return coffee->getCost() + 3;
+    }
+
+    std::string getDescription() const override {
+        return coffee->getDescription() + ", vanilla";
+    }
+};
+
+int main() {
+    std::shared_ptr<Coffee> someCoffee = std::make_shared<SimpleCoffee>();
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<MilkCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<WhipCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription() << std::endl;
+
+    someCoffee = std::make_shared<VanillaCoffee>(someCoffee);
+    std::cout << someCoffee->getCost() << std::endl;
+    std::cout << someCoffee->getDescription();
+    return 0;
+}
 ```
 
 📦 Facade
 ----------------
 
-Real world example
-> How do you turn on the computer? "Hit the power button" you say! That is what you believe because you are using a simple interface that computer provides on the outside, internally it has to do a lot of stuff to make it happen. This simple interface to the complex subsystem is a facade.
+Ví dụ thực tế
+> Bạn bật máy tính như thế nào? "Nhấn nút nguồn" — bạn sẽ nói vậy! Đó là điều bạn nghĩ vì bạn đang dùng một interface đơn giản mà máy tính cung cấp ở bên ngoài, trong khi bên trong nó phải làm rất nhiều việc để chuyện đó xảy ra. Interface đơn giản dẫn vào một subsystem phức tạp đó chính là facade.
 
-In plain words
-> Facade pattern provides a simplified interface to a complex subsystem.
+Nói đơn giản
+> facade pattern cung cấp một interface đơn giản hóa cho một subsystem phức tạp.
 
-Wikipedia says
-> A facade is an object that provides a simplified interface to a larger body of code, such as a class library.
+Wikipedia nói
+> facade là một object cung cấp một interface đơn giản hóa cho một khối code lớn hơn, chẳng hạn như một class library.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our computer example from above. Here we have the computer class
+Lấy ví dụ về máy tính ở trên. Ở đây chúng ta có class máy tính
 
-```php
-class Computer
-{
-    public function getElectricShock()
-    {
-        echo "Ouch!";
+```cpp
+#include <iostream>
+#include <memory>
+
+class Computer {
+public:
+    void getElectricShock() {
+        std::cout << "Ouch!";
     }
 
-    public function makeSound()
-    {
-        echo "Beep beep!";
+    void makeSound() {
+        std::cout << "Beep beep!";
     }
 
-    public function showLoadingScreen()
-    {
-        echo "Loading..";
+    void showLoadingScreen() {
+        std::cout << "Loading..";
     }
 
-    public function bam()
-    {
-        echo "Ready to be used!";
+    void bam() {
+        std::cout << "Ready to be used!";
     }
 
-    public function closeEverything()
-    {
-        echo "Bup bup bup buzzzz!";
+    void closeEverything() {
+        std::cout << "Bup bup bup buzzzz!";
     }
 
-    public function sooth()
-    {
-        echo "Zzzzz";
+    void sooth() {
+        std::cout << "Zzzzz";
     }
 
-    public function pullCurrent()
-    {
-        echo "Haaah!";
+    void pullCurrent() {
+        std::cout << "Haaah!";
     }
+};
+
+class ComputerFacade {
+protected:
+    std::shared_ptr<Computer> computer;
+
+public:
+    explicit ComputerFacade(std::shared_ptr<Computer> computer) : computer(std::move(computer)) {}
+
+    void turnOn() {
+        computer->getElectricShock();
+        computer->makeSound();
+        computer->showLoadingScreen();
+        computer->bam();
+    }
+
+    void turnOff() {
+        computer->closeEverything();
+        computer->pullCurrent();
+        computer->sooth();
+    }
+};
+
+int main() {
+    ComputerFacade computer(std::make_shared<Computer>());
+    computer.turnOn();
+    std::cout << std::endl;
+    computer.turnOff();
+    return 0;
 }
 ```
-Here we have the facade
-```php
-class ComputerFacade
-{
-    protected $computer;
+Ở đây là facade
+```cpp
+#include <iostream>
+#include <memory>
 
-    public function __construct(Computer $computer)
-    {
-        $this->computer = $computer;
+class Computer {
+public:
+    void getElectricShock() {
+        std::cout << "Ouch!";
     }
 
-    public function turnOn()
-    {
-        $this->computer->getElectricShock();
-        $this->computer->makeSound();
-        $this->computer->showLoadingScreen();
-        $this->computer->bam();
+    void makeSound() {
+        std::cout << "Beep beep!";
     }
 
-    public function turnOff()
-    {
-        $this->computer->closeEverything();
-        $this->computer->pullCurrent();
-        $this->computer->sooth();
+    void showLoadingScreen() {
+        std::cout << "Loading..";
     }
+
+    void bam() {
+        std::cout << "Ready to be used!";
+    }
+
+    void closeEverything() {
+        std::cout << "Bup bup bup buzzzz!";
+    }
+
+    void sooth() {
+        std::cout << "Zzzzz";
+    }
+
+    void pullCurrent() {
+        std::cout << "Haaah!";
+    }
+};
+
+class ComputerFacade {
+protected:
+    std::shared_ptr<Computer> computer;
+
+public:
+    explicit ComputerFacade(std::shared_ptr<Computer> computer) : computer(std::move(computer)) {}
+
+    void turnOn() {
+        computer->getElectricShock();
+        computer->makeSound();
+        computer->showLoadingScreen();
+        computer->bam();
+    }
+
+    void turnOff() {
+        computer->closeEverything();
+        computer->pullCurrent();
+        computer->sooth();
+    }
+};
+
+int main() {
+    ComputerFacade computer(std::make_shared<Computer>());
+    computer.turnOn();
+    std::cout << std::endl;
+    computer.turnOff();
+    return 0;
 }
 ```
-Now to use the facade
-```php
-$computer = new ComputerFacade(new Computer());
-$computer->turnOn(); // Ouch! Beep beep! Loading.. Ready to be used!
-$computer->turnOff(); // Bup bup buzzz! Haah! Zzzzz
+Bây giờ hãy dùng facade
+```cpp
+#include <iostream>
+#include <memory>
+
+class Computer {
+public:
+    void getElectricShock() {
+        std::cout << "Ouch!";
+    }
+
+    void makeSound() {
+        std::cout << "Beep beep!";
+    }
+
+    void showLoadingScreen() {
+        std::cout << "Loading..";
+    }
+
+    void bam() {
+        std::cout << "Ready to be used!";
+    }
+
+    void closeEverything() {
+        std::cout << "Bup bup bup buzzzz!";
+    }
+
+    void sooth() {
+        std::cout << "Zzzzz";
+    }
+
+    void pullCurrent() {
+        std::cout << "Haaah!";
+    }
+};
+
+class ComputerFacade {
+protected:
+    std::shared_ptr<Computer> computer;
+
+public:
+    explicit ComputerFacade(std::shared_ptr<Computer> computer) : computer(std::move(computer)) {}
+
+    void turnOn() {
+        computer->getElectricShock();
+        computer->makeSound();
+        computer->showLoadingScreen();
+        computer->bam();
+    }
+
+    void turnOff() {
+        computer->closeEverything();
+        computer->pullCurrent();
+        computer->sooth();
+    }
+};
+
+int main() {
+    ComputerFacade computer(std::make_shared<Computer>());
+    computer.turnOn();
+    std::cout << std::endl;
+    computer.turnOff();
+    return 0;
+}
 ```
 
 🍃 Flyweight
 ---------
 
-Real world example
-> Did you ever have fresh tea from some stall? They often make more than one cup that you demanded and save the rest for any other customer so to save the resources e.g. gas etc. Flyweight pattern is all about that i.e. sharing.
+Ví dụ thực tế
+> Bạn đã từng uống trà tươi ở một quầy hàng chưa? Họ thường pha nhiều hơn số ly bạn gọi và giữ phần còn lại cho khách khác để tiết kiệm tài nguyên như gas, v.v. flyweight pattern chính là như vậy, tức là chia sẻ.
 
-In plain words
-> It is used to minimize memory usage or computational expenses by sharing as much as possible with similar objects.
+Nói đơn giản
+> Nó được dùng để giảm mức sử dụng bộ nhớ hoặc chi phí tính toán bằng cách chia sẻ nhiều nhất có thể giữa các object tương tự nhau.
 
-Wikipedia says
-> In computer programming, flyweight is a software design pattern. A flyweight is an object that minimizes memory use by sharing as much data as possible with other similar objects; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory.
+Wikipedia nói
+> Trong lập trình máy tính, flyweight là một software design pattern. flyweight là một object giảm thiểu việc dùng bộ nhớ bằng cách chia sẻ càng nhiều dữ liệu càng tốt với các object tương tự khác; đây là một cách để dùng số lượng lớn object khi một biểu diễn lặp lại đơn giản sẽ tiêu tốn lượng bộ nhớ không thể chấp nhận được.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our tea example from above. First of all we have tea types and tea maker
+Chuyển ví dụ về trà ở trên sang code. Trước hết, chúng ta có các loại trà và tea maker
 
-```php
-// Anything that will be cached is flyweight.
-// Types of tea here will be flyweights.
-class KarakTea
-{
-}
+```cpp
+#include <iostream>
+#include <map>
+#include <memory>
+#include <string>
 
-// Acts as a factory and saves the tea
-class TeaMaker
-{
-    protected $availableTea = [];
+class KarakTea {
+};
 
-    public function make($preference)
-    {
-        if (empty($this->availableTea[$preference])) {
-            $this->availableTea[$preference] = new KarakTea();
+class TeaMaker {
+protected:
+    std::map<std::string, std::shared_ptr<KarakTea>> availableTea;
+
+public:
+    std::shared_ptr<KarakTea> make(const std::string& preference) {
+        auto it = availableTea.find(preference);
+        if (it == availableTea.end()) {
+            availableTea[preference] = std::make_shared<KarakTea>();
         }
-
-        return $this->availableTea[$preference];
+        return availableTea[preference];
     }
+};
+
+class TeaShop {
+protected:
+    std::map<int, std::shared_ptr<KarakTea>> orders;
+    std::shared_ptr<TeaMaker> teaMaker;
+
+public:
+    explicit TeaShop(std::shared_ptr<TeaMaker> teaMaker) : teaMaker(std::move(teaMaker)) {}
+
+    void takeOrder(const std::string& teaType, int table) {
+        orders[table] = teaMaker->make(teaType);
+    }
+
+    void serve() {
+        for (const auto& [table, tea] : orders) {
+            (void)tea;
+            std::cout << "Serving tea to table# " << table << std::endl;
+        }
+    }
+};
+
+int main() {
+    auto teaMaker = std::make_shared<TeaMaker>();
+    TeaShop shop(teaMaker);
+
+    shop.takeOrder("less sugar", 1);
+    shop.takeOrder("more milk", 2);
+    shop.takeOrder("without sugar", 5);
+
+    shop.serve();
+    return 0;
 }
 ```
 
-Then we have the `TeaShop` which takes orders and serves them
+Sau đó, chúng ta có `TeaShop`, nơi nhận đơn và phục vụ chúng
 
-```php
-class TeaShop
-{
-    protected $orders;
-    protected $teaMaker;
+```cpp
+#include <iostream>
+#include <map>
+#include <memory>
+#include <string>
 
-    public function __construct(TeaMaker $teaMaker)
-    {
-        $this->teaMaker = $teaMaker;
+class KarakTea {
+};
+
+class TeaMaker {
+protected:
+    std::map<std::string, std::shared_ptr<KarakTea>> availableTea;
+
+public:
+    std::shared_ptr<KarakTea> make(const std::string& preference) {
+        auto it = availableTea.find(preference);
+        if (it == availableTea.end()) {
+            availableTea[preference] = std::make_shared<KarakTea>();
+        }
+        return availableTea[preference];
+    }
+};
+
+class TeaShop {
+protected:
+    std::map<int, std::shared_ptr<KarakTea>> orders;
+    std::shared_ptr<TeaMaker> teaMaker;
+
+public:
+    explicit TeaShop(std::shared_ptr<TeaMaker> teaMaker) : teaMaker(std::move(teaMaker)) {}
+
+    void takeOrder(const std::string& teaType, int table) {
+        orders[table] = teaMaker->make(teaType);
     }
 
-    public function takeOrder(string $teaType, int $table)
-    {
-        $this->orders[$table] = $this->teaMaker->make($teaType);
-    }
-
-    public function serve()
-    {
-        foreach ($this->orders as $table => $tea) {
-            echo "Serving tea to table# " . $table;
+    void serve() {
+        for (const auto& [table, tea] : orders) {
+            (void)tea;
+            std::cout << "Serving tea to table# " << table << std::endl;
         }
     }
+};
+
+int main() {
+    auto teaMaker = std::make_shared<TeaMaker>();
+    TeaShop shop(teaMaker);
+
+    shop.takeOrder("less sugar", 1);
+    shop.takeOrder("more milk", 2);
+    shop.takeOrder("without sugar", 5);
+
+    shop.serve();
+    return 0;
 }
 ```
-And it can be used as below
+Và nó có thể được dùng như bên dưới
 
-```php
-$teaMaker = new TeaMaker();
-$shop = new TeaShop($teaMaker);
+```cpp
+#include <iostream>
+#include <map>
+#include <memory>
+#include <string>
 
-$shop->takeOrder('less sugar', 1);
-$shop->takeOrder('more milk', 2);
-$shop->takeOrder('without sugar', 5);
+class KarakTea {
+};
 
-$shop->serve();
-// Serving tea to table# 1
-// Serving tea to table# 2
-// Serving tea to table# 5
+class TeaMaker {
+protected:
+    std::map<std::string, std::shared_ptr<KarakTea>> availableTea;
+
+public:
+    std::shared_ptr<KarakTea> make(const std::string& preference) {
+        auto it = availableTea.find(preference);
+        if (it == availableTea.end()) {
+            availableTea[preference] = std::make_shared<KarakTea>();
+        }
+        return availableTea[preference];
+    }
+};
+
+class TeaShop {
+protected:
+    std::map<int, std::shared_ptr<KarakTea>> orders;
+    std::shared_ptr<TeaMaker> teaMaker;
+
+public:
+    explicit TeaShop(std::shared_ptr<TeaMaker> teaMaker) : teaMaker(std::move(teaMaker)) {}
+
+    void takeOrder(const std::string& teaType, int table) {
+        orders[table] = teaMaker->make(teaType);
+    }
+
+    void serve() {
+        for (const auto& [table, tea] : orders) {
+            (void)tea;
+            std::cout << "Serving tea to table# " << table << std::endl;
+        }
+    }
+};
+
+int main() {
+    auto teaMaker = std::make_shared<TeaMaker>();
+    TeaShop shop(teaMaker);
+
+    shop.takeOrder("less sugar", 1);
+    shop.takeOrder("more milk", 2);
+    shop.takeOrder("without sugar", 5);
+
+    shop.serve();
+    return 0;
+}
 ```
 
 🎱 Proxy
 -------------------
-Real world example
-> Have you ever used an access card to go through a door? There are multiple options to open that door i.e. it can be opened either using access card or by pressing a button that bypasses the security. The door's main functionality is to open but there is a proxy added on top of it to add some functionality. Let me better explain it using the code example below.
+Ví dụ thực tế
+> Bạn đã bao giờ dùng thẻ ra vào để mở cửa chưa? Có nhiều cách để mở cánh cửa đó, ví dụ nó có thể được mở bằng thẻ ra vào hoặc bằng cách nhấn một nút bỏ qua lớp bảo mật. Chức năng chính của cánh cửa là mở, nhưng có một proxy được thêm lên trên để bổ sung thêm chức năng. Để tôi giải thích rõ hơn bằng ví dụ code dưới đây.
 
-In plain words
-> Using the proxy pattern, a class represents the functionality of another class.
+Nói đơn giản
+> Với proxy pattern, một class đại diện cho chức năng của một class khác.
 
-Wikipedia says
-> A proxy, in its most general form, is a class functioning as an interface to something else. A proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes. Use of the proxy can simply be forwarding to the real object, or can provide additional logic. In the proxy extra functionality can be provided, for example caching when operations on the real object are resource intensive, or checking preconditions before operations on the real object are invoked.
+Wikipedia nói
+> proxy, ở dạng tổng quát nhất, là một class hoạt động như interface cho một thứ khác. proxy là một object bao bọc hoặc đại diện được client gọi để truy cập object thực thi thật ở phía sau. Việc dùng proxy có thể chỉ đơn giản là chuyển tiếp sang object thật, hoặc cung cấp thêm logic bổ sung. Trong proxy có thể thêm chức năng như cache khi các thao tác trên object thật tốn nhiều tài nguyên, hoặc kiểm tra điều kiện trước khi gọi các thao tác trên object thật.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our security door example from above. Firstly we have the door interface and an implementation of door
+Lấy ví dụ về cửa bảo mật ở trên. Trước hết, chúng ta có door interface và một phần cài đặt của cửa
 
-```php
-interface Door
-{
-    public function open();
-    public function close();
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-class LabDoor implements Door
-{
-    public function open()
-    {
-        echo "Opening lab door";
+class Door {
+public:
+    virtual void open(const std::string& password = "") = 0;
+    virtual void close() = 0;
+    virtual ~Door() = default;
+};
+
+class LabDoor : public Door {
+public:
+    void open(const std::string& password = "") override {
+        (void)password;
+        std::cout << "Opening lab door";
     }
 
-    public function close()
-    {
-        echo "Closing the lab door";
+    void close() override {
+        std::cout << "Closing the lab door";
     }
-}
-```
-Then we have a proxy to secure any doors that we want
-```php
-class SecuredDoor implements Door
-{
-    protected $door;
+};
 
-    public function __construct(Door $door)
-    {
-        $this->door = $door;
-    }
+class SecuredDoor : public Door {
+protected:
+    std::shared_ptr<Door> door;
 
-    public function open($password)
-    {
-        if ($this->authenticate($password)) {
-            $this->door->open();
+public:
+    explicit SecuredDoor(std::shared_ptr<Door> door) : door(std::move(door)) {}
+
+    void open(const std::string& password = "") override {
+        if (authenticate(password)) {
+            door->open();
         } else {
-            echo "Big no! It ain't possible.";
+            std::cout << "Big no! It ain't possible.";
         }
     }
 
-    public function authenticate($password)
-    {
-        return $password === '$ecr@t';
+    bool authenticate(const std::string& password) const {
+        return password == "$ecr@t";
     }
 
-    public function close()
-    {
-        $this->door->close();
+    void close() override {
+        door->close();
     }
+};
+
+int main() {
+    auto door = std::make_shared<SecuredDoor>(std::make_shared<LabDoor>());
+    door->open("invalid");
+    std::cout << std::endl;
+    door->open("$ecr@t");
+    std::cout << std::endl;
+    door->close();
+    return 0;
 }
 ```
-And here is how it can be used
-```php
-$door = new SecuredDoor(new LabDoor());
-$door->open('invalid'); // Big no! It ain't possible.
+Sau đó, chúng ta có một proxy để bảo vệ bất kỳ cánh cửa nào mình muốn
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-$door->open('$ecr@t'); // Opening lab door
-$door->close(); // Closing lab door
+class Door {
+public:
+    virtual void open(const std::string& password = "") = 0;
+    virtual void close() = 0;
+    virtual ~Door() = default;
+};
+
+class LabDoor : public Door {
+public:
+    void open(const std::string& password = "") override {
+        (void)password;
+        std::cout << "Opening lab door";
+    }
+
+    void close() override {
+        std::cout << "Closing the lab door";
+    }
+};
+
+class SecuredDoor : public Door {
+protected:
+    std::shared_ptr<Door> door;
+
+public:
+    explicit SecuredDoor(std::shared_ptr<Door> door) : door(std::move(door)) {}
+
+    void open(const std::string& password = "") override {
+        if (authenticate(password)) {
+            door->open();
+        } else {
+            std::cout << "Big no! It ain't possible.";
+        }
+    }
+
+    bool authenticate(const std::string& password) const {
+        return password == "$ecr@t";
+    }
+
+    void close() override {
+        door->close();
+    }
+};
+
+int main() {
+    auto door = std::make_shared<SecuredDoor>(std::make_shared<LabDoor>());
+    door->open("invalid");
+    std::cout << std::endl;
+    door->open("$ecr@t");
+    std::cout << std::endl;
+    door->close();
+    return 0;
+}
 ```
-Yet another example would be some sort of data-mapper implementation. For example, I recently made an ODM (Object Data Mapper) for MongoDB using this pattern where I wrote a proxy around mongo classes while utilizing the magic method `__call()`. All the method calls were proxied to the original mongo class and result retrieved was returned as it is but in case of `find` or `findOne` data was mapped to the required class objects and the object was returned instead of `Cursor`.
+Và đây là cách có thể dùng nó
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+
+class Door {
+public:
+    virtual void open(const std::string& password = "") = 0;
+    virtual void close() = 0;
+    virtual ~Door() = default;
+};
+
+class LabDoor : public Door {
+public:
+    void open(const std::string& password = "") override {
+        (void)password;
+        std::cout << "Opening lab door";
+    }
+
+    void close() override {
+        std::cout << "Closing the lab door";
+    }
+};
+
+class SecuredDoor : public Door {
+protected:
+    std::shared_ptr<Door> door;
+
+public:
+    explicit SecuredDoor(std::shared_ptr<Door> door) : door(std::move(door)) {}
+
+    void open(const std::string& password = "") override {
+        if (authenticate(password)) {
+            door->open();
+        } else {
+            std::cout << "Big no! It ain't possible.";
+        }
+    }
+
+    bool authenticate(const std::string& password) const {
+        return password == "$ecr@t";
+    }
+
+    void close() override {
+        door->close();
+    }
+};
+
+int main() {
+    auto door = std::make_shared<SecuredDoor>(std::make_shared<LabDoor>());
+    door->open("invalid");
+    std::cout << std::endl;
+    door->open("$ecr@t");
+    std::cout << std::endl;
+    door->close();
+    return 0;
+}
+```
+Một ví dụ khác là một kiểu cài đặt data-mapper nào đó. Ví dụ, gần đây tôi đã tạo một ODM (Object Data Mapper) cho MongoDB bằng pattern này, trong đó tôi viết một proxy bao quanh các class mongo và sử dụng magic method `__call()`. Mọi lời gọi method đều được chuyển tiếp tới class mongo gốc và kết quả lấy được được trả về nguyên trạng; nhưng trong trường hợp `find` hoặc `findOne`, dữ liệu sẽ được ánh xạ sang các object class cần thiết và object đó được trả về thay cho `Cursor`.
 
 Behavioral Design Patterns
 ==========================
 
-In plain words
-> It is concerned with assignment of responsibilities between the objects. What makes them different from structural patterns is they don't just specify the structure but also outline the patterns for message passing/communication between them. Or in other words, they assist in answering "How to run a behavior in software component?"
+Nói đơn giản
+> Nhóm này quan tâm đến việc phân chia trách nhiệm giữa các object. Điểm khiến chúng khác với structural patterns là chúng không chỉ mô tả cấu trúc mà còn phác thảo các mẫu truyền thông điệp/giao tiếp giữa chúng. Nói cách khác, chúng giúp trả lời câu hỏi: "Làm thế nào để chạy một hành vi trong software component?"
 
-Wikipedia says
-> In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, behavioral design patterns là các design patterns nhận diện những mẫu giao tiếp phổ biến giữa các object và hiện thực hóa các mẫu đó. Nhờ vậy, chúng tăng tính linh hoạt khi thực hiện việc giao tiếp này.
 
 * [Chain of Responsibility](#-chain-of-responsibility)
 * [Command](#-command)
@@ -1308,1013 +2975,2745 @@ Wikipedia says
 🔗 Chain of Responsibility
 -----------------------
 
-Real world example
-> For example, you have three payment methods (`A`, `B` and `C`) setup in your account; each having a different amount in it. `A` has 100 USD, `B` has 300 USD and `C` having 1000 USD and the preference for payments is chosen as `A` then `B` then `C`. You try to purchase something that is worth 210 USD. Using Chain of Responsibility, first of all account `A` will be checked if it can make the purchase, if yes purchase will be made and the chain will be broken. If not, request will move forward to account `B` checking for amount if yes chain will be broken otherwise the request will keep forwarding till it finds the suitable handler. Here `A`, `B` and `C` are links of the chain and the whole phenomenon is Chain of Responsibility.
+Ví dụ thực tế
+> Ví dụ, bạn có ba phương thức thanh toán (`A`, `B` và `C`) được thiết lập trong tài khoản; mỗi phương thức có một số tiền khác nhau. `A` có 100 USD, `B` có 300 USD và `C` có 1000 USD, và thứ tự ưu tiên thanh toán được chọn là `A`, rồi `B`, rồi `C`. Bạn muốn mua một món đồ trị giá 210 USD. Với Chain of Responsibility, trước tiên tài khoản `A` sẽ được kiểm tra xem có thể thanh toán hay không; nếu có thì việc mua sẽ được thực hiện và chuỗi dừng lại. Nếu không, yêu cầu sẽ được chuyển tiếp sang tài khoản `B` để kiểm tra số dư; nếu được thì chuỗi dừng, còn không thì yêu cầu tiếp tục được chuyển tiếp cho tới khi tìm thấy handler phù hợp. Ở đây `A`, `B` và `C` là các mắt xích của chuỗi, và toàn bộ hiện tượng đó chính là Chain of Responsibility.
 
-In plain words
-> It helps building a chain of objects. Request enters from one end and keeps going from object to object till it finds the suitable handler.
+Nói đơn giản
+> Nó giúp xây dựng một chuỗi object. Yêu cầu đi vào từ một đầu và tiếp tục truyền từ object này sang object khác cho tới khi tìm được handler phù hợp.
 
-Wikipedia says
-> In object-oriented design, the chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects. Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain.
+Wikipedia nói
+> Trong thiết kế hướng đối tượng, chain-of-responsibility pattern là một design pattern gồm một nguồn command object và một chuỗi các object xử lý. Mỗi object xử lý chứa logic xác định kiểu command object mà nó có thể xử lý; phần còn lại sẽ được chuyển sang object xử lý tiếp theo trong chuỗi.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating our account example above. First of all we have a base account having the logic for chaining the accounts together and some accounts
+Chuyển ví dụ tài khoản ở trên sang code. Trước hết, chúng ta có một account cơ sở chứa logic để nối các account lại với nhau cùng một số account cụ thể
 
-```php
-abstract class Account
-{
-    protected $successor;
-    protected $balance;
+```cpp
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <string>
 
-    public function setNext(Account $account)
-    {
-        $this->successor = $account;
+class Account {
+protected:
+    std::shared_ptr<Account> successor;
+    float balance = 0;
+
+public:
+    virtual ~Account() = default;
+
+    void setNext(std::shared_ptr<Account> account) {
+        successor = std::move(account);
     }
 
-    public function pay(float $amountToPay)
-    {
-        if ($this->canPay($amountToPay)) {
-            echo sprintf('Paid %s using %s' . PHP_EOL, $amountToPay, get_called_class());
-        } elseif ($this->successor) {
-            echo sprintf('Cannot pay using %s. Proceeding ..' . PHP_EOL, get_called_class());
-            $this->successor->pay($amountToPay);
+    void pay(float amountToPay) {
+        if (canPay(amountToPay)) {
+            std::cout << "Paid " << amountToPay << " using " << getName() << std::endl;
+        } else if (successor) {
+            std::cout << "Cannot pay using " << getName() << ". Proceeding .." << std::endl;
+            successor->pay(amountToPay);
         } else {
-            throw new Exception('None of the accounts have enough balance');
+            throw std::runtime_error("None of the accounts have enough balance");
         }
     }
 
-    public function canPay($amount): bool
-    {
-        return $this->balance >= $amount;
+    bool canPay(float amount) const {
+        return balance >= amount;
     }
-}
 
-class Bank extends Account
-{
-    protected $balance;
+    virtual std::string getName() const = 0;
+};
 
-    public function __construct(float $balance)
-    {
-        $this->balance = $balance;
+class Bank : public Account {
+public:
+    explicit Bank(float balance) {
+        this->balance = balance;
     }
-}
 
-class Paypal extends Account
-{
-    protected $balance;
-
-    public function __construct(float $balance)
-    {
-        $this->balance = $balance;
+    std::string getName() const override {
+        return "Bank";
     }
-}
+};
 
-class Bitcoin extends Account
-{
-    protected $balance;
-
-    public function __construct(float $balance)
-    {
-        $this->balance = $balance;
+class Paypal : public Account {
+public:
+    explicit Paypal(float balance) {
+        this->balance = balance;
     }
+
+    std::string getName() const override {
+        return "Paypal";
+    }
+};
+
+class Bitcoin : public Account {
+public:
+    explicit Bitcoin(float balance) {
+        this->balance = balance;
+    }
+
+    std::string getName() const override {
+        return "Bitcoin";
+    }
+};
+
+int main() {
+    auto bank = std::make_shared<Bank>(100);
+    auto paypal = std::make_shared<Paypal>(200);
+    auto bitcoin = std::make_shared<Bitcoin>(300);
+
+    bank->setNext(paypal);
+    paypal->setNext(bitcoin);
+
+    bank->pay(259);
+    return 0;
 }
 ```
 
-Now let's prepare the chain using the links defined above (i.e. Bank, Paypal, Bitcoin)
+Bây giờ hãy chuẩn bị chuỗi bằng các mắt xích đã định nghĩa ở trên (tức là Bank, Paypal, Bitcoin)
 
-```php
-// Let's prepare a chain like below
-//      $bank->$paypal->$bitcoin
-//
-// First priority bank
-//      If bank can't pay then paypal
-//      If paypal can't pay then bit coin
+```cpp
+#include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <string>
 
-$bank = new Bank(100);          // Bank with balance 100
-$paypal = new Paypal(200);      // Paypal with balance 200
-$bitcoin = new Bitcoin(300);    // Bitcoin with balance 300
+class Account {
+protected:
+    std::shared_ptr<Account> successor;
+    float balance = 0;
 
-$bank->setNext($paypal);
-$paypal->setNext($bitcoin);
+public:
+    virtual ~Account() = default;
 
-// Let's try to pay using the first priority i.e. bank
-$bank->pay(259);
+    void setNext(std::shared_ptr<Account> account) {
+        successor = std::move(account);
+    }
 
-// Output will be
-// ==============
-// Cannot pay using bank. Proceeding ..
-// Cannot pay using paypal. Proceeding ..:
-// Paid 259 using Bitcoin!
+    void pay(float amountToPay) {
+        if (canPay(amountToPay)) {
+            std::cout << "Paid " << amountToPay << " using " << getName() << std::endl;
+        } else if (successor) {
+            std::cout << "Cannot pay using " << getName() << ". Proceeding .." << std::endl;
+            successor->pay(amountToPay);
+        } else {
+            throw std::runtime_error("None of the accounts have enough balance");
+        }
+    }
+
+    bool canPay(float amount) const {
+        return balance >= amount;
+    }
+
+    virtual std::string getName() const = 0;
+};
+
+class Bank : public Account {
+public:
+    explicit Bank(float balance) {
+        this->balance = balance;
+    }
+
+    std::string getName() const override {
+        return "Bank";
+    }
+};
+
+class Paypal : public Account {
+public:
+    explicit Paypal(float balance) {
+        this->balance = balance;
+    }
+
+    std::string getName() const override {
+        return "Paypal";
+    }
+};
+
+class Bitcoin : public Account {
+public:
+    explicit Bitcoin(float balance) {
+        this->balance = balance;
+    }
+
+    std::string getName() const override {
+        return "Bitcoin";
+    }
+};
+
+int main() {
+    auto bank = std::make_shared<Bank>(100);
+    auto paypal = std::make_shared<Paypal>(200);
+    auto bitcoin = std::make_shared<Bitcoin>(300);
+
+    bank->setNext(paypal);
+    paypal->setNext(bitcoin);
+
+    bank->pay(259);
+    return 0;
+}
 ```
 
 👮 Command
 -------
 
-Real world example
-> A generic example would be you ordering food at a restaurant. You (i.e. `Client`) ask the waiter (i.e. `Invoker`) to bring some food (i.e. `Command`) and waiter simply forwards the request to Chef (i.e. `Receiver`) who has the knowledge of what and how to cook.
-> Another example would be you (i.e. `Client`) switching on (i.e. `Command`) the television (i.e. `Receiver`) using a remote control (`Invoker`).
+Ví dụ thực tế
+> Một ví dụ quen thuộc là bạn gọi món trong nhà hàng. Bạn (tức `Client`) nhờ người phục vụ (tức `Invoker`) mang thức ăn (tức `Command`), và người phục vụ chỉ việc chuyển tiếp yêu cầu đó cho đầu bếp (tức `Receiver`) — người biết phải nấu gì và nấu như thế nào.
+> Một ví dụ khác là bạn (`Client`) bật (`Command`) chiếc TV (`Receiver`) bằng điều khiển từ xa (`Invoker`).
 
-In plain words
-> Allows you to encapsulate actions in objects. The key idea behind this pattern is to provide the means to decouple client from receiver.
+Nói đơn giản
+> Cho phép bạn đóng gói các hành động bên trong object. Ý tưởng cốt lõi đằng sau pattern này là cung cấp cách để tách client khỏi receiver.
 
-Wikipedia says
-> In object-oriented programming, the command pattern is a behavioral design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, command pattern là một behavioral design pattern trong đó một object được dùng để đóng gói toàn bộ thông tin cần thiết để thực hiện một hành động hoặc kích hoạt một sự kiện vào thời điểm sau này. Thông tin đó bao gồm tên method, object sở hữu method và các giá trị của tham số method.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-First of all we have the receiver that has the implementation of every action that could be performed
-```php
-// Receiver
-class Bulb
-{
-    public function turnOn()
-    {
-        echo "Bulb has been lit";
+Trước hết, chúng ta có receiver, nơi chứa phần cài đặt của mọi hành động có thể được thực hiện
+```cpp
+#include <iostream>
+#include <memory>
+
+class Bulb {
+public:
+    void turnOn() {
+        std::cout << "Bulb has been lit";
     }
 
-    public function turnOff()
-    {
-        echo "Darkness!";
+    void turnOff() {
+        std::cout << "Darkness!";
     }
+};
+
+class Command {
+public:
+    virtual void execute() = 0;
+    virtual void undo() = 0;
+    virtual void redo() = 0;
+    virtual ~Command() = default;
+};
+
+class TurnOn : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOn(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOn();
+    }
+
+    void undo() override {
+        bulb->turnOff();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class TurnOff : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOff(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOff();
+    }
+
+    void undo() override {
+        bulb->turnOn();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class RemoteControl {
+public:
+    void submit(const std::shared_ptr<Command>& command) {
+        command->execute();
+    }
+};
+
+int main() {
+    auto bulb = std::make_shared<Bulb>();
+    auto turnOn = std::make_shared<TurnOn>(bulb);
+    auto turnOff = std::make_shared<TurnOff>(bulb);
+
+    RemoteControl remote;
+    remote.submit(turnOn);
+    std::cout << std::endl;
+    remote.submit(turnOff);
+    return 0;
 }
 ```
-then we have an interface that each of the commands are going to implement and then we have a set of commands
-```php
-interface Command
-{
-    public function execute();
-    public function undo();
-    public function redo();
-}
+sau đó chúng ta có một interface mà mỗi command sẽ cài đặt, rồi tiếp theo là một tập các command
+```cpp
+#include <iostream>
+#include <memory>
 
-// Command
-class TurnOn implements Command
-{
-    protected $bulb;
-
-    public function __construct(Bulb $bulb)
-    {
-        $this->bulb = $bulb;
+class Bulb {
+public:
+    void turnOn() {
+        std::cout << "Bulb has been lit";
     }
 
-    public function execute()
-    {
-        $this->bulb->turnOn();
+    void turnOff() {
+        std::cout << "Darkness!";
+    }
+};
+
+class Command {
+public:
+    virtual void execute() = 0;
+    virtual void undo() = 0;
+    virtual void redo() = 0;
+    virtual ~Command() = default;
+};
+
+class TurnOn : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOn(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOn();
     }
 
-    public function undo()
-    {
-        $this->bulb->turnOff();
+    void undo() override {
+        bulb->turnOff();
     }
 
-    public function redo()
-    {
-        $this->execute();
+    void redo() override {
+        execute();
     }
-}
+};
 
-class TurnOff implements Command
-{
-    protected $bulb;
+class TurnOff : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
 
-    public function __construct(Bulb $bulb)
-    {
-        $this->bulb = $bulb;
-    }
+public:
+    explicit TurnOff(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
 
-    public function execute()
-    {
-        $this->bulb->turnOff();
+    void execute() override {
+        bulb->turnOff();
     }
 
-    public function undo()
-    {
-        $this->bulb->turnOn();
+    void undo() override {
+        bulb->turnOn();
     }
 
-    public function redo()
-    {
-        $this->execute();
+    void redo() override {
+        execute();
     }
+};
+
+class RemoteControl {
+public:
+    void submit(const std::shared_ptr<Command>& command) {
+        command->execute();
+    }
+};
+
+int main() {
+    auto bulb = std::make_shared<Bulb>();
+    auto turnOn = std::make_shared<TurnOn>(bulb);
+    auto turnOff = std::make_shared<TurnOff>(bulb);
+
+    RemoteControl remote;
+    remote.submit(turnOn);
+    std::cout << std::endl;
+    remote.submit(turnOff);
+    return 0;
 }
 ```
-Then we have an `Invoker` with whom the client will interact to process any commands
-```php
-// Invoker
-class RemoteControl
-{
-    public function submit(Command $command)
-    {
-        $command->execute();
+Tiếp theo, chúng ta có `Invoker`, thành phần mà client sẽ tương tác để xử lý các command
+```cpp
+#include <iostream>
+#include <memory>
+
+class Bulb {
+public:
+    void turnOn() {
+        std::cout << "Bulb has been lit";
     }
+
+    void turnOff() {
+        std::cout << "Darkness!";
+    }
+};
+
+class Command {
+public:
+    virtual void execute() = 0;
+    virtual void undo() = 0;
+    virtual void redo() = 0;
+    virtual ~Command() = default;
+};
+
+class TurnOn : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOn(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOn();
+    }
+
+    void undo() override {
+        bulb->turnOff();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class TurnOff : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOff(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOff();
+    }
+
+    void undo() override {
+        bulb->turnOn();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class RemoteControl {
+public:
+    void submit(const std::shared_ptr<Command>& command) {
+        command->execute();
+    }
+};
+
+int main() {
+    auto bulb = std::make_shared<Bulb>();
+    auto turnOn = std::make_shared<TurnOn>(bulb);
+    auto turnOff = std::make_shared<TurnOff>(bulb);
+
+    RemoteControl remote;
+    remote.submit(turnOn);
+    std::cout << std::endl;
+    remote.submit(turnOff);
+    return 0;
 }
 ```
-Finally let's see how we can use it in our client
-```php
-$bulb = new Bulb();
+Cuối cùng, hãy xem cách chúng ta có thể dùng nó trong client
+```cpp
+#include <iostream>
+#include <memory>
 
-$turnOn = new TurnOn($bulb);
-$turnOff = new TurnOff($bulb);
+class Bulb {
+public:
+    void turnOn() {
+        std::cout << "Bulb has been lit";
+    }
 
-$remote = new RemoteControl();
-$remote->submit($turnOn); // Bulb has been lit!
-$remote->submit($turnOff); // Darkness!
+    void turnOff() {
+        std::cout << "Darkness!";
+    }
+};
+
+class Command {
+public:
+    virtual void execute() = 0;
+    virtual void undo() = 0;
+    virtual void redo() = 0;
+    virtual ~Command() = default;
+};
+
+class TurnOn : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOn(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOn();
+    }
+
+    void undo() override {
+        bulb->turnOff();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class TurnOff : public Command {
+protected:
+    std::shared_ptr<Bulb> bulb;
+
+public:
+    explicit TurnOff(std::shared_ptr<Bulb> bulb) : bulb(std::move(bulb)) {}
+
+    void execute() override {
+        bulb->turnOff();
+    }
+
+    void undo() override {
+        bulb->turnOn();
+    }
+
+    void redo() override {
+        execute();
+    }
+};
+
+class RemoteControl {
+public:
+    void submit(const std::shared_ptr<Command>& command) {
+        command->execute();
+    }
+};
+
+int main() {
+    auto bulb = std::make_shared<Bulb>();
+    auto turnOn = std::make_shared<TurnOn>(bulb);
+    auto turnOff = std::make_shared<TurnOff>(bulb);
+
+    RemoteControl remote;
+    remote.submit(turnOn);
+    std::cout << std::endl;
+    remote.submit(turnOff);
+    return 0;
+}
 ```
 
-Command pattern can also be used to implement a transaction based system. Where you keep maintaining the history of commands as soon as you execute them. If the final command is successfully executed, all good otherwise just iterate through the history and keep executing the `undo` on all the executed commands.
+command pattern cũng có thể được dùng để cài đặt một hệ thống dựa trên transaction. Bạn sẽ lưu lại lịch sử các command ngay khi thực thi chúng. Nếu command cuối cùng chạy thành công thì mọi thứ ổn; còn nếu không, chỉ cần duyệt ngược lịch sử và tiếp tục gọi `undo` trên tất cả các command đã thực thi.
 
 ➿ Iterator
 --------
 
-Real world example
-> An old radio set will be a good example of iterator, where user could start at some channel and then use next or previous buttons to go through the respective channels. Or take an example of MP3 player or a TV set where you could press the next and previous buttons to go through the consecutive channels or in other words they all provide an interface to iterate through the respective channels, songs or radio stations.  
+Ví dụ thực tế
+> Một chiếc radio kiểu cũ là ví dụ hay cho iterator, nơi người dùng có thể bắt đầu ở một kênh nào đó rồi dùng nút next hoặc previous để đi qua các kênh tương ứng. Hoặc hãy nghĩ tới máy nghe MP3 hay TV, nơi bạn có thể nhấn nút next và previous để đi qua các kênh liên tiếp; nói cách khác, tất cả chúng đều cung cấp một interface để duyệt qua các kênh, bài hát hoặc đài phát thanh tương ứng.  
 
-In plain words
-> It presents a way to access the elements of an object without exposing the underlying presentation.
+Nói đơn giản
+> Nó cung cấp một cách để truy cập các phần tử của một object mà không để lộ cách biểu diễn bên dưới.
 
-Wikipedia says
-> In object-oriented programming, the iterator pattern is a design pattern in which an iterator is used to traverse a container and access the container's elements. The iterator pattern decouples algorithms from containers; in some cases, algorithms are necessarily container-specific and thus cannot be decoupled.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, iterator pattern là một design pattern trong đó iterator được dùng để duyệt một container và truy cập các phần tử của container đó. iterator pattern tách thuật toán ra khỏi container; tuy vậy, trong một số trường hợp, thuật toán gắn chặt với container nên không thể tách rời.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-In PHP it is quite easy to implement using SPL (Standard PHP Library). Translating our radio stations example from above. First of all we have `RadioStation`
+Trong PHP, việc cài đặt pattern này khá dễ dàng bằng SPL (Standard PHP Library). Chuyển ví dụ về các đài phát thanh ở trên sang code, trước hết chúng ta có `RadioStation`
 
-```php
-class RadioStation
-{
-    protected $frequency;
+```cpp
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <vector>
 
-    public function __construct(float $frequency)
-    {
-        $this->frequency = $frequency;
+class RadioStation {
+protected:
+    double frequency;
+
+public:
+    explicit RadioStation(double frequency) : frequency(frequency) {}
+
+    double getFrequency() const {
+        return frequency;
+    }
+};
+
+class StationList {
+protected:
+    std::vector<std::shared_ptr<RadioStation>> stations;
+    std::size_t counter = 0;
+
+public:
+    void addStation(std::shared_ptr<RadioStation> station) {
+        stations.push_back(std::move(station));
     }
 
-    public function getFrequency(): float
-    {
-        return $this->frequency;
+    void removeStation(const std::shared_ptr<RadioStation>& toRemove) {
+        double toRemoveFrequency = toRemove->getFrequency();
+        stations.erase(
+            std::remove_if(stations.begin(), stations.end(),
+                [toRemoveFrequency](const std::shared_ptr<RadioStation>& station) {
+                    return station->getFrequency() == toRemoveFrequency;
+                }),
+            stations.end());
     }
+
+    std::size_t count() const {
+        return stations.size();
+    }
+
+    std::shared_ptr<RadioStation> current() const {
+        return stations.at(counter);
+    }
+
+    std::size_t key() const {
+        return counter;
+    }
+
+    void next() {
+        ++counter;
+    }
+
+    void rewind() {
+        counter = 0;
+    }
+
+    bool valid() const {
+        return counter < stations.size();
+    }
+
+    auto begin() {
+        return stations.begin();
+    }
+
+    auto end() {
+        return stations.end();
+    }
+};
+
+int main() {
+    StationList stationList;
+
+    stationList.addStation(std::make_shared<RadioStation>(89));
+    stationList.addStation(std::make_shared<RadioStation>(101));
+    stationList.addStation(std::make_shared<RadioStation>(102));
+    stationList.addStation(std::make_shared<RadioStation>(103.2));
+
+    for (const auto& station : stationList) {
+        std::cout << station->getFrequency() << std::endl;
+    }
+
+    stationList.removeStation(std::make_shared<RadioStation>(89));
+    return 0;
 }
 ```
-Then we have our iterator
+Tiếp theo, chúng ta có iterator của mình
 
-```php
-use Countable;
-use Iterator;
+```cpp
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <vector>
 
-class StationList implements Countable, Iterator
-{
-    /** @var RadioStation[] $stations */
-    protected $stations = [];
+class RadioStation {
+protected:
+    double frequency;
 
-    /** @var int $counter */
-    protected $counter;
+public:
+    explicit RadioStation(double frequency) : frequency(frequency) {}
 
-    public function addStation(RadioStation $station)
-    {
-        $this->stations[] = $station;
+    double getFrequency() const {
+        return frequency;
+    }
+};
+
+class StationList {
+protected:
+    std::vector<std::shared_ptr<RadioStation>> stations;
+    std::size_t counter = 0;
+
+public:
+    void addStation(std::shared_ptr<RadioStation> station) {
+        stations.push_back(std::move(station));
     }
 
-    public function removeStation(RadioStation $toRemove)
-    {
-        $toRemoveFrequency = $toRemove->getFrequency();
-        $this->stations = array_filter($this->stations, function (RadioStation $station) use ($toRemoveFrequency) {
-            return $station->getFrequency() !== $toRemoveFrequency;
-        });
+    void removeStation(const std::shared_ptr<RadioStation>& toRemove) {
+        double toRemoveFrequency = toRemove->getFrequency();
+        stations.erase(
+            std::remove_if(stations.begin(), stations.end(),
+                [toRemoveFrequency](const std::shared_ptr<RadioStation>& station) {
+                    return station->getFrequency() == toRemoveFrequency;
+                }),
+            stations.end());
     }
 
-    public function count(): int
-    {
-        return count($this->stations);
+    std::size_t count() const {
+        return stations.size();
     }
 
-    public function current(): RadioStation
-    {
-        return $this->stations[$this->counter];
+    std::shared_ptr<RadioStation> current() const {
+        return stations.at(counter);
     }
 
-    public function key()
-    {
-        return $this->counter;
+    std::size_t key() const {
+        return counter;
     }
 
-    public function next()
-    {
-        $this->counter++;
+    void next() {
+        ++counter;
     }
 
-    public function rewind()
-    {
-        $this->counter = 0;
+    void rewind() {
+        counter = 0;
     }
 
-    public function valid(): bool
-    {
-        return isset($this->stations[$this->counter]);
+    bool valid() const {
+        return counter < stations.size();
     }
+
+    auto begin() {
+        return stations.begin();
+    }
+
+    auto end() {
+        return stations.end();
+    }
+};
+
+int main() {
+    StationList stationList;
+
+    stationList.addStation(std::make_shared<RadioStation>(89));
+    stationList.addStation(std::make_shared<RadioStation>(101));
+    stationList.addStation(std::make_shared<RadioStation>(102));
+    stationList.addStation(std::make_shared<RadioStation>(103.2));
+
+    for (const auto& station : stationList) {
+        std::cout << station->getFrequency() << std::endl;
+    }
+
+    stationList.removeStation(std::make_shared<RadioStation>(89));
+    return 0;
 }
 ```
-And then it can be used as
-```php
-$stationList = new StationList();
+Và sau đó có thể dùng như sau
+```cpp
+#include <algorithm>
+#include <iostream>
+#include <memory>
+#include <vector>
 
-$stationList->addStation(new RadioStation(89));
-$stationList->addStation(new RadioStation(101));
-$stationList->addStation(new RadioStation(102));
-$stationList->addStation(new RadioStation(103.2));
+class RadioStation {
+protected:
+    double frequency;
 
-foreach($stationList as $station) {
-    echo $station->getFrequency() . PHP_EOL;
+public:
+    explicit RadioStation(double frequency) : frequency(frequency) {}
+
+    double getFrequency() const {
+        return frequency;
+    }
+};
+
+class StationList {
+protected:
+    std::vector<std::shared_ptr<RadioStation>> stations;
+    std::size_t counter = 0;
+
+public:
+    void addStation(std::shared_ptr<RadioStation> station) {
+        stations.push_back(std::move(station));
+    }
+
+    void removeStation(const std::shared_ptr<RadioStation>& toRemove) {
+        double toRemoveFrequency = toRemove->getFrequency();
+        stations.erase(
+            std::remove_if(stations.begin(), stations.end(),
+                [toRemoveFrequency](const std::shared_ptr<RadioStation>& station) {
+                    return station->getFrequency() == toRemoveFrequency;
+                }),
+            stations.end());
+    }
+
+    std::size_t count() const {
+        return stations.size();
+    }
+
+    std::shared_ptr<RadioStation> current() const {
+        return stations.at(counter);
+    }
+
+    std::size_t key() const {
+        return counter;
+    }
+
+    void next() {
+        ++counter;
+    }
+
+    void rewind() {
+        counter = 0;
+    }
+
+    bool valid() const {
+        return counter < stations.size();
+    }
+
+    auto begin() {
+        return stations.begin();
+    }
+
+    auto end() {
+        return stations.end();
+    }
+};
+
+int main() {
+    StationList stationList;
+
+    stationList.addStation(std::make_shared<RadioStation>(89));
+    stationList.addStation(std::make_shared<RadioStation>(101));
+    stationList.addStation(std::make_shared<RadioStation>(102));
+    stationList.addStation(std::make_shared<RadioStation>(103.2));
+
+    for (const auto& station : stationList) {
+        std::cout << station->getFrequency() << std::endl;
+    }
+
+    stationList.removeStation(std::make_shared<RadioStation>(89));
+    return 0;
 }
-
-$stationList->removeStation(new RadioStation(89)); // Will remove station 89
 ```
 
 👽 Mediator
 ========
 
-Real world example
-> A general example would be when you talk to someone on your mobile phone, there is a network provider sitting between you and them and your conversation goes through it instead of being directly sent. In this case network provider is mediator.
+Ví dụ thực tế
+> Một ví dụ quen thuộc là khi bạn nói chuyện với ai đó qua điện thoại di động, sẽ có nhà mạng đứng ở giữa bạn và họ, và cuộc trò chuyện đi qua nhà mạng thay vì được gửi trực tiếp. Trong trường hợp này, nhà mạng chính là mediator.
 
-In plain words
-> Mediator pattern adds a third party object (called mediator) to control the interaction between two objects (called colleagues). It helps reduce the coupling between the classes communicating with each other. Because now they don't need to have the knowledge of each other's implementation.
+Nói đơn giản
+> mediator pattern thêm một object bên thứ ba (gọi là mediator) để kiểm soát sự tương tác giữa hai object (gọi là colleagues). Nó giúp giảm coupling giữa các class đang giao tiếp với nhau, vì giờ đây chúng không cần biết chi tiết cài đặt của nhau.
 
-Wikipedia says
-> In software engineering, the mediator pattern defines an object that encapsulates how a set of objects interact. This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, mediator pattern định nghĩa một object đóng gói cách một tập hợp object tương tác với nhau. Pattern này được xem là một behavioral pattern vì cách nó có thể thay đổi hành vi chạy của chương trình.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Here is the simplest example of a chat room (i.e. mediator) with users (i.e. colleagues) sending messages to each other.
+Đây là ví dụ đơn giản nhất về một phòng chat (tức mediator) với các người dùng (tức colleagues) gửi tin nhắn cho nhau.
 
-First of all, we have the mediator i.e. the chat room
+Trước hết, chúng ta có mediator, tức là phòng chat
 
-```php
-interface ChatRoomMediator 
-{
-    public function showMessage(User $user, string $message);
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-// Mediator
-class ChatRoom implements ChatRoomMediator
-{
-    public function showMessage(User $user, string $message)
-    {
-        $time = date('M d, y H:i');
-        $sender = $user->getName();
+class User;
 
-        echo $time . '[' . $sender . ']:' . $message;
-    }
-}
-```
+class ChatRoomMediator {
+public:
+    virtual void showMessage(const User& user, const std::string& message) = 0;
+    virtual ~ChatRoomMediator() = default;
+};
 
-Then we have our users i.e. colleagues
-```php
 class User {
-    protected $name;
-    protected $chatMediator;
+protected:
+    std::string name;
+    std::shared_ptr<ChatRoomMediator> chatMediator;
 
-    public function __construct(string $name, ChatRoomMediator $chatMediator) {
-        $this->name = $name;
-        $this->chatMediator = $chatMediator;
+public:
+    User(std::string name, std::shared_ptr<ChatRoomMediator> chatMediator)
+        : name(std::move(name)), chatMediator(std::move(chatMediator)) {}
+
+    std::string getName() const {
+        return name;
     }
 
-    public function getName() {
-        return $this->name;
+    void send(const std::string& message) const {
+        chatMediator->showMessage(*this, message);
     }
+};
 
-    public function send($message) {
-        $this->chatMediator->showMessage($this, $message);
+class ChatRoom : public ChatRoomMediator {
+public:
+    void showMessage(const User& user, const std::string& message) override {
+        std::string time = "Feb 14, 10:58 ";
+        std::string sender = user.getName();
+        std::cout << time << "[" << sender << "]:" << message;
     }
+};
+
+int main() {
+    auto mediator = std::make_shared<ChatRoom>();
+
+    User john("John Doe", mediator);
+    User jane("Jane Doe", mediator);
+
+    john.send("Hi there!");
+    std::cout << std::endl;
+    jane.send("Hey!");
+    return 0;
 }
 ```
-And the usage
-```php
-$mediator = new ChatRoom();
 
-$john = new User('John Doe', $mediator);
-$jane = new User('Jane Doe', $mediator);
+Tiếp theo, chúng ta có các user, tức là colleagues
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-$john->send('Hi there!');
-$jane->send('Hey!');
+class User;
 
-// Output will be
-// Feb 14, 10:58 [John]: Hi there!
-// Feb 14, 10:58 [Jane]: Hey!
+class ChatRoomMediator {
+public:
+    virtual void showMessage(const User& user, const std::string& message) = 0;
+    virtual ~ChatRoomMediator() = default;
+};
+
+class User {
+protected:
+    std::string name;
+    std::shared_ptr<ChatRoomMediator> chatMediator;
+
+public:
+    User(std::string name, std::shared_ptr<ChatRoomMediator> chatMediator)
+        : name(std::move(name)), chatMediator(std::move(chatMediator)) {}
+
+    std::string getName() const {
+        return name;
+    }
+
+    void send(const std::string& message) const {
+        chatMediator->showMessage(*this, message);
+    }
+};
+
+class ChatRoom : public ChatRoomMediator {
+public:
+    void showMessage(const User& user, const std::string& message) override {
+        std::string time = "Feb 14, 10:58 ";
+        std::string sender = user.getName();
+        std::cout << time << "[" << sender << "]:" << message;
+    }
+};
+
+int main() {
+    auto mediator = std::make_shared<ChatRoom>();
+
+    User john("John Doe", mediator);
+    User jane("Jane Doe", mediator);
+
+    john.send("Hi there!");
+    std::cout << std::endl;
+    jane.send("Hey!");
+    return 0;
+}
+```
+Và cách sử dụng
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+
+class User;
+
+class ChatRoomMediator {
+public:
+    virtual void showMessage(const User& user, const std::string& message) = 0;
+    virtual ~ChatRoomMediator() = default;
+};
+
+class User {
+protected:
+    std::string name;
+    std::shared_ptr<ChatRoomMediator> chatMediator;
+
+public:
+    User(std::string name, std::shared_ptr<ChatRoomMediator> chatMediator)
+        : name(std::move(name)), chatMediator(std::move(chatMediator)) {}
+
+    std::string getName() const {
+        return name;
+    }
+
+    void send(const std::string& message) const {
+        chatMediator->showMessage(*this, message);
+    }
+};
+
+class ChatRoom : public ChatRoomMediator {
+public:
+    void showMessage(const User& user, const std::string& message) override {
+        std::string time = "Feb 14, 10:58 ";
+        std::string sender = user.getName();
+        std::cout << time << "[" << sender << "]:" << message;
+    }
+};
+
+int main() {
+    auto mediator = std::make_shared<ChatRoom>();
+
+    User john("John Doe", mediator);
+    User jane("Jane Doe", mediator);
+
+    john.send("Hi there!");
+    std::cout << std::endl;
+    jane.send("Hey!");
+    return 0;
+}
 ```
 
 💾 Memento
 -------
-Real world example
-> Take the example of calculator (i.e. originator), where whenever you perform some calculation the last calculation is saved in memory (i.e. memento) so that you can get back to it and maybe get it restored using some action buttons (i.e. caretaker).
+Ví dụ thực tế
+> Hãy lấy ví dụ máy tính bỏ túi (tức originator), nơi mỗi khi bạn thực hiện một phép tính thì phép tính gần nhất được lưu vào bộ nhớ (tức memento) để bạn có thể quay lại nó và khôi phục bằng một số nút thao tác (tức caretaker).
 
-In plain words
-> Memento pattern is about capturing and storing the current state of an object in a manner that it can be restored later on in a smooth manner.
+Nói đơn giản
+> memento pattern là về việc chụp lại và lưu trữ trạng thái hiện tại của một object theo cách mà sau này có thể khôi phục lại một cách trơn tru.
 
-Wikipedia says
-> The memento pattern is a software design pattern that provides the ability to restore an object to its previous state (undo via rollback).
+Wikipedia nói
+> memento pattern là một software design pattern cung cấp khả năng khôi phục một object về trạng thái trước đó của nó (undo thông qua rollback).
 
-Usually useful when you need to provide some sort of undo functionality.
+Thường hữu ích khi bạn cần cung cấp một dạng chức năng undo nào đó.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Lets take an example of text editor which keeps saving the state from time to time and that you can restore if you want.
+Hãy lấy ví dụ một trình soạn thảo văn bản liên tục lưu trạng thái theo thời gian và bạn có thể khôi phục nếu muốn.
 
-First of all we have our memento object that will be able to hold the editor state
+Trước hết, chúng ta có memento object có khả năng giữ trạng thái của trình soạn thảo
 
-```php
-class EditorMemento
-{
-    protected $content;
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-    public function __construct(string $content)
-    {
-        $this->content = $content;
+class EditorMemento {
+protected:
+    std::string content;
+
+public:
+    explicit EditorMemento(std::string content) : content(std::move(content)) {}
+
+    std::string getContent() const {
+        return content;
+    }
+};
+
+class Editor {
+protected:
+    std::string content;
+
+public:
+    void type(const std::string& words) {
+        content = content + " " + words;
     }
 
-    public function getContent()
-    {
-        return $this->content;
+    std::string getContent() const {
+        return content;
     }
+
+    std::shared_ptr<EditorMemento> save() const {
+        return std::make_shared<EditorMemento>(content);
+    }
+
+    void restore(const std::shared_ptr<EditorMemento>& memento) {
+        content = memento->getContent();
+    }
+};
+
+int main() {
+    Editor editor;
+    editor.type("This is the first sentence.");
+    editor.type("This is second.");
+
+    auto saved = editor.save();
+    editor.type("And this is third.");
+
+    std::cout << editor.getContent() << std::endl;
+    editor.restore(saved);
+    std::cout << editor.getContent();
+    return 0;
 }
 ```
 
-Then we have our editor i.e. originator that is going to use memento object
+Tiếp theo, chúng ta có editor, tức originator, thành phần sẽ dùng memento object
 
-```php
-class Editor
-{
-    protected $content = '';
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-    public function type(string $words)
-    {
-        $this->content = $this->content . ' ' . $words;
+class EditorMemento {
+protected:
+    std::string content;
+
+public:
+    explicit EditorMemento(std::string content) : content(std::move(content)) {}
+
+    std::string getContent() const {
+        return content;
+    }
+};
+
+class Editor {
+protected:
+    std::string content;
+
+public:
+    void type(const std::string& words) {
+        content = content + " " + words;
     }
 
-    public function getContent()
-    {
-        return $this->content;
+    std::string getContent() const {
+        return content;
     }
 
-    public function save()
-    {
-        return new EditorMemento($this->content);
+    std::shared_ptr<EditorMemento> save() const {
+        return std::make_shared<EditorMemento>(content);
     }
 
-    public function restore(EditorMemento $memento)
-    {
-        $this->content = $memento->getContent();
+    void restore(const std::shared_ptr<EditorMemento>& memento) {
+        content = memento->getContent();
     }
+};
+
+int main() {
+    Editor editor;
+    editor.type("This is the first sentence.");
+    editor.type("This is second.");
+
+    auto saved = editor.save();
+    editor.type("And this is third.");
+
+    std::cout << editor.getContent() << std::endl;
+    editor.restore(saved);
+    std::cout << editor.getContent();
+    return 0;
 }
 ```
 
-And then it can be used as
+Và sau đó có thể dùng như sau
 
-```php
-$editor = new Editor();
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
 
-// Type some stuff
-$editor->type('This is the first sentence.');
-$editor->type('This is second.');
+class EditorMemento {
+protected:
+    std::string content;
 
-// Save the state to restore to : This is the first sentence. This is second.
-$saved = $editor->save();
+public:
+    explicit EditorMemento(std::string content) : content(std::move(content)) {}
 
-// Type some more
-$editor->type('And this is third.');
+    std::string getContent() const {
+        return content;
+    }
+};
 
-// Output: Content before Saving
-echo $editor->getContent(); // This is the first sentence. This is second. And this is third.
+class Editor {
+protected:
+    std::string content;
 
-// Restoring to last saved state
-$editor->restore($saved);
+public:
+    void type(const std::string& words) {
+        content = content + " " + words;
+    }
 
-$editor->getContent(); // This is the first sentence. This is second.
+    std::string getContent() const {
+        return content;
+    }
+
+    std::shared_ptr<EditorMemento> save() const {
+        return std::make_shared<EditorMemento>(content);
+    }
+
+    void restore(const std::shared_ptr<EditorMemento>& memento) {
+        content = memento->getContent();
+    }
+};
+
+int main() {
+    Editor editor;
+    editor.type("This is the first sentence.");
+    editor.type("This is second.");
+
+    auto saved = editor.save();
+    editor.type("And this is third.");
+
+    std::cout << editor.getContent() << std::endl;
+    editor.restore(saved);
+    std::cout << editor.getContent();
+    return 0;
+}
 ```
 
 😎 Observer
 --------
-Real world example
-> A good example would be the job seekers where they subscribe to some job posting site and they are notified whenever there is a matching job opportunity.   
+Ví dụ thực tế
+> Một ví dụ hay là những người tìm việc đăng ký theo dõi một trang tuyển dụng và được thông báo bất cứ khi nào có cơ hội việc làm phù hợp.   
 
-In plain words
-> Defines a dependency between objects so that whenever an object changes its state, all its dependents are notified.
+Nói đơn giản
+> Định nghĩa một sự phụ thuộc giữa các object để khi một object thay đổi trạng thái, tất cả đối tượng phụ thuộc vào nó đều được thông báo.
 
-Wikipedia says
-> The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+Wikipedia nói
+> observer pattern là một software design pattern trong đó một object, gọi là subject, duy trì danh sách các đối tượng phụ thuộc vào nó, gọi là observers, và tự động thông báo cho họ về mọi thay đổi trạng thái, thường bằng cách gọi một trong các method của họ.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our example from above. First of all we have job seekers that need to be notified for a job posting
-```php
-class JobPost
-{
-    protected $title;
+Chuyển ví dụ ở trên sang code. Trước hết, chúng ta có những người tìm việc cần được thông báo khi có tin tuyển dụng
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
 
-    public function __construct(string $title)
-    {
-        $this->title = $title;
+class JobPost {
+protected:
+    std::string title;
+
+public:
+    explicit JobPost(std::string title) : title(std::move(title)) {}
+
+    std::string getTitle() const {
+        return title;
     }
+};
 
-    public function getTitle()
-    {
-        return $this->title;
+class Observer {
+public:
+    virtual void onJobPosted(const JobPost& job) = 0;
+    virtual ~Observer() = default;
+};
+
+class JobSeeker : public Observer {
+protected:
+    std::string name;
+
+public:
+    explicit JobSeeker(std::string name) : name(std::move(name)) {}
+
+    void onJobPosted(const JobPost& job) override {
+        std::cout << "Hi " << name << "! New job posted: " << job.getTitle();
     }
-}
+};
 
-class JobSeeker implements Observer
-{
-    protected $name;
+class Observable {
+public:
+    virtual void attach(std::shared_ptr<Observer> observer) = 0;
+    virtual ~Observable() = default;
+};
 
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+class EmploymentAgency : public Observable {
+protected:
+    std::vector<std::shared_ptr<Observer>> observers;
 
-    public function onJobPosted(JobPost $job)
-    {
-        // Do something with the job posting
-        echo 'Hi ' . $this->name . '! New job posted: '. $job->getTitle();
-    }
-}
-```
-Then we have our job postings to which the job seekers will subscribe
-```php
-class EmploymentAgency implements Observable
-{
-    protected $observers = [];
-
-    protected function notify(JobPost $jobPosting)
-    {
-        foreach ($this->observers as $observer) {
-            $observer->onJobPosted($jobPosting);
+    void notify(const JobPost& jobPosting) {
+        for (const auto& observer : observers) {
+            observer->onJobPosted(jobPosting);
+            std::cout << std::endl;
         }
     }
 
-    public function attach(Observer $observer)
-    {
-        $this->observers[] = $observer;
+public:
+    void attach(std::shared_ptr<Observer> observer) override {
+        observers.push_back(std::move(observer));
     }
 
-    public function addJob(JobPost $jobPosting)
-    {
-        $this->notify($jobPosting);
+    void addJob(const JobPost& jobPosting) {
+        notify(jobPosting);
     }
+};
+
+int main() {
+    auto johnDoe = std::make_shared<JobSeeker>("John Doe");
+    auto janeDoe = std::make_shared<JobSeeker>("Jane Doe");
+
+    EmploymentAgency jobPostings;
+    jobPostings.attach(johnDoe);
+    jobPostings.attach(janeDoe);
+    jobPostings.addJob(JobPost("Software Engineer"));
+    return 0;
 }
 ```
-Then it can be used as
-```php
-// Create subscribers
-$johnDoe = new JobSeeker('John Doe');
-$janeDoe = new JobSeeker('Jane Doe');
+Tiếp theo, chúng ta có nơi đăng tin tuyển dụng mà người tìm việc sẽ đăng ký theo dõi
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
 
-// Create publisher and attach subscribers
-$jobPostings = new EmploymentAgency();
-$jobPostings->attach($johnDoe);
-$jobPostings->attach($janeDoe);
+class JobPost {
+protected:
+    std::string title;
 
-// Add a new job and see if subscribers get notified
-$jobPostings->addJob(new JobPost('Software Engineer'));
+public:
+    explicit JobPost(std::string title) : title(std::move(title)) {}
 
-// Output
-// Hi John Doe! New job posted: Software Engineer
-// Hi Jane Doe! New job posted: Software Engineer
+    std::string getTitle() const {
+        return title;
+    }
+};
+
+class Observer {
+public:
+    virtual void onJobPosted(const JobPost& job) = 0;
+    virtual ~Observer() = default;
+};
+
+class JobSeeker : public Observer {
+protected:
+    std::string name;
+
+public:
+    explicit JobSeeker(std::string name) : name(std::move(name)) {}
+
+    void onJobPosted(const JobPost& job) override {
+        std::cout << "Hi " << name << "! New job posted: " << job.getTitle();
+    }
+};
+
+class Observable {
+public:
+    virtual void attach(std::shared_ptr<Observer> observer) = 0;
+    virtual ~Observable() = default;
+};
+
+class EmploymentAgency : public Observable {
+protected:
+    std::vector<std::shared_ptr<Observer>> observers;
+
+    void notify(const JobPost& jobPosting) {
+        for (const auto& observer : observers) {
+            observer->onJobPosted(jobPosting);
+            std::cout << std::endl;
+        }
+    }
+
+public:
+    void attach(std::shared_ptr<Observer> observer) override {
+        observers.push_back(std::move(observer));
+    }
+
+    void addJob(const JobPost& jobPosting) {
+        notify(jobPosting);
+    }
+};
+
+int main() {
+    auto johnDoe = std::make_shared<JobSeeker>("John Doe");
+    auto janeDoe = std::make_shared<JobSeeker>("Jane Doe");
+
+    EmploymentAgency jobPostings;
+    jobPostings.attach(johnDoe);
+    jobPostings.attach(janeDoe);
+    jobPostings.addJob(JobPost("Software Engineer"));
+    return 0;
+}
+```
+Sau đó có thể dùng như sau
+```cpp
+#include <iostream>
+#include <memory>
+#include <string>
+#include <vector>
+
+class JobPost {
+protected:
+    std::string title;
+
+public:
+    explicit JobPost(std::string title) : title(std::move(title)) {}
+
+    std::string getTitle() const {
+        return title;
+    }
+};
+
+class Observer {
+public:
+    virtual void onJobPosted(const JobPost& job) = 0;
+    virtual ~Observer() = default;
+};
+
+class JobSeeker : public Observer {
+protected:
+    std::string name;
+
+public:
+    explicit JobSeeker(std::string name) : name(std::move(name)) {}
+
+    void onJobPosted(const JobPost& job) override {
+        std::cout << "Hi " << name << "! New job posted: " << job.getTitle();
+    }
+};
+
+class Observable {
+public:
+    virtual void attach(std::shared_ptr<Observer> observer) = 0;
+    virtual ~Observable() = default;
+};
+
+class EmploymentAgency : public Observable {
+protected:
+    std::vector<std::shared_ptr<Observer>> observers;
+
+    void notify(const JobPost& jobPosting) {
+        for (const auto& observer : observers) {
+            observer->onJobPosted(jobPosting);
+            std::cout << std::endl;
+        }
+    }
+
+public:
+    void attach(std::shared_ptr<Observer> observer) override {
+        observers.push_back(std::move(observer));
+    }
+
+    void addJob(const JobPost& jobPosting) {
+        notify(jobPosting);
+    }
+};
+
+int main() {
+    auto johnDoe = std::make_shared<JobSeeker>("John Doe");
+    auto janeDoe = std::make_shared<JobSeeker>("Jane Doe");
+
+    EmploymentAgency jobPostings;
+    jobPostings.attach(johnDoe);
+    jobPostings.attach(janeDoe);
+    jobPostings.addJob(JobPost("Software Engineer"));
+    return 0;
+}
 ```
 
 🏃 Visitor
 -------
-Real world example
-> Consider someone visiting Dubai. They just need a way (i.e. visa) to enter Dubai. After arrival, they can come and visit any place in Dubai on their own without having to ask for permission or to do some leg work in order to visit any place here; just let them know of a place and they can visit it. Visitor pattern lets you do just that, it helps you add places to visit so that they can visit as much as they can without having to do any legwork.
+Ví dụ thực tế
+> Hãy tưởng tượng một người tới thăm Dubai. Họ chỉ cần một cách (tức visa) để vào Dubai. Sau khi đến nơi, họ có thể tự mình đi thăm bất kỳ đâu ở Dubai mà không cần xin phép hay làm thêm thủ tục gì để ghé từng địa điểm; chỉ cần cho họ biết địa điểm là họ có thể đến. visitor pattern cũng cho phép bạn làm điều tương tự: nó giúp bạn thêm các nơi cần ghé thăm để người đó có thể đi được bao nhiêu tùy thích mà không cần thêm công sức chuẩn bị.
 
-In plain words
-> Visitor pattern lets you add further operations to objects without having to modify them.
+Nói đơn giản
+> visitor pattern cho phép bạn thêm các thao tác mới cho object mà không cần sửa đổi chính chúng.
 
-Wikipedia says
-> In object-oriented programming and software engineering, the visitor design pattern is a way of separating an algorithm from an object structure on which it operates. A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures. It is one way to follow the open/closed principle.
+Wikipedia nói
+> Trong lập trình hướng đối tượng và kỹ nghệ phần mềm, visitor design pattern là một cách tách thuật toán khỏi cấu trúc object mà nó vận hành trên đó. Kết quả thực tế của sự tách biệt này là khả năng thêm các thao tác mới vào các cấu trúc object hiện có mà không cần sửa đổi chính các cấu trúc đó. Đây là một cách để tuân theo nguyên tắc open/closed.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Let's take an example of a zoo simulation where we have several different kinds of animals and we have to make them Sound. Let's translate this using visitor pattern
+Hãy lấy ví dụ một mô phỏng sở thú, nơi chúng ta có nhiều loại động vật khác nhau và cần khiến chúng phát ra âm thanh. Hãy chuyển điều này sang code bằng visitor pattern
 
-```php
-// Visitee
-interface Animal
-{
-    public function accept(AnimalOperation $operation);
-}
+```cpp
+#include <iostream>
+#include <memory>
 
-// Visitor
-interface AnimalOperation
-{
-    public function visitMonkey(Monkey $monkey);
-    public function visitLion(Lion $lion);
-    public function visitDolphin(Dolphin $dolphin);
-}
-```
-Then we have our implementations for the animals
-```php
-class Monkey implements Animal
-{
-    public function shout()
-    {
-        echo 'Ooh oo aa aa!';
+class Monkey;
+class Lion;
+class Dolphin;
+
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
+
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
     }
 
-    public function accept(AnimalOperation $operation)
-    {
-        $operation->visitMonkey($this);
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
     }
-}
+};
 
-class Lion implements Animal
-{
-    public function roar()
-    {
-        echo 'Roaaar!';
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
     }
 
-    public function accept(AnimalOperation $operation)
-    {
-        $operation->visitLion($this);
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
     }
-}
+};
 
-class Dolphin implements Animal
-{
-    public function speak()
-    {
-        echo 'Tuut tuttu tuutt!';
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
     }
 
-    public function accept(AnimalOperation $operation)
-    {
-        $operation->visitDolphin($this);
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
     }
-}
-```
-Let's implement our visitor
-```php
-class Speak implements AnimalOperation
-{
-    public function visitMonkey(Monkey $monkey)
-    {
-        $monkey->shout();
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
     }
 
-    public function visitLion(Lion $lion)
-    {
-        $lion->roar();
+    void visitLion(Lion& lion) override {
+        lion.roar();
     }
 
-    public function visitDolphin(Dolphin $dolphin)
-    {
-        $dolphin->speak();
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
     }
-}
-```
+};
 
-And then it can be used as
-```php
-$monkey = new Monkey();
-$lion = new Lion();
-$dolphin = new Dolphin();
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
 
-$speak = new Speak();
-
-$monkey->accept($speak);    // Ooh oo aa aa!    
-$lion->accept($speak);      // Roaaar!
-$dolphin->accept($speak);   // Tuut tutt tuutt!
-```
-We could have done this simply by having an inheritance hierarchy for the animals but then we would have to modify the animals whenever we would have to add new actions to animals. But now we will not have to change them. For example, let's say we are asked to add the jump behavior to the animals, we can simply add that by creating a new visitor i.e.
-
-```php
-class Jump implements AnimalOperation
-{
-    public function visitMonkey(Monkey $monkey)
-    {
-        echo 'Jumped 20 feet high! on to the tree!';
-    }
-
-    public function visitLion(Lion $lion)
-    {
-        echo 'Jumped 7 feet! Back on the ground!';
-    }
-
-    public function visitDolphin(Dolphin $dolphin)
-    {
-        echo 'Walked on water a little and disappeared';
-    }
+    monkey.accept(speak);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    return 0;
 }
 ```
-And for the usage
-```php
-$jump = new Jump();
+Tiếp theo, chúng ta có các phần cài đặt cho những con vật
+```cpp
+#include <iostream>
+#include <memory>
 
-$monkey->accept($speak);   // Ooh oo aa aa!
-$monkey->accept($jump);    // Jumped 20 feet high! on to the tree!
+class Monkey;
+class Lion;
+class Dolphin;
 
-$lion->accept($speak);     // Roaaar!
-$lion->accept($jump);      // Jumped 7 feet! Back on the ground!
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
 
-$dolphin->accept($speak);  // Tuut tutt tuutt!
-$dolphin->accept($jump);   // Walked on water a little and disappeared
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
+    }
+};
+
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
+    }
+};
+
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
+    }
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
+    }
+
+    void visitLion(Lion& lion) override {
+        lion.roar();
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
+    }
+};
+
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
+
+    monkey.accept(speak);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    return 0;
+}
+```
+Hãy cài đặt visitor của chúng ta
+```cpp
+#include <iostream>
+#include <memory>
+
+class Monkey;
+class Lion;
+class Dolphin;
+
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
+
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
+    }
+};
+
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
+    }
+};
+
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
+    }
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
+    }
+
+    void visitLion(Lion& lion) override {
+        lion.roar();
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
+    }
+};
+
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
+
+    monkey.accept(speak);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    return 0;
+}
+```
+
+Và sau đó có thể dùng như sau
+```cpp
+#include <iostream>
+#include <memory>
+
+class Monkey;
+class Lion;
+class Dolphin;
+
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
+
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
+    }
+};
+
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
+    }
+};
+
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
+    }
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
+    }
+
+    void visitLion(Lion& lion) override {
+        lion.roar();
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
+    }
+};
+
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
+
+    monkey.accept(speak);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    return 0;
+}
+```
+Chúng ta hoàn toàn có thể làm điều này chỉ bằng một hệ phân cấp kế thừa cho các con vật, nhưng khi cần thêm hành động mới cho động vật thì lại phải sửa chính các class động vật. Còn bây giờ, chúng ta sẽ không phải thay đổi chúng. Ví dụ, giả sử cần thêm hành vi nhảy cho động vật, ta chỉ cần tạo một visitor mới như sau.
+
+```cpp
+#include <iostream>
+
+class Monkey;
+class Lion;
+class Dolphin;
+
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
+
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
+    }
+};
+
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
+    }
+};
+
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
+    }
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
+    }
+
+    void visitLion(Lion& lion) override {
+        lion.roar();
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
+    }
+};
+
+class Jump : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        (void)monkey;
+        std::cout << "Jumped 20 feet high! on to the tree!";
+    }
+
+    void visitLion(Lion& lion) override {
+        (void)lion;
+        std::cout << "Jumped 7 feet! Back on the ground!";
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        (void)dolphin;
+        std::cout << "Walked on water a little and disappeared";
+    }
+};
+
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
+    Jump jump;
+
+    monkey.accept(speak);
+    std::cout << std::endl;
+    monkey.accept(jump);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    lion.accept(jump);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(jump);
+    return 0;
+}
+```
+Và cách sử dụng
+```cpp
+#include <iostream>
+
+class Monkey;
+class Lion;
+class Dolphin;
+
+class AnimalOperation {
+public:
+    virtual void visitMonkey(Monkey& monkey) = 0;
+    virtual void visitLion(Lion& lion) = 0;
+    virtual void visitDolphin(Dolphin& dolphin) = 0;
+    virtual ~AnimalOperation() = default;
+};
+
+class Animal {
+public:
+    virtual void accept(AnimalOperation& operation) = 0;
+    virtual ~Animal() = default;
+};
+
+class Monkey : public Animal {
+public:
+    void shout() {
+        std::cout << "Ooh oo aa aa!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitMonkey(*this);
+    }
+};
+
+class Lion : public Animal {
+public:
+    void roar() {
+        std::cout << "Roaaar!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitLion(*this);
+    }
+};
+
+class Dolphin : public Animal {
+public:
+    void speak() {
+        std::cout << "Tuut tuttu tuutt!";
+    }
+
+    void accept(AnimalOperation& operation) override {
+        operation.visitDolphin(*this);
+    }
+};
+
+class Speak : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        monkey.shout();
+    }
+
+    void visitLion(Lion& lion) override {
+        lion.roar();
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        dolphin.speak();
+    }
+};
+
+class Jump : public AnimalOperation {
+public:
+    void visitMonkey(Monkey& monkey) override {
+        (void)monkey;
+        std::cout << "Jumped 20 feet high! on to the tree!";
+    }
+
+    void visitLion(Lion& lion) override {
+        (void)lion;
+        std::cout << "Jumped 7 feet! Back on the ground!";
+    }
+
+    void visitDolphin(Dolphin& dolphin) override {
+        (void)dolphin;
+        std::cout << "Walked on water a little and disappeared";
+    }
+};
+
+int main() {
+    Monkey monkey;
+    Lion lion;
+    Dolphin dolphin;
+    Speak speak;
+    Jump jump;
+
+    monkey.accept(speak);
+    std::cout << std::endl;
+    monkey.accept(jump);
+    std::cout << std::endl;
+    lion.accept(speak);
+    std::cout << std::endl;
+    lion.accept(jump);
+    std::cout << std::endl;
+    dolphin.accept(speak);
+    std::cout << std::endl;
+    dolphin.accept(jump);
+    return 0;
+}
 ```
 
 💡 Strategy
 --------
 
-Real world example
-> Consider the example of sorting, we implemented bubble sort but the data started to grow and bubble sort started getting very slow. In order to tackle this we implemented Quick sort. But now although the quick sort algorithm was doing better for large datasets, it was very slow for smaller datasets. In order to handle this we implemented a strategy where for small datasets, bubble sort will be used and for larger, quick sort.
+Ví dụ thực tế
+> Hãy xét ví dụ về sắp xếp: ban đầu chúng ta cài bubble sort nhưng dữ liệu ngày càng lớn và bubble sort trở nên rất chậm. Để xử lý việc đó, chúng ta cài Quick sort. Nhưng rồi, dù quick sort chạy tốt hơn với tập dữ liệu lớn, nó lại rất chậm với tập dữ liệu nhỏ. Vì vậy, chúng ta cài một strategy: với tập dữ liệu nhỏ thì dùng bubble sort, còn với tập dữ liệu lớn thì dùng quick sort.
 
-In plain words
-> Strategy pattern allows you to switch the algorithm or strategy based upon the situation.
+Nói đơn giản
+> strategy pattern cho phép bạn chuyển đổi thuật toán hoặc strategy tùy theo tình huống.
 
-Wikipedia says
-> In computer programming, the strategy pattern (also known as the policy pattern) is a behavioural software design pattern that enables an algorithm's behavior to be selected at runtime.
+Wikipedia nói
+> Trong lập trình máy tính, strategy pattern (còn được gọi là policy pattern) là một behavioural software design pattern cho phép lựa chọn hành vi của thuật toán tại runtime.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our example from above. First of all we have our strategy interface and different strategy implementations
+Chuyển ví dụ ở trên sang code. Trước hết, chúng ta có strategy interface và các phần cài đặt strategy khác nhau
 
-```php
-interface SortStrategy
-{
-    public function sort(array $dataset): array;
-}
+```cpp
+#include <iostream>
+#include <memory>
+#include <vector>
 
-class BubbleSortStrategy implements SortStrategy
-{
-    public function sort(array $dataset): array
-    {
-        echo "Sorting using bubble sort";
+class SortStrategy {
+public:
+    virtual std::vector<int> sort(const std::vector<int>& dataset) = 0;
+    virtual ~SortStrategy() = default;
+};
 
-        // Do sorting
-        return $dataset;
+class BubbleSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using bubble sort";
+        return dataset;
     }
-}
+};
 
-class QuickSortStrategy implements SortStrategy
-{
-    public function sort(array $dataset): array
-    {
-        echo "Sorting using quick sort";
-
-        // Do sorting
-        return $dataset;
+class QuickSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using quick sort";
+        return dataset;
     }
-}
-```
+};
 
-And then we have our client that is going to use any strategy
-```php
-class Sorter
-{
-    protected $sorterSmall;
-    protected $sorterBig;
+class Sorter {
+protected:
+    std::shared_ptr<SortStrategy> sorterSmall;
+    std::shared_ptr<SortStrategy> sorterBig;
 
-    public function __construct(SortStrategy $sorterSmall, SortStrategy $sorterBig)
-    {
-        $this->sorterSmall = $sorterSmall;
-        $this->sorterBig = $sorterBig;
-    }
+public:
+    Sorter(std::shared_ptr<SortStrategy> sorterSmall, std::shared_ptr<SortStrategy> sorterBig)
+        : sorterSmall(std::move(sorterSmall)), sorterBig(std::move(sorterBig)) {}
 
-    public function sort(array $dataset): array
-    {
-        if (count($dataset) > 5) {
-            return $this->sorterBig->sort($dataset);
-        } else {
-            return $this->sorterSmall->sort($dataset);
+    std::vector<int> sort(const std::vector<int>& dataset) {
+        if (dataset.size() > 5) {
+            return sorterBig->sort(dataset);
         }
+        return sorterSmall->sort(dataset);
     }
+};
+
+int main() {
+    std::vector<int> smalldataset{1, 3, 4, 2};
+    std::vector<int> bigdataset{1, 4, 3, 2, 8, 10, 5, 6, 9, 7};
+
+    Sorter sorter(std::make_shared<BubbleSortStrategy>(), std::make_shared<QuickSortStrategy>());
+    sorter.sort(smalldataset);
+    std::cout << std::endl;
+    sorter.sort(bigdataset);
+    return 0;
 }
 ```
-And it can be used as
-```php
-$smalldataset = [1, 3, 4, 2];
-$bigdataset = [1, 4, 3, 2, 8, 10, 5, 6, 9, 7];
 
-$sorter = new Sorter(new BubbleSortStrategy(), new QuickSortStrategy());
+Tiếp theo, chúng ta có client sẽ sử dụng bất kỳ strategy nào
+```cpp
+#include <iostream>
+#include <memory>
+#include <vector>
 
-$sorter->sort($dataset); // Output : Sorting using bubble sort
+class SortStrategy {
+public:
+    virtual std::vector<int> sort(const std::vector<int>& dataset) = 0;
+    virtual ~SortStrategy() = default;
+};
 
-$sorter->sort($bigdataset); // Output : Sorting using quick sort
+class BubbleSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using bubble sort";
+        return dataset;
+    }
+};
+
+class QuickSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using quick sort";
+        return dataset;
+    }
+};
+
+class Sorter {
+protected:
+    std::shared_ptr<SortStrategy> sorterSmall;
+    std::shared_ptr<SortStrategy> sorterBig;
+
+public:
+    Sorter(std::shared_ptr<SortStrategy> sorterSmall, std::shared_ptr<SortStrategy> sorterBig)
+        : sorterSmall(std::move(sorterSmall)), sorterBig(std::move(sorterBig)) {}
+
+    std::vector<int> sort(const std::vector<int>& dataset) {
+        if (dataset.size() > 5) {
+            return sorterBig->sort(dataset);
+        }
+        return sorterSmall->sort(dataset);
+    }
+};
+
+int main() {
+    std::vector<int> smalldataset{1, 3, 4, 2};
+    std::vector<int> bigdataset{1, 4, 3, 2, 8, 10, 5, 6, 9, 7};
+
+    Sorter sorter(std::make_shared<BubbleSortStrategy>(), std::make_shared<QuickSortStrategy>());
+    sorter.sort(smalldataset);
+    std::cout << std::endl;
+    sorter.sort(bigdataset);
+    return 0;
+}
+```
+Và nó có thể được dùng như sau
+```cpp
+#include <iostream>
+#include <memory>
+#include <vector>
+
+class SortStrategy {
+public:
+    virtual std::vector<int> sort(const std::vector<int>& dataset) = 0;
+    virtual ~SortStrategy() = default;
+};
+
+class BubbleSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using bubble sort";
+        return dataset;
+    }
+};
+
+class QuickSortStrategy : public SortStrategy {
+public:
+    std::vector<int> sort(const std::vector<int>& dataset) override {
+        std::cout << "Sorting using quick sort";
+        return dataset;
+    }
+};
+
+class Sorter {
+protected:
+    std::shared_ptr<SortStrategy> sorterSmall;
+    std::shared_ptr<SortStrategy> sorterBig;
+
+public:
+    Sorter(std::shared_ptr<SortStrategy> sorterSmall, std::shared_ptr<SortStrategy> sorterBig)
+        : sorterSmall(std::move(sorterSmall)), sorterBig(std::move(sorterBig)) {}
+
+    std::vector<int> sort(const std::vector<int>& dataset) {
+        if (dataset.size() > 5) {
+            return sorterBig->sort(dataset);
+        }
+        return sorterSmall->sort(dataset);
+    }
+};
+
+int main() {
+    std::vector<int> smalldataset{1, 3, 4, 2};
+    std::vector<int> bigdataset{1, 4, 3, 2, 8, 10, 5, 6, 9, 7};
+
+    Sorter sorter(std::make_shared<BubbleSortStrategy>(), std::make_shared<QuickSortStrategy>());
+    sorter.sort(smalldataset);
+    std::cout << std::endl;
+    sorter.sort(bigdataset);
+    return 0;
+}
 ```
 
 💢 State
 -----
-Real world example
-> Imagine you are using some drawing application, you choose the paint brush to draw. Now the brush changes its behavior based on the selected color i.e. if you have chosen red color it will draw in red, if blue then it will be in blue etc.  
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang dùng một ứng dụng vẽ và chọn cọ vẽ để vẽ. Lúc này cây cọ thay đổi hành vi tùy theo màu đã chọn, ví dụ nếu chọn màu đỏ thì nó sẽ vẽ màu đỏ, nếu là xanh thì sẽ vẽ màu xanh, v.v.  
 
-In plain words
-> It lets you change the behavior of a class when the state changes.
+Nói đơn giản
+> Nó cho phép bạn thay đổi hành vi của một class khi state thay đổi.
 
-Wikipedia says
-> The state pattern is a behavioral software design pattern that implements a state machine in an object-oriented way. With the state pattern, a state machine is implemented by implementing each individual state as a derived class of the state pattern interface, and implementing state transitions by invoking methods defined by the pattern's superclass.
-> The state pattern can be interpreted as a strategy pattern which is able to switch the current strategy through invocations of methods defined in the pattern's interface.
+Wikipedia nói
+> state pattern là một behavioral software design pattern cài đặt state machine theo cách hướng đối tượng. Với state pattern, state machine được hiện thực bằng cách cài đặt từng state riêng lẻ thành lớp dẫn xuất của state pattern interface, và cài đặt các chuyển đổi state bằng cách gọi các method được định nghĩa bởi superclass của pattern.
+> state pattern có thể được hiểu như một strategy pattern có khả năng chuyển đổi strategy hiện tại thông qua việc gọi các method được định nghĩa trong interface của pattern.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Let's take an example of a phone. First of all we have our state interface and some state implementations
+Hãy lấy ví dụ một chiếc điện thoại. Trước hết, chúng ta có state interface và một số phần cài đặt state
 
-```php
-interface PhoneState {
-    public function pickUp(): PhoneState;
-    public function hangUp(): PhoneState;
-    public function dial(): PhoneState;
+```cpp
+#include <memory>
+#include <stdexcept>
+#include <string>
+
+class PhoneState {
+public:
+    virtual std::shared_ptr<PhoneState> pickUp() = 0;
+    virtual std::shared_ptr<PhoneState> hangUp() = 0;
+    virtual std::shared_ptr<PhoneState> dial() = 0;
+    virtual ~PhoneState() = default;
+};
+
+class PhoneStateIdle;
+class PhoneStatePickedUp;
+class PhoneStateCalling;
+
+class PhoneStateIdle : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStatePickedUp : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStateCalling : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+std::shared_ptr<PhoneState> PhoneStateIdle::pickUp() {
+    return std::make_shared<PhoneStatePickedUp>();
 }
 
-// states implementation
-class PhoneStateIdle implements PhoneState {
-    public function pickUp(): PhoneState {
-        return new PhoneStatePickedUp();
-    }
-    public function hangUp(): PhoneState {
-        throw new Exception("already idle");
-    }
-    public function dial(): PhoneState {
-        throw new Exception("unable to dial in idle state");
-    }
+std::shared_ptr<PhoneState> PhoneStateIdle::hangUp() {
+    throw std::runtime_error("already idle");
 }
 
-class PhoneStatePickedUp implements PhoneState {
-    public function pickUp(): PhoneState {
-        throw new Exception("already picked up");
-    }
-    public function hangUp(): PhoneState {
-        return new PhoneStateIdle();
-    }
-    public function dial(): PhoneState {
-        return new PhoneStateCalling();
-    }
+std::shared_ptr<PhoneState> PhoneStateIdle::dial() {
+    throw std::runtime_error("unable to dial in idle state");
 }
 
-class PhoneStateCalling implements PhoneState {
-    public function pickUp(): PhoneState {
-        throw new Exception("already picked up");
-    }
-    public function hangUp(): PhoneState {
-        return new PhoneStateIdle();
-    }
-    public function dial(): PhoneState {
-        throw new Exception("already dialing");
-    }
+std::shared_ptr<PhoneState> PhoneStatePickedUp::pickUp() {
+    throw std::runtime_error("already picked up");
 }
-```
 
-Then we have our Phone class that changes the state on different behavior calls
+std::shared_ptr<PhoneState> PhoneStatePickedUp::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
 
-```php
+std::shared_ptr<PhoneState> PhoneStatePickedUp::dial() {
+    return std::make_shared<PhoneStateCalling>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::pickUp() {
+    throw std::runtime_error("already picked up");
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::dial() {
+    throw std::runtime_error("already dialing");
+}
+
 class Phone {
-    private $state;
+private:
+    std::shared_ptr<PhoneState> state;
 
-    public function __construct() {
-        $this->state = new PhoneStateIdle();
+public:
+    Phone() : state(std::make_shared<PhoneStateIdle>()) {}
+
+    void pickUp() {
+        state = state->pickUp();
     }
-    public function pickUp() {
-        $this->state = $this->state->pickUp();
+
+    void hangUp() {
+        state = state->hangUp();
     }
-    public function hangUp() {
-        $this->state = $this->state->hangUp();
+
+    void dial() {
+        state = state->dial();
     }
-    public function dial() {
-        $this->state = $this->state->dial();
-    }
+};
+
+int main() {
+    Phone phone;
+    phone.pickUp();
+    phone.dial();
+    return 0;
 }
 ```
 
-And then it can be used as follows and it will call the relevant state methods:
+Tiếp theo, chúng ta có class Phone thay đổi state theo các lời gọi hành vi khác nhau
 
-```php
-$phone = new Phone();
+```cpp
+#include <memory>
+#include <stdexcept>
+#include <string>
 
-$phone->pickUp();
-$phone->dial();
+class PhoneState {
+public:
+    virtual std::shared_ptr<PhoneState> pickUp() = 0;
+    virtual std::shared_ptr<PhoneState> hangUp() = 0;
+    virtual std::shared_ptr<PhoneState> dial() = 0;
+    virtual ~PhoneState() = default;
+};
+
+class PhoneStateIdle;
+class PhoneStatePickedUp;
+class PhoneStateCalling;
+
+class PhoneStateIdle : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStatePickedUp : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStateCalling : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+std::shared_ptr<PhoneState> PhoneStateIdle::pickUp() {
+    return std::make_shared<PhoneStatePickedUp>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateIdle::hangUp() {
+    throw std::runtime_error("already idle");
+}
+
+std::shared_ptr<PhoneState> PhoneStateIdle::dial() {
+    throw std::runtime_error("unable to dial in idle state");
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::pickUp() {
+    throw std::runtime_error("already picked up");
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::dial() {
+    return std::make_shared<PhoneStateCalling>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::pickUp() {
+    throw std::runtime_error("already picked up");
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::dial() {
+    throw std::runtime_error("already dialing");
+}
+
+class Phone {
+private:
+    std::shared_ptr<PhoneState> state;
+
+public:
+    Phone() : state(std::make_shared<PhoneStateIdle>()) {}
+
+    void pickUp() {
+        state = state->pickUp();
+    }
+
+    void hangUp() {
+        state = state->hangUp();
+    }
+
+    void dial() {
+        state = state->dial();
+    }
+};
+
+int main() {
+    Phone phone;
+    phone.pickUp();
+    phone.dial();
+    return 0;
+}
+```
+
+Và sau đó có thể dùng như sau, khi đó nó sẽ gọi các method state tương ứng:
+
+```cpp
+#include <memory>
+#include <stdexcept>
+#include <string>
+
+class PhoneState {
+public:
+    virtual std::shared_ptr<PhoneState> pickUp() = 0;
+    virtual std::shared_ptr<PhoneState> hangUp() = 0;
+    virtual std::shared_ptr<PhoneState> dial() = 0;
+    virtual ~PhoneState() = default;
+};
+
+class PhoneStateIdle;
+class PhoneStatePickedUp;
+class PhoneStateCalling;
+
+class PhoneStateIdle : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStatePickedUp : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+class PhoneStateCalling : public PhoneState {
+public:
+    std::shared_ptr<PhoneState> pickUp() override;
+    std::shared_ptr<PhoneState> hangUp() override;
+    std::shared_ptr<PhoneState> dial() override;
+};
+
+std::shared_ptr<PhoneState> PhoneStateIdle::pickUp() {
+    return std::make_shared<PhoneStatePickedUp>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateIdle::hangUp() {
+    throw std::runtime_error("already idle");
+}
+
+std::shared_ptr<PhoneState> PhoneStateIdle::dial() {
+    throw std::runtime_error("unable to dial in idle state");
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::pickUp() {
+    throw std::runtime_error("already picked up");
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
+
+std::shared_ptr<PhoneState> PhoneStatePickedUp::dial() {
+    return std::make_shared<PhoneStateCalling>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::pickUp() {
+    throw std::runtime_error("already picked up");
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::hangUp() {
+    return std::make_shared<PhoneStateIdle>();
+}
+
+std::shared_ptr<PhoneState> PhoneStateCalling::dial() {
+    throw std::runtime_error("already dialing");
+}
+
+class Phone {
+private:
+    std::shared_ptr<PhoneState> state;
+
+public:
+    Phone() : state(std::make_shared<PhoneStateIdle>()) {}
+
+    void pickUp() {
+        state = state->pickUp();
+    }
+
+    void hangUp() {
+        state = state->hangUp();
+    }
+
+    void dial() {
+        state = state->dial();
+    }
+};
+
+int main() {
+    Phone phone;
+    phone.pickUp();
+    phone.dial();
+    return 0;
+}
 ```
 
 📒 Template Method
 ---------------
 
-Real world example
-> Suppose we are getting some house built. The steps for building might look like
-> - Prepare the base of house
-> - Build the walls
-> - Add roof
-> - Add other floors
+Ví dụ thực tế
+> Giả sử chúng ta đang xây một căn nhà. Các bước xây dựng có thể trông như sau
+> - Chuẩn bị móng nhà
+> - Xây tường
+> - Lợp mái
+> - Thêm các tầng khác
 
-> The order of these steps could never be changed i.e. you can't build the roof before building the walls etc but each of the steps could be modified for example walls can be made of wood or polyester or stone.
+> Thứ tự của các bước này không bao giờ được thay đổi, tức là bạn không thể lợp mái trước khi xây tường, v.v.; nhưng mỗi bước đều có thể được biến đổi, ví dụ tường có thể làm bằng gỗ, polyester hoặc đá.
 
-In plain words
-> Template method defines the skeleton of how a certain algorithm could be performed, but defers the implementation of those steps to the children classes.
+Nói đơn giản
+> template method định nghĩa bộ khung của cách một thuật toán nhất định được thực hiện, nhưng hoãn phần cài đặt của các bước đó cho các lớp con.
 
-Wikipedia says
-> In software engineering, the template method pattern is a behavioral design pattern that defines the program skeleton of an algorithm in an operation, deferring some steps to subclasses. It lets one redefine certain steps of an algorithm without changing the algorithm's structure.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, template method pattern là một behavioral design pattern định nghĩa bộ khung chương trình của một thuật toán trong một thao tác, đồng thời hoãn một số bước cho các lớp con. Nó cho phép định nghĩa lại một số bước nhất định của thuật toán mà không làm thay đổi cấu trúc của thuật toán.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Imagine we have a build tool that helps us test, lint, build, generate build reports (i.e. code coverage reports, linting report etc) and deploy our app on the test server.
+Hãy tưởng tượng chúng ta có một build tool giúp test, lint, build, tạo các báo cáo build (ví dụ báo cáo code coverage, báo cáo linting, v.v.) và deploy ứng dụng của mình lên test server.
 
-First of all we have our base class that specifies the skeleton for the build algorithm
-```php
-abstract class Builder
-{
+Trước hết, chúng ta có base class chỉ rõ bộ khung của thuật toán build
+```cpp
+#include <iostream>
 
-    // Template method
-    final public function build()
-    {
-        $this->test();
-        $this->lint();
-        $this->assemble();
-        $this->deploy();
+class Builder {
+public:
+    virtual ~Builder() = default;
+
+    virtual void build() final {
+        test();
+        lint();
+        assemble();
+        deploy();
     }
 
-    abstract public function test();
-    abstract public function lint();
-    abstract public function assemble();
-    abstract public function deploy();
+    virtual void test() = 0;
+    virtual void lint() = 0;
+    virtual void assemble() = 0;
+    virtual void deploy() = 0;
+};
+
+class AndroidBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running android tests" << std::endl;
+    }
+
+    void lint() override {
+        std::cout << "Linting the android code" << std::endl;
+    }
+
+    void assemble() override {
+        std::cout << "Assembling the android build" << std::endl;
+    }
+
+    void deploy() override {
+        std::cout << "Deploying android build to server" << std::endl;
+    }
+};
+
+class IosBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running ios tests" << std::endl;
+    }
+
+    void lint() override {
+        std::cout << "Linting the ios code" << std::endl;
+    }
+
+    void assemble() override {
+        std::cout << "Assembling the ios build" << std::endl;
+    }
+
+    void deploy() override {
+        std::cout << "Deploying ios build to server" << std::endl;
+    }
+};
+
+int main() {
+    AndroidBuilder androidBuilder;
+    androidBuilder.build();
+
+    IosBuilder iosBuilder;
+    iosBuilder.build();
+    return 0;
 }
 ```
 
-Then we can have our implementations
+Sau đó, chúng ta có thể có các phần cài đặt cụ thể
 
-```php
-class AndroidBuilder extends Builder
-{
-    public function test()
-    {
-        echo 'Running android tests';
+```cpp
+#include <iostream>
+
+class Builder {
+public:
+    virtual ~Builder() = default;
+
+    virtual void build() final {
+        test();
+        lint();
+        assemble();
+        deploy();
     }
 
-    public function lint()
-    {
-        echo 'Linting the android code';
+    virtual void test() = 0;
+    virtual void lint() = 0;
+    virtual void assemble() = 0;
+    virtual void deploy() = 0;
+};
+
+class AndroidBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running android tests" << std::endl;
     }
 
-    public function assemble()
-    {
-        echo 'Assembling the android build';
+    void lint() override {
+        std::cout << "Linting the android code" << std::endl;
     }
 
-    public function deploy()
-    {
-        echo 'Deploying android build to server';
-    }
-}
-
-class IosBuilder extends Builder
-{
-    public function test()
-    {
-        echo 'Running ios tests';
+    void assemble() override {
+        std::cout << "Assembling the android build" << std::endl;
     }
 
-    public function lint()
-    {
-        echo 'Linting the ios code';
+    void deploy() override {
+        std::cout << "Deploying android build to server" << std::endl;
+    }
+};
+
+class IosBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running ios tests" << std::endl;
     }
 
-    public function assemble()
-    {
-        echo 'Assembling the ios build';
+    void lint() override {
+        std::cout << "Linting the ios code" << std::endl;
     }
 
-    public function deploy()
-    {
-        echo 'Deploying ios build to server';
+    void assemble() override {
+        std::cout << "Assembling the ios build" << std::endl;
     }
+
+    void deploy() override {
+        std::cout << "Deploying ios build to server" << std::endl;
+    }
+};
+
+int main() {
+    AndroidBuilder androidBuilder;
+    androidBuilder.build();
+
+    IosBuilder iosBuilder;
+    iosBuilder.build();
+    return 0;
 }
 ```
-And then it can be used as
+Và sau đó có thể dùng như sau
 
-```php
-$androidBuilder = new AndroidBuilder();
-$androidBuilder->build();
+```cpp
+#include <iostream>
 
-// Output:
-// Running android tests
-// Linting the android code
-// Assembling the android build
-// Deploying android build to server
+class Builder {
+public:
+    virtual ~Builder() = default;
 
-$iosBuilder = new IosBuilder();
-$iosBuilder->build();
+    virtual void build() final {
+        test();
+        lint();
+        assemble();
+        deploy();
+    }
 
-// Output:
-// Running ios tests
-// Linting the ios code
-// Assembling the ios build
-// Deploying ios build to server
+    virtual void test() = 0;
+    virtual void lint() = 0;
+    virtual void assemble() = 0;
+    virtual void deploy() = 0;
+};
+
+class AndroidBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running android tests" << std::endl;
+    }
+
+    void lint() override {
+        std::cout << "Linting the android code" << std::endl;
+    }
+
+    void assemble() override {
+        std::cout << "Assembling the android build" << std::endl;
+    }
+
+    void deploy() override {
+        std::cout << "Deploying android build to server" << std::endl;
+    }
+};
+
+class IosBuilder : public Builder {
+public:
+    void test() override {
+        std::cout << "Running ios tests" << std::endl;
+    }
+
+    void lint() override {
+        std::cout << "Linting the ios code" << std::endl;
+    }
+
+    void assemble() override {
+        std::cout << "Assembling the ios build" << std::endl;
+    }
+
+    void deploy() override {
+        std::cout << "Deploying ios build to server" << std::endl;
+    }
+};
+
+int main() {
+    AndroidBuilder androidBuilder;
+    androidBuilder.build();
+
+    IosBuilder iosBuilder;
+    iosBuilder.build();
+    return 0;
+}
 ```
 
-## 🚦 Wrap Up Folks
+## 🚦 Tổng kết
 
-And that about wraps it up. I will continue to improve this, so you might want to watch/star this repository to revisit. Also, I have plans on writing the same about the architectural patterns, stay tuned for it.
+Vậy là chúng ta tạm khép lại ở đây. Tôi sẽ tiếp tục cải thiện tài liệu này, nên bạn có thể watch/star repository này để quay lại sau. Ngoài ra, tôi cũng có kế hoạch viết một phiên bản tương tự về architectural patterns, hãy chờ nhé.
 
-## 👬 Contribution
+## 👬 Đóng góp
 
-- Report issues
-- Open pull request with improvements
-- Spread the word
-- Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/kamrify.svg?style=social&label=Follow%20%40kamrify)](https://twitter.com/kamrify)
+- Báo cáo vấn đề
+- Mở pull request với các cải tiến
+- Lan tỏa cho mọi người cùng biết
+- Gửi cho tôi bất kỳ phản hồi nào [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/kamrify.svg?style=social&label=Follow%20%40kamrify)](https://twitter.com/kamrify)
 
-## License
+## Giấy phép
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)

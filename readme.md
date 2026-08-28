@@ -696,7 +696,7 @@ $hunter->hunt($wildDogAdapter);
 Ví dụ thực tế
 > Hãy tưởng tượng bạn có một website với nhiều trang khác nhau và bạn cần cho phép người dùng đổi theme. Bạn sẽ làm gì? Tạo nhiều bản sao của từng trang cho từng theme, hay chỉ tạo các theme riêng biệt và nạp chúng dựa trên sở thích của người dùng? Bridge pattern cho phép bạn làm theo cách thứ hai, tức là:
 
-![Có và không có bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
+![Với và không có bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
 
 Nói đơn giản
 > bridge pattern đề cao composition hơn inheritance. Các chi tiết cài đặt được tách khỏi một hệ phân cấp và đẩy sang một object khác có hệ phân cấp riêng.

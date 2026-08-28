@@ -6,15 +6,15 @@
 ***
 
 <p align="center">
-🎉 Ultra-simplified explanation to design patterns! 🎉
+🎉 Giải thích siêu đơn giản về design patterns! 🎉
 </p>
 <p align="center">
-A topic that can easily make anyone's mind wobble. Here I try to make them stick in to your<br> mind (and maybe mine) by explaining them in the <i>simplest</i> way possible.
+Một chủ đề rất dễ làm bất kỳ ai rối trí. Ở đây tôi cố gắng giúp chúng in sâu vào<br> tâm trí bạn (và có lẽ cả của tôi nữa) bằng cách giải thích chúng theo cách <i>đơn giản</i> nhất có thể.
 </p>
 
 ***
 
-<sub>Check out my [other project](http://roadmap.sh) and say "hi" on [Twitter](https://twitter.com/kamrify).</sub>
+<sub>Hãy xem [dự án khác](http://roadmap.sh) của tôi và ghé [Twitter](https://twitter.com/kamrify) để nói "xin chào".</sub>
 
 <br>
 
@@ -33,27 +33,27 @@ A topic that can easily make anyone's mind wobble. Here I try to make them stick
 
 <br>
 
-Introduction
+Giới thiệu
 =================
 
-Design patterns are solutions to recurring problems; **guidelines on how to tackle certain problems**. They are not classes, packages or libraries that you can plug into your application and wait for the magic to happen. These are, rather, guidelines on how to tackle certain problems in certain situations.
+Design patterns là lời giải cho những vấn đề lặp đi lặp lại; **những hướng dẫn về cách xử lý một số vấn đề nhất định**. Chúng không phải là class, package hay library mà bạn có thể cắm vào ứng dụng rồi chờ phép màu xảy ra. Đúng hơn, chúng là những hướng dẫn về cách giải quyết một số vấn đề trong những tình huống nhất định.
 
-> Design patterns are solutions to recurring problems; guidelines on how to tackle certain problems
+> Design patterns là lời giải cho những vấn đề lặp đi lặp lại; những hướng dẫn về cách xử lý một số vấn đề nhất định
 
-Wikipedia describes them as
+Wikipedia mô tả chúng như sau
 
-> In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations.
+> Trong kỹ nghệ phần mềm, một software design pattern là một giải pháp tổng quát có thể tái sử dụng cho một vấn đề thường gặp trong một ngữ cảnh cụ thể của thiết kế phần mềm. Nó không phải là một thiết kế hoàn chỉnh có thể chuyển trực tiếp thành source code hay machine code. Nó là một mô tả hoặc khuôn mẫu về cách giải quyết một vấn đề có thể được dùng trong nhiều tình huống khác nhau.
 
-⚠️ Be Careful
+⚠️ Cẩn thận
 -----------------
-- Design patterns are not a silver bullet to all your problems.
-- Do not try to force them; bad things are supposed to happen, if done so. 
-- Keep in mind that design patterns are solutions **to** problems, not solutions **finding** problems; so don't overthink.
-- If used in a correct place in a correct manner, they can prove to be a savior; or else they can result in a horrible mess of a code.
+- Design patterns không phải là viên đạn bạc cho mọi vấn đề của bạn.
+- Đừng cố ép áp dụng chúng; nếu làm vậy thì rất dễ có chuyện tệ xảy ra. 
+- Hãy nhớ rằng design patterns là lời giải **cho** vấn đề, không phải lời giải **đi tìm** vấn đề; vì vậy đừng suy diễn quá mức.
+- Nếu được dùng đúng chỗ, đúng cách, chúng có thể trở thành cứu tinh; còn không thì có thể biến code của bạn thành một mớ hỗn độn kinh khủng.
 
-> Also note that the code samples below are in PHP-7, however this shouldn't stop you because the concepts are same anyways.
+> Cũng lưu ý rằng các ví dụ code bên dưới dùng PHP-7, nhưng điều đó không nên cản trở bạn vì các khái niệm thì vẫn như nhau.
 
-Types of Design Patterns
+Các loại design patterns
 -----------------
 
 * [Creational](#creational-design-patterns)
@@ -63,11 +63,11 @@ Types of Design Patterns
 Creational Design Patterns
 ==========================
 
-In plain words
-> Creational patterns are focused towards how to instantiate an object or group of related objects.
+Nói đơn giản
+> Các pattern creational tập trung vào cách khởi tạo một object hoặc một nhóm object có liên quan với nhau.
 
-Wikipedia says
-> In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, creational design patterns là các design patterns xử lý cơ chế tạo object, cố gắng tạo object theo cách phù hợp với tình huống. Cách tạo object cơ bản có thể dẫn đến các vấn đề thiết kế hoặc làm tăng độ phức tạp của thiết kế. Creational design patterns giải quyết vấn đề này bằng cách kiểm soát việc tạo object theo một cách nào đó.
 
  * [Simple Factory](#-simple-factory)
  * [Factory Method](#-factory-method)
@@ -78,18 +78,18 @@ Wikipedia says
 
 🏠 Simple Factory
 --------------
-Real world example
-> Consider, you are building a house and you need doors. You can either put on your carpenter clothes, bring some wood, glue, nails and all the tools required to build the door and start building it in your house or you can simply call the factory and get the built door delivered to you so that you don't need to learn anything about the door making or to deal with the mess that comes with making it.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang xây nhà và cần cửa. Bạn có thể tự mặc đồ thợ mộc, mang gỗ, keo, đinh và mọi dụng cụ cần thiết để làm cửa rồi bắt đầu đóng ngay tại nhà; hoặc bạn chỉ cần gọi cho factory và nhận cánh cửa hoàn thiện được giao tới, để không phải học cách làm cửa hay xử lý mớ bừa bộn đi kèm với việc đó.
 
-In plain words
-> Simple factory simply generates an instance for client without exposing any instantiation logic to the client
+Nói đơn giản
+> simple factory chỉ đơn giản tạo ra một instance cho client mà không để lộ logic khởi tạo cho client
 
-Wikipedia says
-> In object-oriented programming (OOP), a factory is an object for creating other objects – formally a factory is a function or method that returns objects of a varying prototype or class from some method call, which is assumed to be "new".
+Wikipedia nói
+> Trong lập trình hướng đối tượng (OOP), factory là một object dùng để tạo ra các object khác — nói chính xác hơn, factory là một function hoặc method trả về các object có prototype hoặc class khác nhau từ một lời gọi method, vốn được ngầm hiểu là `new`.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-First of all we have a door interface and the implementation
+Trước hết, chúng ta có một interface cho cửa và phần cài đặt của nó
 ```php
 interface Door
 {
@@ -119,7 +119,7 @@ class WoodenDoor implements Door
     }
 }
 ```
-Then we have our door factory that makes the door and returns it
+Tiếp theo, chúng ta có door factory tạo cửa và trả nó về
 ```php
 class DoorFactory
 {
@@ -129,7 +129,7 @@ class DoorFactory
     }
 }
 ```
-And then it can be used as
+Và sau đó có thể dùng như sau
 ```php
 // Make me a door of 100x200
 $door = DoorFactory::makeDoor(100, 200);
@@ -141,25 +141,25 @@ echo 'Height: ' . $door->getHeight();
 $door2 = DoorFactory::makeDoor(50, 100);
 ```
 
-**When to Use?**
+**Khi nào sử dụng?**
 
-When creating an object is not just a few assignments and involves some logic, it makes sense to put it in a dedicated factory instead of repeating the same code everywhere.
+Khi việc tạo một object không chỉ là vài phép gán đơn giản mà còn bao gồm một số logic, thì việc đặt nó vào một factory chuyên biệt sẽ hợp lý hơn là lặp lại cùng một đoạn code ở khắp nơi.
 
 🏭 Factory Method
 --------------
 
-Real world example
-> Consider the case of a hiring manager. It is impossible for one person to interview for each of the positions. Based on the job opening, she has to decide and delegate the interview steps to different people.
+Ví dụ thực tế
+> Hãy xem trường hợp của một quản lý tuyển dụng. Một người không thể phỏng vấn cho mọi vị trí. Dựa trên vị trí đang tuyển, cô ấy phải quyết định và giao các bước phỏng vấn cho những người khác nhau.
 
-In plain words
-> It provides a way to delegate the instantiation logic to child classes.
+Nói đơn giản
+> Nó cung cấp một cách để ủy quyền logic khởi tạo cho các lớp con.
 
-Wikipedia says
-> In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+Wikipedia nói
+> Trong lập trình dựa trên class, factory method pattern là một creational pattern sử dụng factory methods để giải quyết bài toán tạo object mà không cần chỉ rõ chính xác class của object sẽ được tạo. Điều này được thực hiện bằng cách tạo object thông qua việc gọi một factory method — hoặc được khai báo trong một interface và được cài đặt bởi các lớp con, hoặc được cài đặt trong một base class và có thể được các lớp dẫn xuất ghi đè — thay vì gọi constructor trực tiếp.
 
- **Programmatic Example**
+ **Ví dụ lập trình**
 
-Taking our hiring manager example above. First of all we have an interviewer interface and some implementations for it
+Lấy ví dụ về quản lý tuyển dụng ở trên. Trước hết, chúng ta có một interface cho người phỏng vấn và một vài phần cài đặt của nó
 
 ```php
 interface Interviewer
@@ -184,7 +184,7 @@ class CommunityExecutive implements Interviewer
 }
 ```
 
-Now let us create our `HiringManager`
+Bây giờ hãy tạo `HiringManager` của chúng ta
 
 ```php
 abstract class HiringManager
@@ -201,7 +201,7 @@ abstract class HiringManager
 }
 
 ```
-Now any child can extend it and provide the required interviewer
+Giờ thì bất kỳ lớp con nào cũng có thể kế thừa nó và cung cấp người phỏng vấn phù hợp
 ```php
 class DevelopmentManager extends HiringManager
 {
@@ -219,7 +219,7 @@ class MarketingManager extends HiringManager
     }
 }
 ```
-and then it can be used as
+và sau đó có thể dùng như sau
 
 ```php
 $devManager = new DevelopmentManager();
@@ -229,25 +229,25 @@ $marketingManager = new MarketingManager();
 $marketingManager->takeInterview(); // Output: Asking about community building.
 ```
 
-**When to use?**
+**Khi nào sử dụng?**
 
-Useful when there is some generic processing in a class but the required sub-class is dynamically decided at runtime. Or putting it in other words, when the client doesn't know what exact sub-class it might need.
+Hữu ích khi có một số xử lý chung trong một class nhưng lớp con cần dùng lại được quyết định động tại runtime. Nói cách khác, khi client không biết chính xác nó sẽ cần lớp con nào.
 
 🔨 Abstract Factory
 ----------------
 
-Real world example
-> Extending our door example from Simple Factory. Based on your needs you might get a wooden door from a wooden door shop, iron door from an iron shop or a PVC door from the relevant shop. Plus you might need a guy with different kind of specialities to fit the door, for example a carpenter for wooden door, welder for iron door etc. As you can see there is a dependency between the doors now, wooden door needs carpenter, iron door needs a welder etc.
+Ví dụ thực tế
+> Mở rộng ví dụ về cửa từ Simple Factory. Tùy theo nhu cầu, bạn có thể lấy cửa gỗ từ cửa hàng cửa gỗ, cửa sắt từ cửa hàng đồ sắt hoặc cửa PVC từ cửa hàng tương ứng. Thêm nữa, bạn sẽ cần người có chuyên môn phù hợp để lắp từng loại cửa, ví dụ thợ mộc cho cửa gỗ, thợ hàn cho cửa sắt, v.v. Như bạn thấy, giờ đã có sự phụ thuộc giữa các loại cửa: cửa gỗ cần thợ mộc, cửa sắt cần thợ hàn, v.v.
 
-In plain words
-> A factory of factories; a factory that groups the individual but related/dependent factories together without specifying their concrete classes.
+Nói đơn giản
+> Một factory của các factory; tức là một factory gom các factory riêng lẻ nhưng có liên quan/phụ thuộc với nhau lại mà không cần chỉ rõ các concrete class của chúng.
 
-Wikipedia says
-> The abstract factory pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes
+Wikipedia nói
+> abstract factory pattern cung cấp một cách để đóng gói một nhóm các factory riêng lẻ có chung một chủ đề mà không cần chỉ rõ các concrete class của chúng
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating the door example above. First of all we have our `Door` interface and some implementation for it
+Chuyển ví dụ về cửa ở trên sang code. Trước hết, chúng ta có interface `Door` và một vài phần cài đặt của nó
 
 ```php
 interface Door
@@ -271,7 +271,7 @@ class IronDoor implements Door
     }
 }
 ```
-Then we have some fitting experts for each door type
+Tiếp theo, chúng ta có một số chuyên gia lắp đặt cho từng loại cửa
 
 ```php
 interface DoorFittingExpert
@@ -296,7 +296,7 @@ class Carpenter implements DoorFittingExpert
 }
 ```
 
-Now we have our abstract factory that would let us make family of related objects i.e. wooden door factory would create a wooden door and wooden door fitting expert and iron door factory would create an iron door and iron door fitting expert
+Bây giờ chúng ta có abstract factory cho phép tạo ra cả một họ object liên quan với nhau, ví dụ wooden door factory sẽ tạo cửa gỗ và chuyên gia lắp cửa gỗ, còn iron door factory sẽ tạo cửa sắt và chuyên gia lắp cửa sắt
 ```php
 interface DoorFactory
 {
@@ -332,7 +332,7 @@ class IronDoorFactory implements DoorFactory
     }
 }
 ```
-And then it can be used as
+Và sau đó có thể dùng như sau
 ```php
 $woodenFactory = new WoodenDoorFactory();
 
@@ -352,24 +352,24 @@ $door->getDescription();  // Output: I am an iron door
 $expert->getDescription(); // Output: I can only fit iron doors
 ```
 
-As you can see the wooden door factory has encapsulated the `carpenter` and the `wooden door` also iron door factory has encapsulated the `iron door` and `welder`. And thus it had helped us make sure that for each of the created door, we do not get a wrong fitting expert.   
+Như bạn có thể thấy, wooden door factory đã đóng gói cả `carpenter` và `wooden door`, còn iron door factory đã đóng gói cả `iron door` và `welder`. Nhờ đó, nó giúp đảm bảo rằng với mỗi cánh cửa được tạo ra, chúng ta sẽ không lấy nhầm người lắp đặt.   
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When there are interrelated dependencies with not-that-simple creation logic involved
+Dùng khi có các phụ thuộc liên quan lẫn nhau cùng với logic khởi tạo không hề đơn giản.
 
 👷 Builder
 --------------------------------------------
-Real world example
-> Imagine you are at Hardee's and you order a specific deal, lets say, "Big Hardee" and they hand it over to you without *any questions*; this is the example of simple factory. But there are cases when the creation logic might involve more steps. For example you want a customized Subway deal, you have several options in how your burger is made e.g what bread do you want? what types of sauces would you like? What cheese would you want? etc. In such cases builder pattern comes to the rescue.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang ở Hardee's và gọi một combo cụ thể, ví dụ như "Big Hardee", rồi họ giao ngay cho bạn mà không hỏi *bất kỳ câu nào*; đó là ví dụ của simple factory. Nhưng có những trường hợp logic tạo ra sản phẩm bao gồm nhiều bước hơn. Ví dụ bạn muốn một phần Subway tùy biến, bạn có nhiều lựa chọn cho chiếc burger của mình như: muốn loại bánh mì nào? muốn loại sốt nào? muốn loại phô mai nào? v.v. Trong những trường hợp như vậy, builder pattern sẽ phát huy tác dụng.
 
-In plain words
-> Allows you to create different flavors of an object while avoiding constructor pollution. Useful when there could be several flavors of an object. Or when there are a lot of steps involved in creation of an object.
+Nói đơn giản
+> Cho phép bạn tạo ra nhiều biến thể khác nhau của một object trong khi tránh làm constructor trở nên rối rắm. Hữu ích khi một object có thể có nhiều biến thể hoặc khi việc tạo object gồm rất nhiều bước.
 
-Wikipedia says
-> The builder pattern is an object creation software design pattern with the intentions of finding a solution to the telescoping constructor anti-pattern.
+Wikipedia nói
+> builder pattern là một software design pattern cho việc tạo object với mục tiêu tìm ra lời giải cho telescoping constructor anti-pattern.
 
-Having said that let me add a bit about what telescoping constructor anti-pattern is. At one point or the other we have all seen a constructor like below:
+Nhân đây, hãy nói thêm một chút về telescoping constructor anti-pattern là gì. Chắc hẳn ở đâu đó chúng ta đều từng thấy một constructor như bên dưới:
 
 ```php
 public function __construct($size, $cheese = true, $pepperoni = true, $tomato = false, $lettuce = true)
@@ -377,11 +377,11 @@ public function __construct($size, $cheese = true, $pepperoni = true, $tomato = 
 }
 ```
 
-As you can see; the number of constructor parameters can quickly get out of hand and it might become difficult to understand the arrangement of parameters. Plus this parameter list could keep on growing if you would want to add more options in future. This is called telescoping constructor anti-pattern.
+Như bạn thấy, số lượng tham số của constructor có thể nhanh chóng trở nên mất kiểm soát và rất khó hiểu thứ tự các tham số. Thêm vào đó, danh sách tham số này còn có thể tiếp tục dài ra nếu bạn muốn thêm nhiều tùy chọn trong tương lai. Đó được gọi là telescoping constructor anti-pattern.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-The sane alternative is to use the builder pattern. First of all we have our burger that we want to make
+Giải pháp hợp lý là dùng builder pattern. Trước hết, chúng ta có chiếc burger mà mình muốn tạo
 
 ```php
 class Burger
@@ -404,7 +404,7 @@ class Burger
 }
 ```
 
-And then we have the builder
+Tiếp theo, chúng ta có builder
 
 ```php
 class BurgerBuilder
@@ -451,7 +451,7 @@ class BurgerBuilder
     }
 }
 ```
-And then it can be used as:
+Và sau đó có thể dùng như sau:
 
 ```php
 $burger = (new BurgerBuilder(14))
@@ -461,26 +461,26 @@ $burger = (new BurgerBuilder(14))
                     ->build();
 ```
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When there could be several flavors of an object and to avoid the constructor telescoping. The key difference from the factory pattern is that; factory pattern is to be used when the creation is a one step process while builder pattern is to be used when the creation is a multi step process.
+Dùng khi một object có thể có nhiều biến thể và bạn muốn tránh tình trạng constructor bị phình to. Điểm khác biệt chính so với factory pattern là: factory pattern dùng khi việc tạo là một bước duy nhất, còn builder pattern dùng khi việc tạo gồm nhiều bước.
 
 🐑 Prototype
 ------------
-Real world example
-> Remember dolly? The sheep that was cloned! Lets not get into the details but the key point here is that it is all about cloning
+Ví dụ thực tế
+> Bạn còn nhớ Dolly chứ? Con cừu đã được nhân bản! Không cần đi sâu vào chi tiết, điểm mấu chốt ở đây là mọi thứ đều xoay quanh việc sao chép.
 
-In plain words
-> Create object based on an existing object through cloning.
+Nói đơn giản
+> Tạo object dựa trên một object có sẵn thông qua việc clone.
 
-Wikipedia says
-> The prototype pattern is a creational design pattern in software development. It is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects.
+Wikipedia nói
+> prototype pattern là một creational design pattern trong phát triển phần mềm. Nó được dùng khi kiểu object cần tạo được xác định bởi một instance nguyên mẫu, instance này sẽ được clone để sinh ra các object mới.
 
-In short, it allows you to create a copy of an existing object and modify it to your needs, instead of going through the trouble of creating an object from scratch and setting it up.
+Nói ngắn gọn, nó cho phép bạn tạo một bản sao của object hiện có rồi chỉnh sửa theo nhu cầu, thay vì phải vất vả tạo object từ đầu và cấu hình lại.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-In PHP, it can be easily done using `clone`
+Trong PHP, việc này có thể được thực hiện rất dễ dàng bằng `clone`
 
 ```php
 class Sheep
@@ -515,7 +515,7 @@ class Sheep
     }
 }
 ```
-Then it can be cloned like below
+Sau đó nó có thể được clone như bên dưới
 ```php
 $original = new Sheep('Jolly');
 echo $original->getName(); // Jolly
@@ -528,28 +528,28 @@ echo $cloned->getName(); // Dolly
 echo $cloned->getCategory(); // Mountain sheep
 ```
 
-Also you could use the magic method `__clone` to modify the cloning behavior.
+Bạn cũng có thể dùng magic method `__clone` để thay đổi hành vi clone.
 
-**When to use?**
+**Khi nào sử dụng?**
 
-When an object is required that is similar to existing object or when the creation would be expensive as compared to cloning.
+Dùng khi bạn cần một object tương tự object đã có hoặc khi việc tạo mới tốn kém hơn so với clone.
 
 💍 Singleton
 ------------
-Real world example
-> There can only be one president of a country at a time. The same president has to be brought to action, whenever duty calls. President here is singleton.
+Ví dụ thực tế
+> Ở một thời điểm chỉ có thể có một tổng thống của một quốc gia. Mỗi khi cần, cũng chính vị tổng thống đó phải được đưa vào hoạt động. Tổng thống ở đây chính là singleton.
 
-In plain words
-> Ensures that only one object of a particular class is ever created.
+Nói đơn giản
+> Đảm bảo rằng chỉ có đúng một object của một class cụ thể từng được tạo ra.
 
-Wikipedia says
-> In software engineering, the singleton pattern is a software design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, singleton pattern là một software design pattern giới hạn việc khởi tạo một class chỉ còn một object. Điều này hữu ích khi hệ thống cần chính xác một object để điều phối các hành động.
 
-Singleton pattern is actually considered an anti-pattern and overuse of it should be avoided. It is not necessarily bad and could have some valid use-cases but should be used with caution because it introduces a global state in your application and change to it in one place could affect in the other areas and it could become pretty difficult to debug. The other bad thing about them is it makes your code tightly coupled plus mocking the singleton could be difficult.
+singleton pattern thực ra thường bị xem là một anti-pattern và nên tránh lạm dụng. Nó không hẳn là xấu và vẫn có một số trường hợp dùng hợp lý, nhưng cần dùng thận trọng vì nó đưa global state vào ứng dụng; thay đổi ở một nơi có thể ảnh hưởng đến nơi khác và khiến việc debug trở nên khá khó khăn. Điểm bất lợi khác là nó làm code bị kết dính chặt hơn và việc mock singleton cũng có thể khó.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-To create a singleton, make the constructor private, disable cloning, disable extension and create a static variable to house the instance
+Để tạo singleton, hãy đặt constructor thành private, vô hiệu hóa việc clone, không cho phép kế thừa và tạo một biến static để giữ instance đó
 ```php
 final class President
 {
@@ -580,7 +580,7 @@ final class President
     }
 }
 ```
-Then in order to use
+Sau đó, để sử dụng
 ```php
 $president1 = President::getInstance();
 $president2 = President::getInstance();
@@ -590,11 +590,11 @@ var_dump($president1 === $president2); // true
 
 Structural Design Patterns
 ==========================
-In plain words
-> Structural patterns are mostly concerned with object composition or in other words how the entities can use each other. Or yet another explanation would be, they help in answering "How to build a software component?"
+Nói đơn giản
+> Structural patterns chủ yếu quan tâm đến việc kết hợp các object, hay nói cách khác là cách các thực thể có thể dùng lẫn nhau. Một cách diễn đạt khác là chúng giúp trả lời câu hỏi: "Làm thế nào để xây dựng một software component?"
 
-Wikipedia says
-> In software engineering, structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, structural design patterns là các design patterns giúp việc thiết kế trở nên dễ dàng hơn bằng cách xác định một cách đơn giản để hiện thực hóa các mối quan hệ giữa các thực thể.
 
  * [Adapter](#-adapter)
  * [Bridge](#-bridge)
@@ -606,22 +606,22 @@ Wikipedia says
 
 🔌 Adapter
 -------
-Real world example
-> Consider that you have some pictures in your memory card and you need to transfer them to your computer. In order to transfer them you need some kind of adapter that is compatible with your computer ports so that you can attach memory card to your computer. In this case card reader is an adapter.
-> Another example would be the famous power adapter; a three legged plug can't be connected to a two pronged outlet, it needs to use a power adapter that makes it compatible with the two pronged outlet.
-> Yet another example would be a translator translating words spoken by one person to another
+Ví dụ thực tế
+> Hãy tưởng tượng bạn có một số ảnh trong thẻ nhớ và cần chuyển chúng sang máy tính. Để làm điều đó, bạn cần một loại adapter tương thích với các cổng trên máy tính để có thể gắn thẻ nhớ vào. Trong trường hợp này, đầu đọc thẻ chính là adapter.
+> Một ví dụ khác là bộ đổi nguồn quen thuộc; một phích cắm ba chấu không thể cắm vào ổ hai chấu, nó cần dùng power adapter để tương thích với ổ hai chấu.
+> Một ví dụ nữa là người phiên dịch, chuyển lời nói của người này sang cho người kia.
 
-In plain words
-> Adapter pattern lets you wrap an otherwise incompatible object in an adapter to make it compatible with another class.
+Nói đơn giản
+> adapter pattern cho phép bạn bọc một object vốn không tương thích bên trong một adapter để làm nó tương thích với một class khác.
 
-Wikipedia says
-> In software engineering, the adapter pattern is a software design pattern that allows the interface of an existing class to be used as another interface. It is often used to make existing classes work with others without modifying their source code.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, adapter pattern là một software design pattern cho phép interface của một class có sẵn được dùng như một interface khác. Nó thường được dùng để làm cho các class hiện có hoạt động được với nhau mà không cần sửa source code của chúng.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Consider a game where there is a hunter and he hunts lions.
+Hãy xét một trò chơi có một thợ săn và anh ta săn sư tử.
 
-First we have an interface `Lion` that all types of lions have to implement
+Trước tiên, chúng ta có interface `Lion` mà mọi loại sư tử đều phải cài đặt
 
 ```php
 interface Lion
@@ -643,7 +643,7 @@ class AsianLion implements Lion
     }
 }
 ```
-And hunter expects any implementation of `Lion` interface to hunt.
+Và thợ săn kỳ vọng bất kỳ phần cài đặt nào của interface `Lion` cũng có thể dùng để săn.
 ```php
 class Hunter
 {
@@ -654,7 +654,7 @@ class Hunter
 }
 ```
 
-Now let's say we have to add a `WildDog` in our game so that hunter can hunt that also. But we can't do that directly because dog has a different interface. To make it compatible for our hunter, we will have to create an adapter that is compatible
+Giờ hãy giả sử chúng ta cần thêm `WildDog` vào trò chơi để thợ săn cũng có thể săn nó. Nhưng không thể làm trực tiếp vì chó có interface khác. Để làm nó tương thích với thợ săn, chúng ta sẽ phải tạo một adapter phù hợp.
 
 ```php
 // This needs to be added to the game
@@ -681,7 +681,7 @@ class WildDogAdapter implements Lion
     }
 }
 ```
-And now the `WildDog` can be used in our game using `WildDogAdapter`.
+Và bây giờ `WildDog` có thể được dùng trong trò chơi của chúng ta thông qua `WildDogAdapter`.
 
 ```php
 $wildDog = new WildDog();
@@ -693,20 +693,20 @@ $hunter->hunt($wildDogAdapter);
 
 🚡 Bridge
 ------
-Real world example
-> Consider you have a website with different pages and you are supposed to allow the user to change the theme. What would you do? Create multiple copies of each of the pages for each of the themes or would you just create separate theme and load them based on the user's preferences? Bridge pattern allows you to do the second i.e.
+Ví dụ thực tế
+> Hãy tưởng tượng bạn có một website với nhiều trang khác nhau và bạn cần cho phép người dùng đổi theme. Bạn sẽ làm gì? Tạo nhiều bản sao của từng trang cho từng theme, hay chỉ tạo các theme riêng biệt và nạp chúng dựa trên sở thích của người dùng? Bridge pattern cho phép bạn làm theo cách thứ hai, tức là:
 
-![With and without the bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
+![Có và không có bridge pattern](https://cloud.githubusercontent.com/assets/11269635/23065293/33b7aea0-f515-11e6-983f-98823c9845ee.png)
 
-In Plain Words
-> Bridge pattern is about preferring composition over inheritance. Implementation details are pushed from a hierarchy to another object with a separate hierarchy.
+Nói đơn giản
+> bridge pattern đề cao composition hơn inheritance. Các chi tiết cài đặt được tách khỏi một hệ phân cấp và đẩy sang một object khác có hệ phân cấp riêng.
 
-Wikipedia says
-> The bridge pattern is a design pattern used in software engineering that is meant to "decouple an abstraction from its implementation so that the two can vary independently"
+Wikipedia nói
+> bridge pattern là một design pattern được dùng trong kỹ nghệ phần mềm với mục đích "tách abstraction ra khỏi implementation để cả hai có thể thay đổi độc lập"
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating our WebPage example from above. Here we have the `WebPage` hierarchy
+Chuyển ví dụ `WebPage` ở trên sang code. Ở đây chúng ta có hệ phân cấp `WebPage`
 
 ```php
 interface WebPage
@@ -745,7 +745,7 @@ class Careers implements WebPage
     }
 }
 ```
-And the separate theme hierarchy
+Và hệ phân cấp theme riêng biệt
 ```php
 
 interface Theme
@@ -775,7 +775,7 @@ class AquaTheme implements Theme
     }
 }
 ```
-And both the hierarchies
+Và kết hợp cả hai hệ phân cấp
 ```php
 $darkTheme = new DarkTheme();
 
@@ -789,18 +789,18 @@ echo $careers->getContent(); // "Careers page in Dark Black";
 🌿 Composite
 -----------------
 
-Real world example
-> Every organization is composed of employees. Each of the employees has the same features i.e. has a salary, has some responsibilities, may or may not report to someone, may or may not have some subordinates etc.
+Ví dụ thực tế
+> Mọi tổ chức đều được tạo thành từ các nhân viên. Mỗi nhân viên có những đặc điểm giống nhau, tức là có lương, có một số trách nhiệm, có thể hoặc không báo cáo cho ai đó, có thể hoặc không có cấp dưới, v.v.
 
-In plain words
-> Composite pattern lets clients treat the individual objects in a uniform manner.
+Nói đơn giản
+> composite pattern cho phép client xử lý các object riêng lẻ theo một cách thống nhất.
 
-Wikipedia says
-> In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes that a group of objects is to be treated in the same way as a single instance of an object. The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, composite pattern là một design pattern phân chia cấu trúc. composite pattern mô tả rằng một nhóm object sẽ được đối xử giống như một instance đơn lẻ của object. Mục đích của composite là "ghép" các object thành cấu trúc cây để biểu diễn quan hệ bộ phận-tổng thể. Việc cài đặt composite pattern cho phép client xử lý thống nhất cả object riêng lẻ lẫn tổ hợp object.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our employees example from above. Here we have different employee types
+Lấy ví dụ về nhân viên ở trên. Ở đây chúng ta có nhiều kiểu nhân viên khác nhau
 
 ```php
 interface Employee
@@ -879,7 +879,7 @@ class Designer implements Employee
 }
 ```
 
-Then we have an organization which consists of several different types of employees
+Sau đó, chúng ta có một tổ chức gồm nhiều loại nhân viên khác nhau
 
 ```php
 class Organization
@@ -904,7 +904,7 @@ class Organization
 }
 ```
 
-And then it can be used as
+Và sau đó có thể dùng như sau
 
 ```php
 // Prepare the employees
@@ -922,19 +922,19 @@ echo "Net salaries: " . $organization->getNetSalaries(); // Net Salaries: 27000
 ☕ Decorator
 -------------
 
-Real world example
+Ví dụ thực tế
 
-> Imagine you run a car service shop offering multiple services. Now how do you calculate the bill to be charged? You pick one service and dynamically keep adding to it the prices for the provided services till you get the final cost. Here each type of service is a decorator.
+> Hãy tưởng tượng bạn điều hành một gara cung cấp nhiều dịch vụ. Vậy bạn tính hóa đơn như thế nào? Bạn bắt đầu với một dịch vụ rồi động thêm giá của từng dịch vụ được cung cấp cho tới khi ra tổng chi phí cuối cùng. Ở đây mỗi loại dịch vụ chính là một decorator.
 
-In plain words
-> Decorator pattern lets you dynamically change the behavior of an object at run time by wrapping them in an object of a decorator class.
+Nói đơn giản
+> decorator pattern cho phép bạn thay đổi động hành vi của một object trong lúc chạy bằng cách bọc nó bên trong một object thuộc decorator class.
 
-Wikipedia says
-> In object-oriented programming, the decorator pattern is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, decorator pattern là một design pattern cho phép bổ sung hành vi cho một object riêng lẻ, theo cách tĩnh hoặc động, mà không ảnh hưởng đến hành vi của các object khác cùng class. decorator pattern thường hữu ích để tuân theo Single Responsibility Principle, vì nó cho phép chia chức năng giữa các class với các mối quan tâm riêng biệt.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Lets take coffee for example. First of all we have a simple coffee implementing the coffee interface
+Hãy lấy cà phê làm ví dụ. Trước hết, chúng ta có một loại cà phê đơn giản cài đặt coffee interface
 
 ```php
 interface Coffee
@@ -956,7 +956,7 @@ class SimpleCoffee implements Coffee
     }
 }
 ```
-We want to make the code extensible to allow options to modify it if required. Lets make some add-ons (decorators)
+Chúng ta muốn làm cho code có thể mở rộng để thêm các tùy chọn chỉnh sửa khi cần. Hãy tạo một vài phần bổ sung (decorators)
 ```php
 class MilkCoffee implements Coffee
 {
@@ -1019,7 +1019,7 @@ class VanillaCoffee implements Coffee
 }
 ```
 
-Lets make a coffee now
+Giờ hãy pha một ly cà phê
 
 ```php
 $someCoffee = new SimpleCoffee();
@@ -1042,18 +1042,18 @@ echo $someCoffee->getDescription(); // Simple Coffee, milk, whip, vanilla
 📦 Facade
 ----------------
 
-Real world example
-> How do you turn on the computer? "Hit the power button" you say! That is what you believe because you are using a simple interface that computer provides on the outside, internally it has to do a lot of stuff to make it happen. This simple interface to the complex subsystem is a facade.
+Ví dụ thực tế
+> Bạn bật máy tính như thế nào? "Nhấn nút nguồn" — bạn sẽ nói vậy! Đó là điều bạn nghĩ vì bạn đang dùng một interface đơn giản mà máy tính cung cấp ở bên ngoài, trong khi bên trong nó phải làm rất nhiều việc để chuyện đó xảy ra. Interface đơn giản dẫn vào một subsystem phức tạp đó chính là facade.
 
-In plain words
-> Facade pattern provides a simplified interface to a complex subsystem.
+Nói đơn giản
+> facade pattern cung cấp một interface đơn giản hóa cho một subsystem phức tạp.
 
-Wikipedia says
-> A facade is an object that provides a simplified interface to a larger body of code, such as a class library.
+Wikipedia nói
+> facade là một object cung cấp một interface đơn giản hóa cho một khối code lớn hơn, chẳng hạn như một class library.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our computer example from above. Here we have the computer class
+Lấy ví dụ về máy tính ở trên. Ở đây chúng ta có class máy tính
 
 ```php
 class Computer
@@ -1094,7 +1094,7 @@ class Computer
     }
 }
 ```
-Here we have the facade
+Ở đây là facade
 ```php
 class ComputerFacade
 {
@@ -1121,7 +1121,7 @@ class ComputerFacade
     }
 }
 ```
-Now to use the facade
+Bây giờ hãy dùng facade
 ```php
 $computer = new ComputerFacade(new Computer());
 $computer->turnOn(); // Ouch! Beep beep! Loading.. Ready to be used!
@@ -1131,18 +1131,18 @@ $computer->turnOff(); // Bup bup buzzz! Haah! Zzzzz
 🍃 Flyweight
 ---------
 
-Real world example
-> Did you ever have fresh tea from some stall? They often make more than one cup that you demanded and save the rest for any other customer so to save the resources e.g. gas etc. Flyweight pattern is all about that i.e. sharing.
+Ví dụ thực tế
+> Bạn đã từng uống trà tươi ở một quầy hàng chưa? Họ thường pha nhiều hơn số ly bạn gọi và giữ phần còn lại cho khách khác để tiết kiệm tài nguyên như gas, v.v. flyweight pattern chính là như vậy, tức là chia sẻ.
 
-In plain words
-> It is used to minimize memory usage or computational expenses by sharing as much as possible with similar objects.
+Nói đơn giản
+> Nó được dùng để giảm mức sử dụng bộ nhớ hoặc chi phí tính toán bằng cách chia sẻ nhiều nhất có thể giữa các object tương tự nhau.
 
-Wikipedia says
-> In computer programming, flyweight is a software design pattern. A flyweight is an object that minimizes memory use by sharing as much data as possible with other similar objects; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory.
+Wikipedia nói
+> Trong lập trình máy tính, flyweight là một software design pattern. flyweight là một object giảm thiểu việc dùng bộ nhớ bằng cách chia sẻ càng nhiều dữ liệu càng tốt với các object tương tự khác; đây là một cách để dùng số lượng lớn object khi một biểu diễn lặp lại đơn giản sẽ tiêu tốn lượng bộ nhớ không thể chấp nhận được.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our tea example from above. First of all we have tea types and tea maker
+Chuyển ví dụ về trà ở trên sang code. Trước hết, chúng ta có các loại trà và tea maker
 
 ```php
 // Anything that will be cached is flyweight.
@@ -1167,7 +1167,7 @@ class TeaMaker
 }
 ```
 
-Then we have the `TeaShop` which takes orders and serves them
+Sau đó, chúng ta có `TeaShop`, nơi nhận đơn và phục vụ chúng
 
 ```php
 class TeaShop
@@ -1193,7 +1193,7 @@ class TeaShop
     }
 }
 ```
-And it can be used as below
+Và nó có thể được dùng như bên dưới
 
 ```php
 $teaMaker = new TeaMaker();
@@ -1211,18 +1211,18 @@ $shop->serve();
 
 🎱 Proxy
 -------------------
-Real world example
-> Have you ever used an access card to go through a door? There are multiple options to open that door i.e. it can be opened either using access card or by pressing a button that bypasses the security. The door's main functionality is to open but there is a proxy added on top of it to add some functionality. Let me better explain it using the code example below.
+Ví dụ thực tế
+> Bạn đã bao giờ dùng thẻ ra vào để mở cửa chưa? Có nhiều cách để mở cánh cửa đó, ví dụ nó có thể được mở bằng thẻ ra vào hoặc bằng cách nhấn một nút bỏ qua lớp bảo mật. Chức năng chính của cánh cửa là mở, nhưng có một proxy được thêm lên trên để bổ sung thêm chức năng. Để tôi giải thích rõ hơn bằng ví dụ code dưới đây.
 
-In plain words
-> Using the proxy pattern, a class represents the functionality of another class.
+Nói đơn giản
+> Với proxy pattern, một class đại diện cho chức năng của một class khác.
 
-Wikipedia says
-> A proxy, in its most general form, is a class functioning as an interface to something else. A proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes. Use of the proxy can simply be forwarding to the real object, or can provide additional logic. In the proxy extra functionality can be provided, for example caching when operations on the real object are resource intensive, or checking preconditions before operations on the real object are invoked.
+Wikipedia nói
+> proxy, ở dạng tổng quát nhất, là một class hoạt động như interface cho một thứ khác. proxy là một object bao bọc hoặc đại diện được client gọi để truy cập object thực thi thật ở phía sau. Việc dùng proxy có thể chỉ đơn giản là chuyển tiếp sang object thật, hoặc cung cấp thêm logic bổ sung. Trong proxy có thể thêm chức năng như cache khi các thao tác trên object thật tốn nhiều tài nguyên, hoặc kiểm tra điều kiện trước khi gọi các thao tác trên object thật.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Taking our security door example from above. Firstly we have the door interface and an implementation of door
+Lấy ví dụ về cửa bảo mật ở trên. Trước hết, chúng ta có door interface và một phần cài đặt của cửa
 
 ```php
 interface Door
@@ -1244,7 +1244,7 @@ class LabDoor implements Door
     }
 }
 ```
-Then we have a proxy to secure any doors that we want
+Sau đó, chúng ta có một proxy để bảo vệ bất kỳ cánh cửa nào mình muốn
 ```php
 class SecuredDoor implements Door
 {
@@ -1275,7 +1275,7 @@ class SecuredDoor implements Door
     }
 }
 ```
-And here is how it can be used
+Và đây là cách có thể dùng nó
 ```php
 $door = new SecuredDoor(new LabDoor());
 $door->open('invalid'); // Big no! It ain't possible.
@@ -1283,16 +1283,16 @@ $door->open('invalid'); // Big no! It ain't possible.
 $door->open('$ecr@t'); // Opening lab door
 $door->close(); // Closing lab door
 ```
-Yet another example would be some sort of data-mapper implementation. For example, I recently made an ODM (Object Data Mapper) for MongoDB using this pattern where I wrote a proxy around mongo classes while utilizing the magic method `__call()`. All the method calls were proxied to the original mongo class and result retrieved was returned as it is but in case of `find` or `findOne` data was mapped to the required class objects and the object was returned instead of `Cursor`.
+Một ví dụ khác là một kiểu cài đặt data-mapper nào đó. Ví dụ, gần đây tôi đã tạo một ODM (Object Data Mapper) cho MongoDB bằng pattern này, trong đó tôi viết một proxy bao quanh các class mongo và sử dụng magic method `__call()`. Mọi lời gọi method đều được chuyển tiếp tới class mongo gốc và kết quả lấy được được trả về nguyên trạng; nhưng trong trường hợp `find` hoặc `findOne`, dữ liệu sẽ được ánh xạ sang các object class cần thiết và object đó được trả về thay cho `Cursor`.
 
 Behavioral Design Patterns
 ==========================
 
-In plain words
-> It is concerned with assignment of responsibilities between the objects. What makes them different from structural patterns is they don't just specify the structure but also outline the patterns for message passing/communication between them. Or in other words, they assist in answering "How to run a behavior in software component?"
+Nói đơn giản
+> Nhóm này quan tâm đến việc phân chia trách nhiệm giữa các object. Điểm khiến chúng khác với structural patterns là chúng không chỉ mô tả cấu trúc mà còn phác thảo các mẫu truyền thông điệp/giao tiếp giữa chúng. Nói cách khác, chúng giúp trả lời câu hỏi: "Làm thế nào để chạy một hành vi trong software component?"
 
-Wikipedia says
-> In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, behavioral design patterns là các design patterns nhận diện những mẫu giao tiếp phổ biến giữa các object và hiện thực hóa các mẫu đó. Nhờ vậy, chúng tăng tính linh hoạt khi thực hiện việc giao tiếp này.
 
 * [Chain of Responsibility](#-chain-of-responsibility)
 * [Command](#-command)
@@ -1308,18 +1308,18 @@ Wikipedia says
 🔗 Chain of Responsibility
 -----------------------
 
-Real world example
-> For example, you have three payment methods (`A`, `B` and `C`) setup in your account; each having a different amount in it. `A` has 100 USD, `B` has 300 USD and `C` having 1000 USD and the preference for payments is chosen as `A` then `B` then `C`. You try to purchase something that is worth 210 USD. Using Chain of Responsibility, first of all account `A` will be checked if it can make the purchase, if yes purchase will be made and the chain will be broken. If not, request will move forward to account `B` checking for amount if yes chain will be broken otherwise the request will keep forwarding till it finds the suitable handler. Here `A`, `B` and `C` are links of the chain and the whole phenomenon is Chain of Responsibility.
+Ví dụ thực tế
+> Ví dụ, bạn có ba phương thức thanh toán (`A`, `B` và `C`) được thiết lập trong tài khoản; mỗi phương thức có một số tiền khác nhau. `A` có 100 USD, `B` có 300 USD và `C` có 1000 USD, và thứ tự ưu tiên thanh toán được chọn là `A`, rồi `B`, rồi `C`. Bạn muốn mua một món đồ trị giá 210 USD. Với Chain of Responsibility, trước tiên tài khoản `A` sẽ được kiểm tra xem có thể thanh toán hay không; nếu có thì việc mua sẽ được thực hiện và chuỗi dừng lại. Nếu không, yêu cầu sẽ được chuyển tiếp sang tài khoản `B` để kiểm tra số dư; nếu được thì chuỗi dừng, còn không thì yêu cầu tiếp tục được chuyển tiếp cho tới khi tìm thấy handler phù hợp. Ở đây `A`, `B` và `C` là các mắt xích của chuỗi, và toàn bộ hiện tượng đó chính là Chain of Responsibility.
 
-In plain words
-> It helps building a chain of objects. Request enters from one end and keeps going from object to object till it finds the suitable handler.
+Nói đơn giản
+> Nó giúp xây dựng một chuỗi object. Yêu cầu đi vào từ một đầu và tiếp tục truyền từ object này sang object khác cho tới khi tìm được handler phù hợp.
 
-Wikipedia says
-> In object-oriented design, the chain-of-responsibility pattern is a design pattern consisting of a source of command objects and a series of processing objects. Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain.
+Wikipedia nói
+> Trong thiết kế hướng đối tượng, chain-of-responsibility pattern là một design pattern gồm một nguồn command object và một chuỗi các object xử lý. Mỗi object xử lý chứa logic xác định kiểu command object mà nó có thể xử lý; phần còn lại sẽ được chuyển sang object xử lý tiếp theo trong chuỗi.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Translating our account example above. First of all we have a base account having the logic for chaining the accounts together and some accounts
+Chuyển ví dụ tài khoản ở trên sang code. Trước hết, chúng ta có một account cơ sở chứa logic để nối các account lại với nhau cùng một số account cụ thể
 
 ```php
 abstract class Account
@@ -1381,7 +1381,7 @@ class Bitcoin extends Account
 }
 ```
 
-Now let's prepare the chain using the links defined above (i.e. Bank, Paypal, Bitcoin)
+Bây giờ hãy chuẩn bị chuỗi bằng các mắt xích đã định nghĩa ở trên (tức là Bank, Paypal, Bitcoin)
 
 ```php
 // Let's prepare a chain like below
@@ -1411,19 +1411,19 @@ $bank->pay(259);
 👮 Command
 -------
 
-Real world example
-> A generic example would be you ordering food at a restaurant. You (i.e. `Client`) ask the waiter (i.e. `Invoker`) to bring some food (i.e. `Command`) and waiter simply forwards the request to Chef (i.e. `Receiver`) who has the knowledge of what and how to cook.
-> Another example would be you (i.e. `Client`) switching on (i.e. `Command`) the television (i.e. `Receiver`) using a remote control (`Invoker`).
+Ví dụ thực tế
+> Một ví dụ quen thuộc là bạn gọi món trong nhà hàng. Bạn (tức `Client`) nhờ người phục vụ (tức `Invoker`) mang thức ăn (tức `Command`), và người phục vụ chỉ việc chuyển tiếp yêu cầu đó cho đầu bếp (tức `Receiver`) — người biết phải nấu gì và nấu như thế nào.
+> Một ví dụ khác là bạn (`Client`) bật (`Command`) chiếc TV (`Receiver`) bằng điều khiển từ xa (`Invoker`).
 
-In plain words
-> Allows you to encapsulate actions in objects. The key idea behind this pattern is to provide the means to decouple client from receiver.
+Nói đơn giản
+> Cho phép bạn đóng gói các hành động bên trong object. Ý tưởng cốt lõi đằng sau pattern này là cung cấp cách để tách client khỏi receiver.
 
-Wikipedia says
-> In object-oriented programming, the command pattern is a behavioral design pattern in which an object is used to encapsulate all information needed to perform an action or trigger an event at a later time. This information includes the method name, the object that owns the method and values for the method parameters.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, command pattern là một behavioral design pattern trong đó một object được dùng để đóng gói toàn bộ thông tin cần thiết để thực hiện một hành động hoặc kích hoạt một sự kiện vào thời điểm sau này. Thông tin đó bao gồm tên method, object sở hữu method và các giá trị của tham số method.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-First of all we have the receiver that has the implementation of every action that could be performed
+Trước hết, chúng ta có receiver, nơi chứa phần cài đặt của mọi hành động có thể được thực hiện
 ```php
 // Receiver
 class Bulb
@@ -1439,7 +1439,7 @@ class Bulb
     }
 }
 ```
-then we have an interface that each of the commands are going to implement and then we have a set of commands
+sau đó chúng ta có một interface mà mỗi command sẽ cài đặt, rồi tiếp theo là một tập các command
 ```php
 interface Command
 {
@@ -1499,7 +1499,7 @@ class TurnOff implements Command
     }
 }
 ```
-Then we have an `Invoker` with whom the client will interact to process any commands
+Tiếp theo, chúng ta có `Invoker`, thành phần mà client sẽ tương tác để xử lý các command
 ```php
 // Invoker
 class RemoteControl
@@ -1510,7 +1510,7 @@ class RemoteControl
     }
 }
 ```
-Finally let's see how we can use it in our client
+Cuối cùng, hãy xem cách chúng ta có thể dùng nó trong client
 ```php
 $bulb = new Bulb();
 
@@ -1522,23 +1522,23 @@ $remote->submit($turnOn); // Bulb has been lit!
 $remote->submit($turnOff); // Darkness!
 ```
 
-Command pattern can also be used to implement a transaction based system. Where you keep maintaining the history of commands as soon as you execute them. If the final command is successfully executed, all good otherwise just iterate through the history and keep executing the `undo` on all the executed commands.
+command pattern cũng có thể được dùng để cài đặt một hệ thống dựa trên transaction. Bạn sẽ lưu lại lịch sử các command ngay khi thực thi chúng. Nếu command cuối cùng chạy thành công thì mọi thứ ổn; còn nếu không, chỉ cần duyệt ngược lịch sử và tiếp tục gọi `undo` trên tất cả các command đã thực thi.
 
 ➿ Iterator
 --------
 
-Real world example
-> An old radio set will be a good example of iterator, where user could start at some channel and then use next or previous buttons to go through the respective channels. Or take an example of MP3 player or a TV set where you could press the next and previous buttons to go through the consecutive channels or in other words they all provide an interface to iterate through the respective channels, songs or radio stations.  
+Ví dụ thực tế
+> Một chiếc radio kiểu cũ là ví dụ hay cho iterator, nơi người dùng có thể bắt đầu ở một kênh nào đó rồi dùng nút next hoặc previous để đi qua các kênh tương ứng. Hoặc hãy nghĩ tới máy nghe MP3 hay TV, nơi bạn có thể nhấn nút next và previous để đi qua các kênh liên tiếp; nói cách khác, tất cả chúng đều cung cấp một interface để duyệt qua các kênh, bài hát hoặc đài phát thanh tương ứng.  
 
-In plain words
-> It presents a way to access the elements of an object without exposing the underlying presentation.
+Nói đơn giản
+> Nó cung cấp một cách để truy cập các phần tử của một object mà không để lộ cách biểu diễn bên dưới.
 
-Wikipedia says
-> In object-oriented programming, the iterator pattern is a design pattern in which an iterator is used to traverse a container and access the container's elements. The iterator pattern decouples algorithms from containers; in some cases, algorithms are necessarily container-specific and thus cannot be decoupled.
+Wikipedia nói
+> Trong lập trình hướng đối tượng, iterator pattern là một design pattern trong đó iterator được dùng để duyệt một container và truy cập các phần tử của container đó. iterator pattern tách thuật toán ra khỏi container; tuy vậy, trong một số trường hợp, thuật toán gắn chặt với container nên không thể tách rời.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-In PHP it is quite easy to implement using SPL (Standard PHP Library). Translating our radio stations example from above. First of all we have `RadioStation`
+Trong PHP, việc cài đặt pattern này khá dễ dàng bằng SPL (Standard PHP Library). Chuyển ví dụ về các đài phát thanh ở trên sang code, trước hết chúng ta có `RadioStation`
 
 ```php
 class RadioStation
@@ -1556,7 +1556,7 @@ class RadioStation
     }
 }
 ```
-Then we have our iterator
+Tiếp theo, chúng ta có iterator của mình
 
 ```php
 use Countable;
@@ -1614,7 +1614,7 @@ class StationList implements Countable, Iterator
     }
 }
 ```
-And then it can be used as
+Và sau đó có thể dùng như sau
 ```php
 $stationList = new StationList();
 
@@ -1633,20 +1633,20 @@ $stationList->removeStation(new RadioStation(89)); // Will remove station 89
 👽 Mediator
 ========
 
-Real world example
-> A general example would be when you talk to someone on your mobile phone, there is a network provider sitting between you and them and your conversation goes through it instead of being directly sent. In this case network provider is mediator.
+Ví dụ thực tế
+> Một ví dụ quen thuộc là khi bạn nói chuyện với ai đó qua điện thoại di động, sẽ có nhà mạng đứng ở giữa bạn và họ, và cuộc trò chuyện đi qua nhà mạng thay vì được gửi trực tiếp. Trong trường hợp này, nhà mạng chính là mediator.
 
-In plain words
-> Mediator pattern adds a third party object (called mediator) to control the interaction between two objects (called colleagues). It helps reduce the coupling between the classes communicating with each other. Because now they don't need to have the knowledge of each other's implementation.
+Nói đơn giản
+> mediator pattern thêm một object bên thứ ba (gọi là mediator) để kiểm soát sự tương tác giữa hai object (gọi là colleagues). Nó giúp giảm coupling giữa các class đang giao tiếp với nhau, vì giờ đây chúng không cần biết chi tiết cài đặt của nhau.
 
-Wikipedia says
-> In software engineering, the mediator pattern defines an object that encapsulates how a set of objects interact. This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, mediator pattern định nghĩa một object đóng gói cách một tập hợp object tương tác với nhau. Pattern này được xem là một behavioral pattern vì cách nó có thể thay đổi hành vi chạy của chương trình.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Here is the simplest example of a chat room (i.e. mediator) with users (i.e. colleagues) sending messages to each other.
+Đây là ví dụ đơn giản nhất về một phòng chat (tức mediator) với các người dùng (tức colleagues) gửi tin nhắn cho nhau.
 
-First of all, we have the mediator i.e. the chat room
+Trước hết, chúng ta có mediator, tức là phòng chat
 
 ```php
 interface ChatRoomMediator 
@@ -1667,7 +1667,7 @@ class ChatRoom implements ChatRoomMediator
 }
 ```
 
-Then we have our users i.e. colleagues
+Tiếp theo, chúng ta có các user, tức là colleagues
 ```php
 class User {
     protected $name;
@@ -1687,7 +1687,7 @@ class User {
     }
 }
 ```
-And the usage
+Và cách sử dụng
 ```php
 $mediator = new ChatRoom();
 
@@ -1704,22 +1704,22 @@ $jane->send('Hey!');
 
 💾 Memento
 -------
-Real world example
-> Take the example of calculator (i.e. originator), where whenever you perform some calculation the last calculation is saved in memory (i.e. memento) so that you can get back to it and maybe get it restored using some action buttons (i.e. caretaker).
+Ví dụ thực tế
+> Hãy lấy ví dụ máy tính bỏ túi (tức originator), nơi mỗi khi bạn thực hiện một phép tính thì phép tính gần nhất được lưu vào bộ nhớ (tức memento) để bạn có thể quay lại nó và khôi phục bằng một số nút thao tác (tức caretaker).
 
-In plain words
-> Memento pattern is about capturing and storing the current state of an object in a manner that it can be restored later on in a smooth manner.
+Nói đơn giản
+> memento pattern là về việc chụp lại và lưu trữ trạng thái hiện tại của một object theo cách mà sau này có thể khôi phục lại một cách trơn tru.
 
-Wikipedia says
-> The memento pattern is a software design pattern that provides the ability to restore an object to its previous state (undo via rollback).
+Wikipedia nói
+> memento pattern là một software design pattern cung cấp khả năng khôi phục một object về trạng thái trước đó của nó (undo thông qua rollback).
 
-Usually useful when you need to provide some sort of undo functionality.
+Thường hữu ích khi bạn cần cung cấp một dạng chức năng undo nào đó.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Lets take an example of text editor which keeps saving the state from time to time and that you can restore if you want.
+Hãy lấy ví dụ một trình soạn thảo văn bản liên tục lưu trạng thái theo thời gian và bạn có thể khôi phục nếu muốn.
 
-First of all we have our memento object that will be able to hold the editor state
+Trước hết, chúng ta có memento object có khả năng giữ trạng thái của trình soạn thảo
 
 ```php
 class EditorMemento
@@ -1738,7 +1738,7 @@ class EditorMemento
 }
 ```
 
-Then we have our editor i.e. originator that is going to use memento object
+Tiếp theo, chúng ta có editor, tức originator, thành phần sẽ dùng memento object
 
 ```php
 class Editor
@@ -1767,7 +1767,7 @@ class Editor
 }
 ```
 
-And then it can be used as
+Và sau đó có thể dùng như sau
 
 ```php
 $editor = new Editor();
@@ -1793,18 +1793,18 @@ $editor->getContent(); // This is the first sentence. This is second.
 
 😎 Observer
 --------
-Real world example
-> A good example would be the job seekers where they subscribe to some job posting site and they are notified whenever there is a matching job opportunity.   
+Ví dụ thực tế
+> Một ví dụ hay là những người tìm việc đăng ký theo dõi một trang tuyển dụng và được thông báo bất cứ khi nào có cơ hội việc làm phù hợp.   
 
-In plain words
-> Defines a dependency between objects so that whenever an object changes its state, all its dependents are notified.
+Nói đơn giản
+> Định nghĩa một sự phụ thuộc giữa các object để khi một object thay đổi trạng thái, tất cả đối tượng phụ thuộc vào nó đều được thông báo.
 
-Wikipedia says
-> The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+Wikipedia nói
+> observer pattern là một software design pattern trong đó một object, gọi là subject, duy trì danh sách các đối tượng phụ thuộc vào nó, gọi là observers, và tự động thông báo cho họ về mọi thay đổi trạng thái, thường bằng cách gọi một trong các method của họ.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our example from above. First of all we have job seekers that need to be notified for a job posting
+Chuyển ví dụ ở trên sang code. Trước hết, chúng ta có những người tìm việc cần được thông báo khi có tin tuyển dụng
 ```php
 class JobPost
 {
@@ -1837,7 +1837,7 @@ class JobSeeker implements Observer
     }
 }
 ```
-Then we have our job postings to which the job seekers will subscribe
+Tiếp theo, chúng ta có nơi đăng tin tuyển dụng mà người tìm việc sẽ đăng ký theo dõi
 ```php
 class EmploymentAgency implements Observable
 {
@@ -1861,7 +1861,7 @@ class EmploymentAgency implements Observable
     }
 }
 ```
-Then it can be used as
+Sau đó có thể dùng như sau
 ```php
 // Create subscribers
 $johnDoe = new JobSeeker('John Doe');
@@ -1882,18 +1882,18 @@ $jobPostings->addJob(new JobPost('Software Engineer'));
 
 🏃 Visitor
 -------
-Real world example
-> Consider someone visiting Dubai. They just need a way (i.e. visa) to enter Dubai. After arrival, they can come and visit any place in Dubai on their own without having to ask for permission or to do some leg work in order to visit any place here; just let them know of a place and they can visit it. Visitor pattern lets you do just that, it helps you add places to visit so that they can visit as much as they can without having to do any legwork.
+Ví dụ thực tế
+> Hãy tưởng tượng một người tới thăm Dubai. Họ chỉ cần một cách (tức visa) để vào Dubai. Sau khi đến nơi, họ có thể tự mình đi thăm bất kỳ đâu ở Dubai mà không cần xin phép hay làm thêm thủ tục gì để ghé từng địa điểm; chỉ cần cho họ biết địa điểm là họ có thể đến. visitor pattern cũng cho phép bạn làm điều tương tự: nó giúp bạn thêm các nơi cần ghé thăm để người đó có thể đi được bao nhiêu tùy thích mà không cần thêm công sức chuẩn bị.
 
-In plain words
-> Visitor pattern lets you add further operations to objects without having to modify them.
+Nói đơn giản
+> visitor pattern cho phép bạn thêm các thao tác mới cho object mà không cần sửa đổi chính chúng.
 
-Wikipedia says
-> In object-oriented programming and software engineering, the visitor design pattern is a way of separating an algorithm from an object structure on which it operates. A practical result of this separation is the ability to add new operations to existing object structures without modifying those structures. It is one way to follow the open/closed principle.
+Wikipedia nói
+> Trong lập trình hướng đối tượng và kỹ nghệ phần mềm, visitor design pattern là một cách tách thuật toán khỏi cấu trúc object mà nó vận hành trên đó. Kết quả thực tế của sự tách biệt này là khả năng thêm các thao tác mới vào các cấu trúc object hiện có mà không cần sửa đổi chính các cấu trúc đó. Đây là một cách để tuân theo nguyên tắc open/closed.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Let's take an example of a zoo simulation where we have several different kinds of animals and we have to make them Sound. Let's translate this using visitor pattern
+Hãy lấy ví dụ một mô phỏng sở thú, nơi chúng ta có nhiều loại động vật khác nhau và cần khiến chúng phát ra âm thanh. Hãy chuyển điều này sang code bằng visitor pattern
 
 ```php
 // Visitee
@@ -1910,7 +1910,7 @@ interface AnimalOperation
     public function visitDolphin(Dolphin $dolphin);
 }
 ```
-Then we have our implementations for the animals
+Tiếp theo, chúng ta có các phần cài đặt cho những con vật
 ```php
 class Monkey implements Animal
 {
@@ -1951,7 +1951,7 @@ class Dolphin implements Animal
     }
 }
 ```
-Let's implement our visitor
+Hãy cài đặt visitor của chúng ta
 ```php
 class Speak implements AnimalOperation
 {
@@ -1972,7 +1972,7 @@ class Speak implements AnimalOperation
 }
 ```
 
-And then it can be used as
+Và sau đó có thể dùng như sau
 ```php
 $monkey = new Monkey();
 $lion = new Lion();
@@ -1984,7 +1984,7 @@ $monkey->accept($speak);    // Ooh oo aa aa!
 $lion->accept($speak);      // Roaaar!
 $dolphin->accept($speak);   // Tuut tutt tuutt!
 ```
-We could have done this simply by having an inheritance hierarchy for the animals but then we would have to modify the animals whenever we would have to add new actions to animals. But now we will not have to change them. For example, let's say we are asked to add the jump behavior to the animals, we can simply add that by creating a new visitor i.e.
+Chúng ta hoàn toàn có thể làm điều này chỉ bằng một hệ phân cấp kế thừa cho các con vật, nhưng khi cần thêm hành động mới cho động vật thì lại phải sửa chính các class động vật. Còn bây giờ, chúng ta sẽ không phải thay đổi chúng. Ví dụ, giả sử cần thêm hành vi nhảy cho động vật, ta chỉ cần tạo một visitor mới như sau.
 
 ```php
 class Jump implements AnimalOperation
@@ -2005,7 +2005,7 @@ class Jump implements AnimalOperation
     }
 }
 ```
-And for the usage
+Và cách sử dụng
 ```php
 $jump = new Jump();
 
@@ -2022,18 +2022,18 @@ $dolphin->accept($jump);   // Walked on water a little and disappeared
 💡 Strategy
 --------
 
-Real world example
-> Consider the example of sorting, we implemented bubble sort but the data started to grow and bubble sort started getting very slow. In order to tackle this we implemented Quick sort. But now although the quick sort algorithm was doing better for large datasets, it was very slow for smaller datasets. In order to handle this we implemented a strategy where for small datasets, bubble sort will be used and for larger, quick sort.
+Ví dụ thực tế
+> Hãy xét ví dụ về sắp xếp: ban đầu chúng ta cài bubble sort nhưng dữ liệu ngày càng lớn và bubble sort trở nên rất chậm. Để xử lý việc đó, chúng ta cài Quick sort. Nhưng rồi, dù quick sort chạy tốt hơn với tập dữ liệu lớn, nó lại rất chậm với tập dữ liệu nhỏ. Vì vậy, chúng ta cài một strategy: với tập dữ liệu nhỏ thì dùng bubble sort, còn với tập dữ liệu lớn thì dùng quick sort.
 
-In plain words
-> Strategy pattern allows you to switch the algorithm or strategy based upon the situation.
+Nói đơn giản
+> strategy pattern cho phép bạn chuyển đổi thuật toán hoặc strategy tùy theo tình huống.
 
-Wikipedia says
-> In computer programming, the strategy pattern (also known as the policy pattern) is a behavioural software design pattern that enables an algorithm's behavior to be selected at runtime.
+Wikipedia nói
+> Trong lập trình máy tính, strategy pattern (còn được gọi là policy pattern) là một behavioural software design pattern cho phép lựa chọn hành vi của thuật toán tại runtime.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Translating our example from above. First of all we have our strategy interface and different strategy implementations
+Chuyển ví dụ ở trên sang code. Trước hết, chúng ta có strategy interface và các phần cài đặt strategy khác nhau
 
 ```php
 interface SortStrategy
@@ -2064,7 +2064,7 @@ class QuickSortStrategy implements SortStrategy
 }
 ```
 
-And then we have our client that is going to use any strategy
+Tiếp theo, chúng ta có client sẽ sử dụng bất kỳ strategy nào
 ```php
 class Sorter
 {
@@ -2087,7 +2087,7 @@ class Sorter
     }
 }
 ```
-And it can be used as
+Và nó có thể được dùng như sau
 ```php
 $smalldataset = [1, 3, 4, 2];
 $bigdataset = [1, 4, 3, 2, 8, 10, 5, 6, 9, 7];
@@ -2101,19 +2101,19 @@ $sorter->sort($bigdataset); // Output : Sorting using quick sort
 
 💢 State
 -----
-Real world example
-> Imagine you are using some drawing application, you choose the paint brush to draw. Now the brush changes its behavior based on the selected color i.e. if you have chosen red color it will draw in red, if blue then it will be in blue etc.  
+Ví dụ thực tế
+> Hãy tưởng tượng bạn đang dùng một ứng dụng vẽ và chọn cọ vẽ để vẽ. Lúc này cây cọ thay đổi hành vi tùy theo màu đã chọn, ví dụ nếu chọn màu đỏ thì nó sẽ vẽ màu đỏ, nếu là xanh thì sẽ vẽ màu xanh, v.v.  
 
-In plain words
-> It lets you change the behavior of a class when the state changes.
+Nói đơn giản
+> Nó cho phép bạn thay đổi hành vi của một class khi state thay đổi.
 
-Wikipedia says
-> The state pattern is a behavioral software design pattern that implements a state machine in an object-oriented way. With the state pattern, a state machine is implemented by implementing each individual state as a derived class of the state pattern interface, and implementing state transitions by invoking methods defined by the pattern's superclass.
-> The state pattern can be interpreted as a strategy pattern which is able to switch the current strategy through invocations of methods defined in the pattern's interface.
+Wikipedia nói
+> state pattern là một behavioral software design pattern cài đặt state machine theo cách hướng đối tượng. Với state pattern, state machine được hiện thực bằng cách cài đặt từng state riêng lẻ thành lớp dẫn xuất của state pattern interface, và cài đặt các chuyển đổi state bằng cách gọi các method được định nghĩa bởi superclass của pattern.
+> state pattern có thể được hiểu như một strategy pattern có khả năng chuyển đổi strategy hiện tại thông qua việc gọi các method được định nghĩa trong interface của pattern.
 
-**Programmatic example**
+**Ví dụ lập trình**
 
-Let's take an example of a phone. First of all we have our state interface and some state implementations
+Hãy lấy ví dụ một chiếc điện thoại. Trước hết, chúng ta có state interface và một số phần cài đặt state
 
 ```php
 interface PhoneState {
@@ -2160,7 +2160,7 @@ class PhoneStateCalling implements PhoneState {
 }
 ```
 
-Then we have our Phone class that changes the state on different behavior calls
+Tiếp theo, chúng ta có class Phone thay đổi state theo các lời gọi hành vi khác nhau
 
 ```php
 class Phone {
@@ -2181,7 +2181,7 @@ class Phone {
 }
 ```
 
-And then it can be used as follows and it will call the relevant state methods:
+Và sau đó có thể dùng như sau, khi đó nó sẽ gọi các method state tương ứng:
 
 ```php
 $phone = new Phone();
@@ -2193,26 +2193,26 @@ $phone->dial();
 📒 Template Method
 ---------------
 
-Real world example
-> Suppose we are getting some house built. The steps for building might look like
-> - Prepare the base of house
-> - Build the walls
-> - Add roof
-> - Add other floors
+Ví dụ thực tế
+> Giả sử chúng ta đang xây một căn nhà. Các bước xây dựng có thể trông như sau
+> - Chuẩn bị móng nhà
+> - Xây tường
+> - Lợp mái
+> - Thêm các tầng khác
 
-> The order of these steps could never be changed i.e. you can't build the roof before building the walls etc but each of the steps could be modified for example walls can be made of wood or polyester or stone.
+> Thứ tự của các bước này không bao giờ được thay đổi, tức là bạn không thể lợp mái trước khi xây tường, v.v.; nhưng mỗi bước đều có thể được biến đổi, ví dụ tường có thể làm bằng gỗ, polyester hoặc đá.
 
-In plain words
-> Template method defines the skeleton of how a certain algorithm could be performed, but defers the implementation of those steps to the children classes.
+Nói đơn giản
+> template method định nghĩa bộ khung của cách một thuật toán nhất định được thực hiện, nhưng hoãn phần cài đặt của các bước đó cho các lớp con.
 
-Wikipedia says
-> In software engineering, the template method pattern is a behavioral design pattern that defines the program skeleton of an algorithm in an operation, deferring some steps to subclasses. It lets one redefine certain steps of an algorithm without changing the algorithm's structure.
+Wikipedia nói
+> Trong kỹ nghệ phần mềm, template method pattern là một behavioral design pattern định nghĩa bộ khung chương trình của một thuật toán trong một thao tác, đồng thời hoãn một số bước cho các lớp con. Nó cho phép định nghĩa lại một số bước nhất định của thuật toán mà không làm thay đổi cấu trúc của thuật toán.
 
-**Programmatic Example**
+**Ví dụ lập trình**
 
-Imagine we have a build tool that helps us test, lint, build, generate build reports (i.e. code coverage reports, linting report etc) and deploy our app on the test server.
+Hãy tưởng tượng chúng ta có một build tool giúp test, lint, build, tạo các báo cáo build (ví dụ báo cáo code coverage, báo cáo linting, v.v.) và deploy ứng dụng của mình lên test server.
 
-First of all we have our base class that specifies the skeleton for the build algorithm
+Trước hết, chúng ta có base class chỉ rõ bộ khung của thuật toán build
 ```php
 abstract class Builder
 {
@@ -2233,7 +2233,7 @@ abstract class Builder
 }
 ```
 
-Then we can have our implementations
+Sau đó, chúng ta có thể có các phần cài đặt cụ thể
 
 ```php
 class AndroidBuilder extends Builder
@@ -2282,7 +2282,7 @@ class IosBuilder extends Builder
     }
 }
 ```
-And then it can be used as
+Và sau đó có thể dùng như sau
 
 ```php
 $androidBuilder = new AndroidBuilder();
@@ -2304,17 +2304,17 @@ $iosBuilder->build();
 // Deploying ios build to server
 ```
 
-## 🚦 Wrap Up Folks
+## 🚦 Tổng kết
 
-And that about wraps it up. I will continue to improve this, so you might want to watch/star this repository to revisit. Also, I have plans on writing the same about the architectural patterns, stay tuned for it.
+Vậy là chúng ta tạm khép lại ở đây. Tôi sẽ tiếp tục cải thiện tài liệu này, nên bạn có thể watch/star repository này để quay lại sau. Ngoài ra, tôi cũng có kế hoạch viết một phiên bản tương tự về architectural patterns, hãy chờ nhé.
 
-## 👬 Contribution
+## 👬 Đóng góp
 
-- Report issues
-- Open pull request with improvements
-- Spread the word
-- Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/kamrify.svg?style=social&label=Follow%20%40kamrify)](https://twitter.com/kamrify)
+- Báo cáo vấn đề
+- Mở pull request với các cải tiến
+- Lan tỏa cho mọi người cùng biết
+- Gửi cho tôi bất kỳ phản hồi nào [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/kamrify.svg?style=social&label=Follow%20%40kamrify)](https://twitter.com/kamrify)
 
-## License
+## Giấy phép
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
